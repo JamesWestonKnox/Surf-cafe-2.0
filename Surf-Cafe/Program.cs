@@ -9,7 +9,7 @@ namespace Surf_Cafe
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Forms.LoginForm());
+            Application.Run(new Forms.AdminDashboardForm());
         }
     }
 }

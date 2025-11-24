@@ -21,5 +21,25 @@ namespace Surf_Cafe.Forms
         {
 
         }
+
+        private void btnCollapse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMainHeading_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlSubHeading_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
