@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Surf_Cafe.Forms
 {
-    public partial class OrdersForm : Form
+    public partial class ReportsUserControl : UserControl
     {
-        public OrdersForm()
+        public ReportsUserControl()
         {
             InitializeComponent();
         }

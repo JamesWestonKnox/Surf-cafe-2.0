@@ -17,10 +17,17 @@ namespace Surf_Cafe.Forms
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        /// <summary>
+        /// Method to load new user controls into our content panel in our dashboard
+        /// </summary>
+        /// <param name="uc"></param>
+        private void LoadUserControl(UserControl uc)
         {
-
+            pnlContent.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            pnlContent.Controls.Add(uc);
         }
+
 
         private void btnCollapse_Click(object sender, EventArgs e)
         {
@@ -40,6 +47,44 @@ namespace Surf_Cafe.Forms
         private void pnlSubHeading_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            lblSubHeading.Text = "Orders";
+            OrdersUserControl orders = new OrdersUserControl();
+            LoadUserControl(orders);
+
+
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            lblSubHeading.Text = "Inventory Management";
+            InventoryUserControl inventory = new InventoryUserControl();
+            LoadUserControl(inventory);
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            lblSubHeading.Text = "Categories";
+            CategoriesUserControl categories = new CategoriesUserControl();
+            LoadUserControl(categories);
+
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            lblSubHeading.Text = "Reports";
+            ReportsUserControl reports = new ReportsUserControl();
+            LoadUserControl(reports);
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            lblSubHeading.Text = "Employee Management";
+            EmployeesManagementUserControl employees = new EmployeesManagementUserControl();
+            LoadUserControl(employees);
         }
     }
 }

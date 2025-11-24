@@ -38,14 +38,14 @@
             btnCollapse = new Button();
             btnLogout = new Button();
             pnlLogo = new Panel();
+            pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
-            pnlContent = new Panel();
+            pnlActions = new Panel();
+            lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
-            lblSubHeading = new Label();
-            pnlSubHeading = new Panel();
-            pnlActions = new Panel();
+            pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -64,7 +64,6 @@
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(234, 634);
             pnlSidebar.TabIndex = 0;
-            pnlSidebar.Paint += panel1_Paint;
             // 
             // pnlMenuButtons
             // 
@@ -89,6 +88,7 @@
             btnReports.TabIndex = 5;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
             // 
             // btnEmployees
             // 
@@ -99,6 +99,7 @@
             btnEmployees.TabIndex = 4;
             btnEmployees.Text = "Employees";
             btnEmployees.UseVisualStyleBackColor = true;
+            btnEmployees.Click += btnEmployees_Click;
             // 
             // btnInventory
             // 
@@ -109,6 +110,7 @@
             btnInventory.TabIndex = 3;
             btnInventory.Text = "Inventory";
             btnInventory.UseVisualStyleBackColor = true;
+            btnInventory.Click += btnInventory_Click;
             // 
             // btnMenu
             // 
@@ -119,6 +121,7 @@
             btnMenu.TabIndex = 2;
             btnMenu.Text = "Menu";
             btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
             // 
             // btnOrders
             // 
@@ -129,6 +132,7 @@
             btnOrders.TabIndex = 1;
             btnOrders.Text = "Orders";
             btnOrders.UseVisualStyleBackColor = true;
+            btnOrders.Click += btnOrders_Click;
             // 
             // btnCollapse
             // 
@@ -163,6 +167,13 @@
             pnlLogo.Size = new Size(234, 131);
             pnlLogo.TabIndex = 7;
             // 
+            // pnlSubHeading
+            // 
+            pnlSubHeading.Location = new Point(234, 71);
+            pnlSubHeading.Name = "pnlSubHeading";
+            pnlSubHeading.Size = new Size(785, 60);
+            pnlSubHeading.TabIndex = 1;
+            // 
             // pbLogo
             // 
             pbLogo.BackColor = SystemColors.MenuHighlight;
@@ -186,14 +197,24 @@
             pnlHeader.Size = new Size(785, 131);
             pnlHeader.TabIndex = 1;
             // 
-            // pnlContent
+            // pnlActions
             // 
-            pnlContent.Dock = DockStyle.Fill;
-            pnlContent.Location = new Point(234, 131);
-            pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(785, 503);
-            pnlContent.TabIndex = 2;
-            pnlContent.Paint += pnlContent_Paint;
+            pnlActions.Dock = DockStyle.Right;
+            pnlActions.Location = new Point(478, 68);
+            pnlActions.Name = "pnlActions";
+            pnlActions.Size = new Size(307, 63);
+            pnlActions.TabIndex = 1;
+            // 
+            // lblSubHeading
+            // 
+            lblSubHeading.AutoSize = true;
+            lblSubHeading.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubHeading.Location = new Point(0, 71);
+            lblSubHeading.Name = "lblSubHeading";
+            lblSubHeading.Size = new Size(415, 50);
+            lblSubHeading.TabIndex = 0;
+            lblSubHeading.Text = "Subheading >Eg Orders";
+            lblSubHeading.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlMainHeading
             // 
@@ -215,31 +236,14 @@
             lblMainHeading.Text = "Admin Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
             // 
-            // lblSubHeading
+            // pnlContent
             // 
-            lblSubHeading.AutoSize = true;
-            lblSubHeading.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSubHeading.Location = new Point(0, 71);
-            lblSubHeading.Name = "lblSubHeading";
-            lblSubHeading.Size = new Size(415, 50);
-            lblSubHeading.TabIndex = 0;
-            lblSubHeading.Text = "Subheading >Eg Orders";
-            lblSubHeading.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pnlSubHeading
-            // 
-            pnlSubHeading.Location = new Point(234, 71);
-            pnlSubHeading.Name = "pnlSubHeading";
-            pnlSubHeading.Size = new Size(785, 60);
-            pnlSubHeading.TabIndex = 1;
-            // 
-            // pnlActions
-            // 
-            pnlActions.Dock = DockStyle.Right;
-            pnlActions.Location = new Point(478, 68);
-            pnlActions.Name = "pnlActions";
-            pnlActions.Size = new Size(307, 63);
-            pnlActions.TabIndex = 1;
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(234, 131);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(785, 503);
+            pnlContent.TabIndex = 2;
+            pnlContent.Paint += pnlContent_Paint;
             // 
             // AdminDashboardForm
             // 

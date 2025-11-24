@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Surf_Cafe.Forms
 {
-    public partial class EmployeeManagementForm : Form
+    public partial class EmployeesManagementUserControl : UserControl
     {
-        public EmployeeManagementForm()
+        public EmployeesManagementUserControl()
         {
             InitializeComponent();
         }
