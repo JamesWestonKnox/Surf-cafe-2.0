@@ -128,5 +128,11 @@ namespace Surf_Cafe.Forms
             AddCategoryForm form = new AddCategoryForm();
             form.ShowDialog();
         }
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            NewOrderForm form = new NewOrderForm();
+            form.ShowDialog();
+        }
     }
 }
