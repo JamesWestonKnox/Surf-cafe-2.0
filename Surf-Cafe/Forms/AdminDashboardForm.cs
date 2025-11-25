@@ -110,5 +110,11 @@ namespace Surf_Cafe.Forms
             LoadUserControl(employees);
             btnAddEmployee.Visible = true;
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            AddEmployeeForm form = new AddEmployeeForm();
+            form.ShowDialog();
+        }
     }
 }

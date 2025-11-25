@@ -32,7 +32,7 @@
             btnConfirm = new Button();
             btnCancel = new Button();
             txtUsername = new TextBox();
-            this.txtPasscode = new TextBox();
+            txtPasscode = new TextBox();
             cmbRole = new ComboBox();
             label2 = new Label();
             label3 = new Label();
@@ -67,6 +67,7 @@
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtUsername
             // 
@@ -79,14 +80,14 @@
             // 
             // txtPasscode
             // 
-            this.txtPasscode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.txtPasscode.Location = new Point(36, 219);
-            this.txtPasscode.Name = "txtPasscode";
-            this.txtPasscode.PasswordChar = '*';
-            this.txtPasscode.PlaceholderText = "E.g. 1234";
-            this.txtPasscode.Size = new Size(238, 29);
-            this.txtPasscode.TabIndex = 7;
-            this.txtPasscode.UseSystemPasswordChar = true;
+            txtPasscode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPasscode.Location = new Point(36, 219);
+            txtPasscode.Name = "txtPasscode";
+            txtPasscode.PasswordChar = '*';
+            txtPasscode.PlaceholderText = "E.g. 1234";
+            txtPasscode.Size = new Size(238, 29);
+            txtPasscode.TabIndex = 7;
+            txtPasscode.UseSystemPasswordChar = true;
             // 
             // cmbRole
             // 
@@ -128,12 +129,13 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(cmbRole);
-            Controls.Add(this.txtPasscode);
+            Controls.Add(txtPasscode);
             Controls.Add(txtUsername);
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
             Controls.Add(label1);
             Name = "AddEmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddEmployeeForm";
             ResumeLayout(false);
             PerformLayout();
@@ -145,7 +147,7 @@
         private Button btnConfirm;
         private Button btnCancel;
         private TextBox txtUsername;
-        private TextBox textBox3;
+        private TextBox txtPasscode;
         private ComboBox cmbRole;
         private Label label2;
         private Label label3;

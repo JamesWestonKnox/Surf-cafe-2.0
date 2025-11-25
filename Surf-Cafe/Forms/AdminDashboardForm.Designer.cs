@@ -227,6 +227,7 @@
             btnAddEmployee.Text = "+ Add Employee";
             btnAddEmployee.UseVisualStyleBackColor = true;
             btnAddEmployee.Visible = false;
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // btnAddOrder
             // 
