@@ -122,5 +122,11 @@ namespace Surf_Cafe.Forms
             AddProductForm form = new AddProductForm();
             form.ShowDialog();
         }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            AddCategoryForm form = new AddCategoryForm();
+            form.ShowDialog();
+        }
     }
 }
