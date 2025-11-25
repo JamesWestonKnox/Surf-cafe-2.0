@@ -259,6 +259,7 @@
             btnAddStock.Text = "+ Add Stock";
             btnAddStock.UseVisualStyleBackColor = true;
             btnAddStock.Visible = false;
+            btnAddStock.Click += btnAddStock_Click;
             // 
             // btnAddCategory
             // 

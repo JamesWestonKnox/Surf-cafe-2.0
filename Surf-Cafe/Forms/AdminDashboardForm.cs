@@ -116,5 +116,11 @@ namespace Surf_Cafe.Forms
             AddEmployeeForm form = new AddEmployeeForm();
             form.ShowDialog();
         }
+
+        private void btnAddStock_Click(object sender, EventArgs e)
+        {
+            AddProductForm form = new AddProductForm();
+            form.ShowDialog();
+        }
     }
 }
