@@ -42,16 +42,16 @@
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
             pnlActions = new Panel();
+            btnAddEmployee = new Button();
+            btnAddOrder = new Button();
+            btnGenerateReport = new Button();
+            btnAddStock = new Button();
+            btnAddCategory = new Button();
+            btnSaveChanges = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
             pnlContent = new Panel();
-            btnAddOrder = new Button();
-            btnAddCategory = new Button();
-            btnAddStock = new Button();
-            btnSaveChanges = new Button();
-            btnGenerateReport = new Button();
-            btnAddEmployee = new Button();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -218,6 +218,67 @@
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
             // 
+            // btnAddEmployee
+            // 
+            btnAddEmployee.Location = new Point(344, 6);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(153, 52);
+            btnAddEmployee.TabIndex = 5;
+            btnAddEmployee.Text = "+ Add Employee";
+            btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Visible = false;
+            // 
+            // btnAddOrder
+            // 
+            btnAddOrder.AutoSize = true;
+            btnAddOrder.Location = new Point(344, 6);
+            btnAddOrder.Name = "btnAddOrder";
+            btnAddOrder.Size = new Size(153, 52);
+            btnAddOrder.TabIndex = 0;
+            btnAddOrder.Text = "+ New Order";
+            btnAddOrder.UseVisualStyleBackColor = true;
+            btnAddOrder.Visible = false;
+            // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.Location = new Point(343, 6);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 4;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Visible = false;
+            // 
+            // btnAddStock
+            // 
+            btnAddStock.Location = new Point(13, 6);
+            btnAddStock.Name = "btnAddStock";
+            btnAddStock.Size = new Size(153, 52);
+            btnAddStock.TabIndex = 2;
+            btnAddStock.Text = "+ Add Stock";
+            btnAddStock.UseVisualStyleBackColor = true;
+            btnAddStock.Visible = false;
+            // 
+            // btnAddCategory
+            // 
+            btnAddCategory.Location = new Point(344, 6);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            btnAddCategory.Visible = false;
+            // 
+            // btnSaveChanges
+            // 
+            btnSaveChanges.Location = new Point(178, 6);
+            btnSaveChanges.Name = "btnSaveChanges";
+            btnSaveChanges.Size = new Size(153, 52);
+            btnSaveChanges.TabIndex = 3;
+            btnSaveChanges.Text = "Save Changes";
+            btnSaveChanges.UseVisualStyleBackColor = true;
+            btnSaveChanges.Visible = false;
+            // 
             // lblSubHeading
             // 
             lblSubHeading.AutoSize = true;
@@ -247,7 +308,6 @@
             lblMainHeading.Size = new Size(994, 68);
             lblMainHeading.TabIndex = 0;
             lblMainHeading.Text = "Admin Dashboard";
-            lblMainHeading.Visible = false;
             lblMainHeading.Click += lblMainHeading_Click;
             // 
             // pnlContent
@@ -258,67 +318,6 @@
             pnlContent.Size = new Size(994, 503);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
-            // 
-            // btnAddOrder
-            // 
-            btnAddOrder.AutoSize = true;
-            btnAddOrder.Location = new Point(344, 6);
-            btnAddOrder.Name = "btnAddOrder";
-            btnAddOrder.Size = new Size(153, 52);
-            btnAddOrder.TabIndex = 0;
-            btnAddOrder.Text = "+ New Order";
-            btnAddOrder.UseVisualStyleBackColor = true;
-            btnAddOrder.Visible = false;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.Location = new Point(344, 6);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = true;
-            btnAddCategory.Visible = false;
-            // 
-            // btnAddStock
-            // 
-            btnAddStock.Location = new Point(13, 6);
-            btnAddStock.Name = "btnAddStock";
-            btnAddStock.Size = new Size(153, 52);
-            btnAddStock.TabIndex = 2;
-            btnAddStock.Text = "+ Add Stock";
-            btnAddStock.UseVisualStyleBackColor = true;
-            btnAddStock.Visible = false;
-            // 
-            // btnSaveChanges
-            // 
-            btnSaveChanges.Location = new Point(178, 6);
-            btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(153, 52);
-            btnSaveChanges.TabIndex = 3;
-            btnSaveChanges.Text = "Save Changes";
-            btnSaveChanges.UseVisualStyleBackColor = true;
-            btnSaveChanges.Visible = false;
-            // 
-            // btnGenerateReport
-            // 
-            btnGenerateReport.Location = new Point(343, 6);
-            btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(153, 52);
-            btnGenerateReport.TabIndex = 4;
-            btnGenerateReport.Text = "Generate Report";
-            btnGenerateReport.UseVisualStyleBackColor = true;
-            btnGenerateReport.Visible = false;
-            // 
-            // btnAddEmployee
-            // 
-            btnAddEmployee.Location = new Point(344, 6);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(153, 52);
-            btnAddEmployee.TabIndex = 5;
-            btnAddEmployee.Text = "+ Add Employee";
-            btnAddEmployee.UseVisualStyleBackColor = true;
-            btnAddEmployee.Visible = false;
             // 
             // AdminDashboardForm
             // 
