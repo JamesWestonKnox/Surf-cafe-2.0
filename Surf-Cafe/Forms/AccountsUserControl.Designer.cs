@@ -1,6 +1,6 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class OrdersUserControl
+    partial class AccountsUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,29 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpOrders = new FlowLayoutPanel();
+            label1 = new Label();
+            flpAccounts = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flpOrders
+            // label1
             // 
-            flpOrders.Location = new Point(47, 50);
-            flpOrders.Name = "flpOrders";
-            flpOrders.Size = new Size(525, 345);
-            flpOrders.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(254, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(318, 40);
+            label1.TabIndex = 0;
+            label1.Text = "Choose your Account:";
             // 
-            // OrdersUserControl
+            // flpAccounts
+            // 
+            flpAccounts.Location = new Point(68, 122);
+            flpAccounts.Name = "flpAccounts";
+            flpAccounts.Size = new Size(676, 339);
+            flpAccounts.TabIndex = 1;
+            // 
+            // AccountsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpOrders);
-            Name = "OrdersUserControl";
-            Size = new Size(615, 442);
-            Load += OrdersUserControl_Load;
+            Controls.Add(flpAccounts);
+            Controls.Add(label1);
+            Name = "AccountsUserControl";
+            Size = new Size(812, 506);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel flpOrders;
+        private Label label1;
+        private FlowLayoutPanel flpAccounts;
     }
 }

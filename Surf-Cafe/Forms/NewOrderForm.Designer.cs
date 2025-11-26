@@ -84,6 +84,7 @@
             btnSaveOrder.TabIndex = 4;
             btnSaveOrder.Text = "Save";
             btnSaveOrder.UseVisualStyleBackColor = true;
+            btnSaveOrder.Click += btnSaveOrder_Click;
             // 
             // NewOrderForm
             // 

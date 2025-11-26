@@ -132,7 +132,18 @@ namespace Surf_Cafe.Forms
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             NewOrderForm form = new NewOrderForm();
-            form.ShowDialog();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                if (pnlContent.Controls[0] is OrdersUserControl ordersControl)
+                {
+                    ordersControl.AddOrderCard(form.newOrder);
+                }
+            }
+        }
+
+       private void AdminDashboardForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

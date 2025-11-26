@@ -42,6 +42,7 @@
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
             pnlActions = new Panel();
+            btnGenerateReport = new Button();
             btnAddStock = new Button();
             btnAddOrder = new Button();
             btnAddCategory = new Button();
@@ -50,7 +51,6 @@
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
-            btnGenerateReport = new Button();
             pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
@@ -69,7 +69,7 @@
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(234, 634);
+            pnlSidebar.Size = new Size(234, 584);
             pnlSidebar.TabIndex = 0;
             // 
             // pnlMenuButtons
@@ -157,7 +157,7 @@
             // btnLogout
             // 
             btnLogout.Dock = DockStyle.Bottom;
-            btnLogout.Location = new Point(0, 589);
+            btnLogout.Location = new Point(0, 539);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(234, 45);
             btnLogout.TabIndex = 6;
@@ -217,6 +217,16 @@
             pnlActions.Name = "pnlActions";
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
+            // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.Location = new Point(344, 6);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 4;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Visible = false;
             // 
             // btnAddStock
             // 
@@ -304,22 +314,12 @@
             lblMainHeading.Text = "Admin Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
             // 
-            // btnGenerateReport
-            // 
-            btnGenerateReport.Location = new Point(344, 6);
-            btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(153, 52);
-            btnGenerateReport.TabIndex = 4;
-            btnGenerateReport.Text = "Generate Report";
-            btnGenerateReport.UseVisualStyleBackColor = true;
-            btnGenerateReport.Visible = false;
-            // 
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(994, 503);
+            pnlContent.Size = new Size(994, 453);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -327,13 +327,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1228, 634);
+            ClientSize = new Size(1228, 584);
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
             Name = "AdminDashboardForm";
             Text = "AdminDashboardForm";
             WindowState = FormWindowState.Maximized;
+            Load += AdminDashboardForm_Load;
             pnlSidebar.ResumeLayout(false);
             pnlMenuButtons.ResumeLayout(false);
             pnlLogo.ResumeLayout(false);
