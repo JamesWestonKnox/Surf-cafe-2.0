@@ -14,7 +14,7 @@ namespace Surf_Cafe.Forms
     {
         public LoyaltyForm()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

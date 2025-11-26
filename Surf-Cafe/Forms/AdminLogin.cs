@@ -1,8 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Surf_Cafe.Models;
+
+//-------------------------------------------------------- START OF FILE --------------------------------------------------------//
 
 namespace Surf_Cafe.Forms
 {
@@ -14,27 +14,41 @@ namespace Surf_Cafe.Forms
             this.InitializeComponent();
         }
 
+        //------------------------ Cancel Button Logic  -----------------------//
+
         private void button1_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
+        //------------------------ Login Button Loigc  -----------------------//
+
         private void button2_Click(object sender, EventArgs e)
         {
             string username = this.txtUsername.Text;
             string password = this.txtPassword.Text;
-            bool flag = username == "admin" && password == "password123";
-            if (flag)
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                base.Close();
+                MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+           User authenticatedUser = Authentication.AuthenticationUser(username, password, UserRole.Admin);
+            if (authenticatedUser != null)
+            {
+                MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                AdminDashboardForm adminDashboardForm = new AdminDashboardForm();
+                adminDashboardForm.ShowDialog();
+                this.Close();
+
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Invalid username or password.", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //------------------------ Unused Event Handlers  -----------------------//
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -51,3 +65,5 @@ namespace Surf_Cafe.Forms
  
     }
 }
+
+//-------------------------------------------------------- END OF FILE --------------------------------------------------------//

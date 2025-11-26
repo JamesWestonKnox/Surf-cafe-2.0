@@ -3,6 +3,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Surf_Cafe.Models;
+
+//-------------------------------------------------------- START OF FILE --------------------------------------------------------//
 
 namespace Surf_Cafe.Forms
 {
@@ -13,22 +16,34 @@ namespace Surf_Cafe.Forms
             InitializeComponent();
         }
 
+        //------------------------ Login Button Logic  -----------------------//
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = this.txtUsername.Text;
             string password = this.txtPassword.Text;
-            bool flag = username == "employee" && password == "emp123";
-            if (flag)
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                base.Close();
+                MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            User authenticatedUser = Authentication.AuthenticationUser(username, password, UserRole.Admin);
+            if (authenticatedUser != null)
+            {
+                MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                AdminDashboardForm adminDashboardForm = new AdminDashboardForm();
+                adminDashboardForm.ShowDialog();
+                this.Close();
+
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Invalid username or password.", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        //------------------------ Unused Event Handlers  -----------------------//
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
@@ -38,6 +53,8 @@ namespace Surf_Cafe.Forms
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
         }
+
+        //------------------------ Cancel Button Logic  -----------------------//
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
