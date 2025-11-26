@@ -1,6 +1,6 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class OrdersUserControl
+    partial class UserCard
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpOrders = new FlowLayoutPanel();
+            lblUser = new Label();
             SuspendLayout();
             // 
-            // flpOrders
+            // lblUser
             // 
-            flpOrders.Location = new Point(47, 50);
-            flpOrders.Name = "flpOrders";
-            flpOrders.Size = new Size(525, 345);
-            flpOrders.TabIndex = 0;
+            lblUser.AutoSize = true;
+            lblUser.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUser.Location = new Point(26, 56);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(232, 37);
+            lblUser.TabIndex = 0;
+            lblUser.Text = "Set To Username";
             // 
-            // OrdersUserControl
+            // UserCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpOrders);
-            Name = "OrdersUserControl";
-            Size = new Size(615, 442);
-            Load += OrdersUserControl_Load;
+            Controls.Add(lblUser);
+            Name = "UserCard";
+            Size = new Size(274, 153);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel flpOrders;
+        private Label lblUser;
     }
 }

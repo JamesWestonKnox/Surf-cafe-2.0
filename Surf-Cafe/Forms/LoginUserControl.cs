@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Surf_Cafe.Forms
 {
-    public partial class AddCategoryForm : Form
+    public partial class LoginUserControl : UserControl
     {
-        public AddCategoryForm()
+        public LoginUserControl()
         {
             InitializeComponent();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

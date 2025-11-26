@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Surf_Cafe.Models
 {
-    internal class Payment
+    public enum PaymentType
     {
+        Cash,
+        Card,
+        EFT
+    }
+    public class Payment
+    {
+        public int PaymentID { get; set; }
+
+        [Required]
+        public PaymentType Type { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal PaymentAmount { get; set; } = decimal.Zero;
+
+        [Required]
+        public DateTime PaymentDateTime { get; set; } = DateTime.Now;
+
+        [Required]
+        public int OrderID { get; set; }
+        [ForeignKey("OrderID")]
+        public User Order { get; set; }
     }
 }

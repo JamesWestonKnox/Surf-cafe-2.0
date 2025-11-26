@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Surf_Cafe.Forms
 {
-    public partial class AddCategoryForm : Form
+    public partial class AddEmployeeForm : Form
     {
-        public AddCategoryForm()
+        public AddEmployeeForm()
         {
             InitializeComponent();
         }

@@ -1,13 +1,13 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class OrdersUserControl
+    partial class LoginForm
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,37 +20,36 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            flpOrders = new FlowLayoutPanel();
+            pnlContent = new Panel();
             SuspendLayout();
             // 
-            // flpOrders
+            // pnlContent
             // 
-            flpOrders.Location = new Point(47, 50);
-            flpOrders.Name = "flpOrders";
-            flpOrders.Size = new Size(525, 345);
-            flpOrders.TabIndex = 0;
+            pnlContent.Location = new Point(59, 156);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(710, 357);
+            pnlContent.TabIndex = 1;
             // 
-            // OrdersUserControl
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpOrders);
-            Name = "OrdersUserControl";
-            Size = new Size(615, 442);
-            Load += OrdersUserControl_Load;
+            ClientSize = new Size(845, 557);
+            Controls.Add(pnlContent);
+            Name = "LoginForm";
+            Text = "LoginForm";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel flpOrders;
+        private Panel pnlContent;
     }
 }

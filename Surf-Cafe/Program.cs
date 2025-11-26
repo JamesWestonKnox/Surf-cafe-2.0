@@ -1,3 +1,5 @@
+using Surf_Cafe.Database;
+
 namespace Surf_Cafe
 {
     internal static class Program
@@ -9,6 +11,11 @@ namespace Surf_Cafe
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+            using (var db = new DBContext())
+            {
+                db.Database.EnsureCreated();
+            }
+            Application.Run(new Forms.AdminDashboardForm());
             Application.Run(new Login());
 
         }
