@@ -12,12 +12,10 @@ namespace Surf_Cafe.Forms
 {
     public partial class CategoryCard : UserControl
     {
-        public CategoryCard()
-        {
-            InitializeComponent();
-        }
-
         private string categoryName;
+        public int categoryID {  get; set; }
+
+        
         public string CategoryName
         {
             get => categoryName;
@@ -25,5 +23,20 @@ namespace Surf_Cafe.Forms
                     lblCategoryName.Text = value;
                 }
         }
+
+        public event Action<int, string> CategoryClicked;
+
+        public CategoryCard()
+        {
+            InitializeComponent();
+            this.Click += CategoryCard_Click;
+            lblCategoryName.Click += CategoryCard_Click;
+        }
+
+        private void CategoryCard_Click(object sender, EventArgs e)
+        {
+            CategoryClicked?.Invoke(categoryID, categoryName);
+        }
+
     }
 }

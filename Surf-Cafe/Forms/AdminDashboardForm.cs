@@ -92,6 +92,13 @@ namespace Surf_Cafe.Forms
             HideButtons();
             lblSubHeading.Text = "Categories";
             categoriesUC = new CategoriesUserControl();
+            categoriesUC.CategorySelected += (categoryID, categoryName) =>
+            {
+                var productUC = new ProductsInCategoryUserControl(categoryID, categoryName);
+                lblSubHeading.Text = $"Category - {categoryName}";
+                LoadUserControl(productUC);
+            };
+
             LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
 

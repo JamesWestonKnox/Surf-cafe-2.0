@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace Surf_Cafe.Forms
 {
     public partial class CategoriesUserControl : UserControl
     {
+        public event Action<int, string> CategorySelected;
         public CategoriesUserControl()
         {
             InitializeComponent();
@@ -37,8 +39,15 @@ namespace Surf_Cafe.Forms
                     Margin = new Padding(10)
                 };
 
+                card.CategoryClicked += Card_CategoryClicked;
+
                 flpCategories.Controls.Add(card);
             }
+        }
+
+        private void Card_CategoryClicked(int categoryID, string categoryName)
+        {
+           CategorySelected?.Invoke(categoryID, categoryName);
         }
     }
 }
