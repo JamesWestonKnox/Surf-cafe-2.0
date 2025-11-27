@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Surf_Cafe.Models;
 using Surf_Cafe.Database;
+using System.Windows.Forms.Design;
 
 namespace Surf_Cafe.Forms
 {
     public partial class AddCategoryForm : Form
     {
+        public event Action CategoryAdded;
         public AddCategoryForm()
         {
             InitializeComponent();
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,6 +51,8 @@ namespace Surf_Cafe.Forms
 
             db.Categories.Add(category);
             db.SaveChanges();
+
+            CategoryAdded?.Invoke();
 
             MessageBox.Show("Category successfully created!");
 

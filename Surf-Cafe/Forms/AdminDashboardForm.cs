@@ -13,6 +13,7 @@ namespace Surf_Cafe.Forms
     public partial class AdminDashboardForm : Form
     {
         private User _loggedInUser;
+        private CategoriesUserControl categoriesUC;
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
@@ -90,8 +91,8 @@ namespace Surf_Cafe.Forms
         {
             HideButtons();
             lblSubHeading.Text = "Categories";
-            CategoriesUserControl categories = new CategoriesUserControl();
-            LoadUserControl(categories);
+            categoriesUC = new CategoriesUserControl();
+            LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
 
         }
@@ -128,6 +129,7 @@ namespace Surf_Cafe.Forms
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             AddCategoryForm form = new AddCategoryForm();
+           form.CategoryAdded += () => categoriesUC.LoadCategories();
             form.ShowDialog();
         }
 

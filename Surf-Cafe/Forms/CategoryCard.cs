@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Surf_Cafe.Forms
+{
+    public partial class CategoryCard : UserControl
+    {
+        public CategoryCard()
+        {
+            InitializeComponent();
+        }
+
+        private string categoryName;
+        public string CategoryName
+        {
+            get => categoryName;
+            set {  categoryName = value; 
+                    lblCategoryName.Text = value;
+                }
+        }
+    }
+}

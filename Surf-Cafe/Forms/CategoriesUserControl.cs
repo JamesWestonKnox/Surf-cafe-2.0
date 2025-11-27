@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Surf_Cafe.Database;
+using Surf_Cafe.Models;
 
 namespace Surf_Cafe.Forms
 {
@@ -15,6 +17,28 @@ namespace Surf_Cafe.Forms
         public CategoriesUserControl()
         {
             InitializeComponent();
+            LoadCategories();
+        }
+
+        public void LoadCategories()
+        {
+            flpCategories.Controls.Clear();
+
+            using var db = new DBContext();
+            var categories = db.Categories.ToList();
+
+            foreach (var category in categories)
+            {
+                var card = new CategoryCard
+                {
+                    CategoryName = category.CategoryName,
+                    Width = 300,
+                    Height = 100,
+                    Margin = new Padding(10)
+                };
+
+                flpCategories.Controls.Add(card);
+            }
         }
     }
 }
