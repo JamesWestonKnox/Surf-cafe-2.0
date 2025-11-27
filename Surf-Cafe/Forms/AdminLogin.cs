@@ -37,7 +37,7 @@ namespace Surf_Cafe.Forms
             {
                 MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                AdminDashboardForm adminDashboardForm = new AdminDashboardForm();
+                AdminDashboardForm adminDashboardForm = new AdminDashboardForm(authenticatedUser);
                 adminDashboardForm.ShowDialog();
                 this.Close();
 

@@ -39,7 +39,7 @@ namespace Surf_Cafe.Models
         [ForeignKey("CustomerID")]
         public Customer Customer { get; set; }
 
-        public int DiscountID { get; set; }
+        public int? DiscountID { get; set; }
         [ForeignKey("DiscountID")]
         public Discount Discount { get; set; }
 

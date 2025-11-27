@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,13 +14,16 @@ namespace Surf_Cafe.Forms
 {
     public partial class NewOrderForm : Form
     {
+        private int _userId;
+
         private DBContext db = new DBContext();
-        public NewOrderForm()
+        public NewOrderForm(int userID)
         {
             InitializeComponent();
+            _userId = userID;
         }
 
-        public Order newOrder {  get; set; }
+        public Order newOrder { get; set; }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -42,8 +46,7 @@ namespace Surf_Cafe.Forms
                 OrderTotal = 0,
                 VATAmount = 0,
                 Status = OrderStatus.Opened,
-                UserID = 1, //Need to replace this with the user id of user logged in once login is  done
-                DiscountID = 1
+                UserID = _userId
             };
 
             db.Orders.Add(order);
@@ -62,3 +65,5 @@ namespace Surf_Cafe.Forms
         }
     }
 }
+
+   

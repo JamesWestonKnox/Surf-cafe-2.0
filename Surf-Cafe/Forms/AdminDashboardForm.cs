@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Surf_Cafe.Models;
 namespace Surf_Cafe.Forms
 {
     public partial class AdminDashboardForm : Form
     {
-        public AdminDashboardForm()
+        private User _loggedInUser;
+        public AdminDashboardForm(User user)
         {
             InitializeComponent();
+            _loggedInUser = user;
         }
 
         /// <summary>
@@ -131,7 +133,7 @@ namespace Surf_Cafe.Forms
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            NewOrderForm form = new NewOrderForm();
+            NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 if (pnlContent.Controls[0] is OrdersUserControl ordersControl)

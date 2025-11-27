@@ -18,7 +18,6 @@ namespace Surf_Cafe
             {
                 db.Database.EnsureCreated();
             }
-            Application.Run(new Forms.AdminDashboardForm());
 
         }
     }

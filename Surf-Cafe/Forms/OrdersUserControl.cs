@@ -54,6 +54,21 @@ namespace Surf_Cafe.Forms
             flowLayoutOrders.Controls.Add(orderCard);
 
         }
+
+        public void RefreshOrder()
+        {
+            flowLayoutOrders.Controls.Clear();
+
+            using (var db = new DBContext())
+            {
+                var openOrders = db.Orders.Where(o => o.Status == OrderStatus.Opened).ToList();
+
+                foreach (var order in openOrders)
+                {
+                    AddOrderCard(order);
+                }
+            }
+        }
         private void OrdersUserControl_Load(object sender, EventArgs e)
         {
 

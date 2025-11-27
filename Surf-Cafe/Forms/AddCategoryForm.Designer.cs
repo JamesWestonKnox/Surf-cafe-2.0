@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtCategoryName = new TextBox();
             btnCancel = new Button();
             btnSave = new Button();
             label2 = new Label();
@@ -46,13 +46,13 @@
             label1.TabIndex = 0;
             label1.Text = "Create a new Category";
             // 
-            // textBox1
+            // txtCategoryName
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(62, 116);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(280, 29);
-            textBox1.TabIndex = 1;
+            txtCategoryName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCategoryName.Location = new Point(62, 116);
+            txtCategoryName.Name = "txtCategoryName";
+            txtCategoryName.Size = new Size(280, 29);
+            txtCategoryName.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -74,6 +74,7 @@
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // label2
             // 
@@ -93,7 +94,7 @@
             Controls.Add(label2);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
-            Controls.Add(textBox1);
+            Controls.Add(txtCategoryName);
             Controls.Add(label1);
             Name = "AddCategoryForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -105,7 +106,7 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtCategoryName;
         private Button btnCancel;
         private Button btnSave;
         private Label label2;
