@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             dgvStock = new DataGridView();
-            btnSave = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvStock).BeginInit();
             SuspendLayout();
             // 
@@ -37,28 +36,18 @@
             // 
             dgvStock.AllowUserToAddRows = false;
             dgvStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvStock.BackgroundColor = SystemColors.ControlLightLight;
             dgvStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStock.Dock = DockStyle.Top;
+            dgvStock.Dock = DockStyle.Fill;
             dgvStock.Location = new Point(0, 0);
             dgvStock.Name = "dgvStock";
-            dgvStock.Size = new Size(840, 255);
+            dgvStock.Size = new Size(840, 554);
             dgvStock.TabIndex = 0;
-            // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(543, 284);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(119, 47);
-            btnSave.TabIndex = 1;
-            btnSave.Text = "Save Changes";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
             // 
             // InventoryUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnSave);
             Controls.Add(dgvStock);
             Name = "InventoryUserControl";
             Size = new Size(840, 554);
@@ -69,6 +58,5 @@
         #endregion
 
         private DataGridView dgvStock;
-        private Button btnSave;
     }
 }

@@ -282,6 +282,7 @@
             btnSaveChanges.Text = "Save Changes";
             btnSaveChanges.UseVisualStyleBackColor = true;
             btnSaveChanges.Visible = false;
+            btnSaveChanges.Click += btnSaveChanges_Click;
             // 
             // lblSubHeading
             // 

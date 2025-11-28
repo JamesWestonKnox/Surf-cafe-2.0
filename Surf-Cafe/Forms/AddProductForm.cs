@@ -14,7 +14,7 @@ namespace Surf_Cafe.Forms
 {
     public partial class AddProductForm : Form
     {
-        public InventoryUserControl inventoryUserControl;
+        public event Action StockAdded;
         public AddProductForm()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace Surf_Cafe.Forms
             db.StockItems.Add(stockItem);
             db.SaveChanges();
 
-            inventoryUserControl.LoadStockItems();
+            StockAdded?.Invoke();
 
             this.DialogResult = DialogResult.OK;
             this.Close();

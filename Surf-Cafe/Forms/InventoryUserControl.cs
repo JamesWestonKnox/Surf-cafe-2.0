@@ -79,7 +79,7 @@ namespace Surf_Cafe.Forms
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public void SaveChanges()
         {
             using var db = new DBContext();
 
