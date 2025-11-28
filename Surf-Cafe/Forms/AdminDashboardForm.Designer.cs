@@ -69,7 +69,7 @@
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(234, 584);
+            pnlSidebar.Size = new Size(234, 583);
             pnlSidebar.TabIndex = 0;
             // 
             // pnlMenuButtons
@@ -157,7 +157,7 @@
             // btnLogout
             // 
             btnLogout.Dock = DockStyle.Bottom;
-            btnLogout.Location = new Point(0, 539);
+            btnLogout.Location = new Point(0, 538);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(234, 45);
             btnLogout.TabIndex = 6;
@@ -201,7 +201,7 @@
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(234, 0);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(994, 131);
+            pnlHeader.Size = new Size(918, 131);
             pnlHeader.TabIndex = 1;
             // 
             // pnlActions
@@ -213,7 +213,7 @@
             pnlActions.Controls.Add(btnAddEmployee);
             pnlActions.Controls.Add(btnSaveChanges);
             pnlActions.Dock = DockStyle.Right;
-            pnlActions.Location = new Point(485, 68);
+            pnlActions.Location = new Point(409, 68);
             pnlActions.Name = "pnlActions";
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
@@ -300,7 +300,7 @@
             pnlMainHeading.Dock = DockStyle.Top;
             pnlMainHeading.Location = new Point(0, 0);
             pnlMainHeading.Name = "pnlMainHeading";
-            pnlMainHeading.Size = new Size(994, 68);
+            pnlMainHeading.Size = new Size(918, 68);
             pnlMainHeading.TabIndex = 0;
             // 
             // lblMainHeading
@@ -309,7 +309,7 @@
             lblMainHeading.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMainHeading.Location = new Point(0, 0);
             lblMainHeading.Name = "lblMainHeading";
-            lblMainHeading.Size = new Size(994, 68);
+            lblMainHeading.Size = new Size(918, 68);
             lblMainHeading.TabIndex = 0;
             lblMainHeading.Text = "Admin Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
@@ -319,7 +319,7 @@
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(994, 453);
+            pnlContent.Size = new Size(918, 452);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -327,11 +327,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1228, 584);
+            ClientSize = new Size(1152, 583);
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
             Name = "AdminDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboardForm";
             WindowState = FormWindowState.Maximized;
             Load += AdminDashboardForm_Load;

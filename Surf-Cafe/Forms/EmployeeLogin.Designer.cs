@@ -39,19 +39,17 @@ namespace Surf_Cafe.Forms
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(405, 340);
-            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Location = new Point(354, 255);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(114, 27);
+            txtUsername.Size = new Size(100, 23);
             txtUsername.TabIndex = 0;
             txtUsername.Text = "Username";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(405, 379);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Location = new Point(354, 284);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(114, 27);
+            txtPassword.Size = new Size(100, 23);
             txtPassword.TabIndex = 1;
             txtPassword.Text = "Password";
             txtPassword.TextChanged += txtPassword_TextChanged_1;
@@ -59,19 +57,18 @@ namespace Surf_Cafe.Forms
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(386, 276);
+            label1.Location = new Point(338, 207);
             label1.Name = "label1";
-            label1.Size = new Size(163, 40);
+            label1.Size = new Size(131, 30);
             label1.TabIndex = 2;
             label1.Text = "     Please Enter your \r\nUsername and Pasword";
             // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.LightCoral;
-            btnCancel.Location = new Point(374, 417);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Location = new Point(327, 313);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(86, 40);
+            btnCancel.Size = new Size(75, 30);
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
@@ -80,10 +77,9 @@ namespace Surf_Cafe.Forms
             // btnLogin
             // 
             btnLogin.BackColor = SystemColors.GradientActiveCaption;
-            btnLogin.Location = new Point(466, 417);
-            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Location = new Point(408, 313);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(86, 40);
+            btnLogin.Size = new Size(75, 30);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -91,16 +87,16 @@ namespace Surf_Cafe.Forms
             // 
             // EmployeeLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(btnLogin);
             Controls.Add(btnCancel);
             Controls.Add(label1);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeLogin";
             Load += EmployeeLogin_Load;
             ResumeLayout(false);
