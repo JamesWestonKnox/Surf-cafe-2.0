@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Surf_Cafe.Models;
+using System.Globalization;
 
 namespace Surf_Cafe.Forms
 {
@@ -21,7 +22,7 @@ namespace Surf_Cafe.Forms
 
             lblOrderName.Text = order.OrderName;
             lblDateCreated.Text = order.OrderDateTime.ToString("g");
-            lblTotal.Text = $"Total: {order.OrderTotal:C}";
+            lblTotal.Text = $"Total: {order.OrderTotal.ToString("C", CultureInfo.CreateSpecificCulture("en-ZA"))}";
         }
 
         private void OrderCard_Load(object sender, EventArgs e)
