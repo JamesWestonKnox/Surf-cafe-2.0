@@ -1,6 +1,6 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class CategoriesUserControl
+    partial class ProductCard
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpCategories = new FlowLayoutPanel();
+            lblProductName = new Label();
             SuspendLayout();
             // 
-            // flpCategories
+            // lblProductName
             // 
-            flpCategories.AutoScroll = true;
-            flpCategories.Dock = DockStyle.Fill;
-            flpCategories.Location = new Point(0, 0);
-            flpCategories.Name = "flpCategories";
-            flpCategories.Size = new Size(773, 426);
-            flpCategories.TabIndex = 0;
+            lblProductName.AutoSize = true;
+            lblProductName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductName.ForeColor = SystemColors.ControlLight;
+            lblProductName.Location = new Point(65, 65);
+            lblProductName.Name = "lblProductName";
+            lblProductName.Size = new Size(100, 40);
+            lblProductName.TabIndex = 0;
+            lblProductName.Text = "label1";
             // 
-            // CategoriesUserControl
+            // ProductCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpCategories);
-            Name = "CategoriesUserControl";
-            Size = new Size(773, 426);
+            BackColor = SystemColors.ActiveCaption;
+            Controls.Add(lblProductName);
+            Name = "ProductCard";
+            Size = new Size(301, 180);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel flpCategories;
+        private Label lblProductName;
     }
 }

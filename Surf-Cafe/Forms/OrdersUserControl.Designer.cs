@@ -33,9 +33,10 @@
             // 
             // flpOrders
             // 
-            flpOrders.Location = new Point(47, 50);
+            flpOrders.Dock = DockStyle.Fill;
+            flpOrders.Location = new Point(0, 0);
             flpOrders.Name = "flpOrders";
-            flpOrders.Size = new Size(525, 345);
+            flpOrders.Size = new Size(765, 545);
             flpOrders.TabIndex = 0;
             // 
             // OrdersUserControl
@@ -44,8 +45,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(flpOrders);
             Name = "OrdersUserControl";
-            Size = new Size(615, 442);
-            Load += OrdersUserControl_Load;
+            Size = new Size(765, 545);
             ResumeLayout(false);
         }
 

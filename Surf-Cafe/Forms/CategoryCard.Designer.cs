@@ -1,6 +1,6 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class CategoriesUserControl
+    partial class CategoryCard
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpCategories = new FlowLayoutPanel();
+            lblCategoryName = new Label();
             SuspendLayout();
             // 
-            // flpCategories
+            // lblCategoryName
             // 
-            flpCategories.AutoScroll = true;
-            flpCategories.Dock = DockStyle.Fill;
-            flpCategories.Location = new Point(0, 0);
-            flpCategories.Name = "flpCategories";
-            flpCategories.Size = new Size(773, 426);
-            flpCategories.TabIndex = 0;
+            lblCategoryName.Anchor = AnchorStyles.None;
+            lblCategoryName.AutoSize = true;
+            lblCategoryName.BackColor = SystemColors.ActiveCaption;
+            lblCategoryName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategoryName.ForeColor = SystemColors.ButtonHighlight;
+            lblCategoryName.Location = new Point(87, 78);
+            lblCategoryName.Name = "lblCategoryName";
+            lblCategoryName.Size = new Size(100, 40);
+            lblCategoryName.TabIndex = 0;
+            lblCategoryName.Text = "label1";
             // 
-            // CategoriesUserControl
+            // CategoryCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpCategories);
-            Name = "CategoriesUserControl";
-            Size = new Size(773, 426);
+            BackColor = SystemColors.ActiveCaption;
+            Controls.Add(lblCategoryName);
+            Name = "CategoryCard";
+            Size = new Size(414, 212);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel flpCategories;
+        private Label lblCategoryName;
     }
 }

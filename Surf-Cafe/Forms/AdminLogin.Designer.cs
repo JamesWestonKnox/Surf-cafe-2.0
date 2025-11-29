@@ -30,60 +30,77 @@ namespace Surf_Cafe.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(AdminLogin));
-            this.txtUsername = new TextBox();
-            this.txtPassword = new TextBox();
-            this.CancelBtn = new Button();
-            this.LoginBtn = new Button();
-            this.label1 = new Label();
-            base.SuspendLayout();
-            this.txtUsername.Location = new Point(333, 216);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new Size(100, 23);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "Username";
-            this.txtUsername.TextChanged += this.textBox1_TextChanged;
-            this.txtPassword.Location = new Point(333, 245);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new Size(100, 23);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "Password";
-            this.CancelBtn.BackColor = Color.LightCoral;
-            this.CancelBtn.Location = new Point(304, 274);
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new Size(75, 37);
-            this.CancelBtn.TabIndex = 2;
-            this.CancelBtn.Text = "Cancel";
-            this.CancelBtn.UseVisualStyleBackColor = false;
-            this.CancelBtn.Click += this.button1_Click;
-            this.LoginBtn.BackColor = SystemColors.ActiveCaption;
-            this.LoginBtn.Location = new Point(385, 274);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new Size(75, 37);
-            this.LoginBtn.TabIndex = 3;
-            this.LoginBtn.Text = "Login";
-            this.LoginBtn.UseVisualStyleBackColor = false;
-            this.LoginBtn.Click += this.button2_Click;
-            this.label1.AutoSize = true;
-            this.label1.Location = new Point(345, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new Size(73, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Please Login\r\n";
-            this.label1.Click += this.label1_Click;
-            base.AutoScaleDimensions = new SizeF(7f, 15f);
-            base.AutoScaleMode = AutoScaleMode.Font;
-            base.ClientSize = new Size(800, 450);
-            base.Controls.Add(this.label1);
-            base.Controls.Add(this.LoginBtn);
-            base.Controls.Add(this.CancelBtn);
-            base.Controls.Add(this.txtPassword);
-            base.Controls.Add(this.txtUsername);
-            base.Icon = (Icon)resources.GetObject("$this.Icon");
-            base.Name = "AdminLogin";
-            this.Text = "AdminLogin";
-            base.ResumeLayout(false);
-            base.PerformLayout();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            CancelBtn = new Button();
+            LoginBtn = new Button();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(333, 216);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(100, 23);
+            txtUsername.TabIndex = 0;
+            txtUsername.Text = "Username";
+            txtUsername.TextChanged += textBox1_TextChanged;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(333, 245);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(100, 23);
+            txtPassword.TabIndex = 1;
+            txtPassword.Text = "Password";
+            // 
+            // CancelBtn
+            // 
+            CancelBtn.BackColor = Color.LightCoral;
+            CancelBtn.Location = new Point(304, 274);
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.Size = new Size(75, 37);
+            CancelBtn.TabIndex = 2;
+            CancelBtn.Text = "Cancel";
+            CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += button1_Click;
+            // 
+            // LoginBtn
+            // 
+            LoginBtn.BackColor = SystemColors.ActiveCaption;
+            LoginBtn.Location = new Point(385, 274);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(75, 37);
+            LoginBtn.TabIndex = 3;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = false;
+            LoginBtn.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(345, 186);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Please Login\r\n";
+            label1.Click += label1_Click;
+            // 
+            // AdminLogin
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(LoginBtn);
+            Controls.Add(CancelBtn);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Name = "AdminLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AdminLogin";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
 

@@ -28,17 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dgvStock = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvStock).BeginInit();
             SuspendLayout();
+            // 
+            // dgvStock
+            // 
+            dgvStock.AllowUserToAddRows = false;
+            dgvStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvStock.BackgroundColor = SystemColors.ControlLightLight;
+            dgvStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStock.Dock = DockStyle.Fill;
+            dgvStock.Location = new Point(0, 0);
+            dgvStock.Name = "dgvStock";
+            dgvStock.Size = new Size(840, 554);
+            dgvStock.TabIndex = 0;
             // 
             // InventoryUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(dgvStock);
             Name = "InventoryUserControl";
-            Size = new Size(467, 466);
+            Size = new Size(840, 554);
+            ((System.ComponentModel.ISupportInitialize)dgvStock).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvStock;
     }
 }

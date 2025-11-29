@@ -11,15 +11,15 @@ namespace Surf_Cafe
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
-
-
             using (var db = new DBContext())
             {
                 db.Database.EnsureCreated();
             }
-            Application.Run(new Forms.AdminDashboardForm());
 
+            Application.Run(new Login());
+
+
+           
         }
     }
 }

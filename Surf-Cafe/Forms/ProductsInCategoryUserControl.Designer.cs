@@ -1,6 +1,6 @@
 ﻿namespace Surf_Cafe.Forms
 {
-    partial class CategoriesUserControl
+    partial class ProductsInCategoryUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flpCategories = new FlowLayoutPanel();
+            flpProducts = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flpCategories
+            // flpProducts
             // 
-            flpCategories.AutoScroll = true;
-            flpCategories.Dock = DockStyle.Fill;
-            flpCategories.Location = new Point(0, 0);
-            flpCategories.Name = "flpCategories";
-            flpCategories.Size = new Size(773, 426);
-            flpCategories.TabIndex = 0;
+            flpProducts.Dock = DockStyle.Fill;
+            flpProducts.Location = new Point(0, 0);
+            flpProducts.Name = "flpProducts";
+            flpProducts.Size = new Size(721, 386);
+            flpProducts.TabIndex = 0;
             // 
-            // CategoriesUserControl
+            // ProductsInCategoryUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flpCategories);
-            Name = "CategoriesUserControl";
-            Size = new Size(773, 426);
+            Controls.Add(flpProducts);
+            Name = "ProductsInCategoryUserControl";
+            Size = new Size(721, 386);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel flpCategories;
+        private FlowLayoutPanel flpProducts;
     }
 }

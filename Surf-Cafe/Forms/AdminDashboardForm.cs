@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Surf_Cafe.Models;
 namespace Surf_Cafe.Forms
 {
     public partial class AdminDashboardForm : Form
     {
-        public AdminDashboardForm()
+        private User _loggedInUser;
+        private CategoriesUserControl categoriesUC;
+        private InventoryUserControl inventoryUC;
+        public AdminDashboardForm(User user)
         {
             InitializeComponent();
         }
@@ -77,8 +80,8 @@ namespace Surf_Cafe.Forms
         {
             HideButtons();
             lblSubHeading.Text = "Inventory Management";
-            InventoryUserControl inventory = new InventoryUserControl();
-            LoadUserControl(inventory);
+            inventoryUC = new InventoryUserControl();
+            LoadUserControl(inventoryUC);
             btnGenerateReport.Visible = true;
             btnSaveChanges.Visible = true;
             btnAddStock.Visible = true;
@@ -88,8 +91,15 @@ namespace Surf_Cafe.Forms
         {
             HideButtons();
             lblSubHeading.Text = "Categories";
-            CategoriesUserControl categories = new CategoriesUserControl();
-            LoadUserControl(categories);
+            categoriesUC = new CategoriesUserControl();
+            categoriesUC.CategorySelected += (categoryID, categoryName) =>
+            {
+                var productUC = new ProductsInCategoryUserControl(categoryID, categoryName);
+                lblSubHeading.Text = $"Category - {categoryName}";
+                LoadUserControl(productUC);
+            };
+
+            LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
 
         }
@@ -120,18 +130,24 @@ namespace Surf_Cafe.Forms
         private void btnAddStock_Click(object sender, EventArgs e)
         {
             AddProductForm form = new AddProductForm();
+            form.StockAdded += () =>
+            {
+                inventoryUC?.LoadStockItems();
+            };
+
             form.ShowDialog();
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             AddCategoryForm form = new AddCategoryForm();
+            form.CategoryAdded += () => categoriesUC.LoadCategories();
             form.ShowDialog();
         }
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            NewOrderForm form = new NewOrderForm();
+            NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 if (pnlContent.Controls[0] is OrdersUserControl ordersControl)
@@ -143,6 +159,15 @@ namespace Surf_Cafe.Forms
 
         private void AdminDashboardForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (inventoryUC != null)
+            {
+                inventoryUC.SaveChanges();
+            }
 
         }
 

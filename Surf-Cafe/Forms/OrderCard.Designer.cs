@@ -36,39 +36,45 @@
             // lblOrderName
             // 
             lblOrderName.AutoSize = true;
-            lblOrderName.Location = new Point(94, 49);
+            lblOrderName.Location = new Point(40, 22);
+            lblOrderName.Margin = new Padding(6, 0, 6, 0);
             lblOrderName.Name = "lblOrderName";
-            lblOrderName.Size = new Size(38, 15);
+            lblOrderName.Size = new Size(72, 30);
             lblOrderName.TabIndex = 0;
             lblOrderName.Text = "label1";
             // 
             // lblDateCreated
             // 
             lblDateCreated.AutoSize = true;
-            lblDateCreated.Location = new Point(94, 112);
+            lblDateCreated.Location = new Point(40, 110);
+            lblDateCreated.Margin = new Padding(6, 0, 6, 0);
             lblDateCreated.Name = "lblDateCreated";
-            lblDateCreated.Size = new Size(38, 15);
+            lblDateCreated.Size = new Size(72, 30);
             lblDateCreated.TabIndex = 1;
             lblDateCreated.Text = "label2";
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(94, 81);
+            lblTotal.Location = new Point(40, 64);
+            lblTotal.Margin = new Padding(6, 0, 6, 0);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(38, 15);
+            lblTotal.Size = new Size(72, 30);
             lblTotal.TabIndex = 2;
             lblTotal.Text = "label1";
             // 
             // OrderCard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(lblTotal);
             Controls.Add(lblDateCreated);
             Controls.Add(lblOrderName);
+            Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(6);
             Name = "OrderCard";
-            Size = new Size(273, 226);
+            Size = new Size(231, 179);
             Load += OrderCard_Load;
             ResumeLayout(false);
             PerformLayout();

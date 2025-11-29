@@ -14,22 +14,18 @@ namespace Surf_Cafe.Forms
 {
     public partial class OrdersUserControl : UserControl
     {
-        private FlowLayoutPanel flowLayoutOrders;
         public OrdersUserControl()
         {
             InitializeComponent();
-
-            flowLayoutOrders = new FlowLayoutPanel()
-            {
-                Dock = DockStyle.Fill,
-                AutoScroll = true,
-            };
-            this.Controls.Add(flowLayoutOrders);
+            flpOrders.Dock = DockStyle.Fill;
+            flpOrders.AutoScroll = true;
             LoadOrders();
         }
 
         private void LoadOrders()
         {
+            flpOrders.Controls.Clear();
+
             using (var db = new DBContext())
             {
                 var openOrders = db.Orders.Where(o => o.Status == OrderStatus.Opened).ToList();
@@ -47,16 +43,18 @@ namespace Surf_Cafe.Forms
             var orderCard = new OrderCard(order)
             {
                 Width = 250,
-                Height = 120,
+                Height = 160,
                 Margin = new Padding(10)
             };
 
-            flowLayoutOrders.Controls.Add(orderCard);
+            flpOrders.Controls.Add(orderCard);
 
         }
-        private void OrdersUserControl_Load(object sender, EventArgs e)
+
+        public void RefreshOrder()
         {
-
+            LoadOrders();
         }
+        
     }
 }
