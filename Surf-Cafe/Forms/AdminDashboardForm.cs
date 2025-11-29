@@ -48,6 +48,21 @@ namespace Surf_Cafe.Forms
         private void btnCollapse_Click(object sender, EventArgs e)
         {
 
+            int collapsedWidth = 50;
+            int expandedWidth = 200;
+
+            if (pnlSidebar.Width == collapsedWidth)
+            {
+                // Expand
+                pnlSidebar.Width = expandedWidth;
+                btnCollapse.Text = "Collapse";
+            }
+            else
+            {
+                // Collapse
+                pnlSidebar.Width = collapsedWidth;
+                btnCollapse.Text = "Open";
+            }
         }
 
         private void lblMainHeading_Click(object sender, EventArgs e)
@@ -179,6 +194,12 @@ namespace Surf_Cafe.Forms
         private void lblSubHeading_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _loggedInUser = null;
+            this.Close();
         }
     }
 }

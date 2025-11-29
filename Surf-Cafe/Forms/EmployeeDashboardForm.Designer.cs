@@ -35,7 +35,7 @@
             btnMenu = new Button();
             btnOrders = new Button();
             btnCollapse = new Button();
-            button1 = new Button();
+            btnLogout = new Button();
             pnlLogo = new Panel();
             pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
@@ -50,7 +50,7 @@
             // pnlSidebar
             // 
             pnlSidebar.Controls.Add(pnlMenuButtons);
-            pnlSidebar.Controls.Add(button1);
+            pnlSidebar.Controls.Add(btnLogout);
             pnlSidebar.Controls.Add(pnlLogo);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
@@ -101,6 +101,7 @@
             btnOrders.TabIndex = 1;
             btnOrders.Text = "Orders";
             btnOrders.UseVisualStyleBackColor = true;
+            btnOrders.Click += btnOrders_Click;
             // 
             // btnCollapse
             // 
@@ -114,15 +115,16 @@
             btnCollapse.UseVisualStyleBackColor = true;
             btnCollapse.Click += btnCollapse_Click;
             // 
-            // button1
+            // btnLogout
             // 
-            button1.Dock = DockStyle.Bottom;
-            button1.Location = new Point(0, 534);
-            button1.Name = "button1";
-            button1.Size = new Size(234, 45);
-            button1.TabIndex = 6;
-            button1.Text = "Logout";
-            button1.UseVisualStyleBackColor = true;
+            btnLogout.Dock = DockStyle.Bottom;
+            btnLogout.Location = new Point(0, 534);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(234, 45);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // pnlLogo
             // 
@@ -200,7 +202,7 @@
         private Button btnMenu;
         private Button btnOrders;
         private Button btnCollapse;
-        private Button button1;
+        private Button btnLogout;
         private Panel pnlLogo;
         private Panel pnlSubHeading;
         private PictureBox pbLogo;

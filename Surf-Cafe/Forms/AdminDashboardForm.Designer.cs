@@ -152,7 +152,6 @@
             btnCollapse.Size = new Size(234, 59);
             btnCollapse.TabIndex = 0;
             btnCollapse.Text = "Collapse";
-            btnCollapse.TextAlign = ContentAlignment.MiddleLeft;
             btnCollapse.UseVisualStyleBackColor = true;
             btnCollapse.Click += btnCollapse_Click;
             // 
@@ -165,6 +164,7 @@
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // pnlLogo
             // 
