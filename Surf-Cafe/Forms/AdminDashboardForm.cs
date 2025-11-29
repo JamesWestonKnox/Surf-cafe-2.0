@@ -141,7 +141,17 @@ namespace Surf_Cafe.Forms
             }
         }
 
-       private void AdminDashboardForm_Load(object sender, EventArgs e)
+        private void AdminDashboardForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSubHeading_Click(object sender, EventArgs e)
         {
 
         }

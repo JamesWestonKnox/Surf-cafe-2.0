@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboardForm));
             pnlSidebar = new Panel();
             pnlMenuButtons = new Panel();
             btnReports = new Button();
@@ -71,6 +72,7 @@
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(234, 584);
             pnlSidebar.TabIndex = 0;
+            pnlSidebar.Paint += pnlSidebar_Paint;
             // 
             // pnlMenuButtons
             // 
@@ -293,6 +295,7 @@
             lblSubHeading.TabIndex = 0;
             lblSubHeading.Text = "Subheading >Eg Orders";
             lblSubHeading.TextAlign = ContentAlignment.MiddleCenter;
+            lblSubHeading.Click += lblSubHeading_Click;
             // 
             // pnlMainHeading
             // 
@@ -331,6 +334,7 @@
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminDashboardForm";
             Text = "AdminDashboardForm";
             WindowState = FormWindowState.Maximized;
