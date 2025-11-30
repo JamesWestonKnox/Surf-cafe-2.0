@@ -53,6 +53,7 @@
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
             pnlContent = new Panel();
+            btnAddItem = new Button();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -208,10 +209,11 @@
             // 
             // pnlActions
             // 
-            pnlActions.Controls.Add(btnGenerateReport);
+            pnlActions.Controls.Add(btnAddItem);
             pnlActions.Controls.Add(btnAddStock);
-            pnlActions.Controls.Add(btnAddOrder);
             pnlActions.Controls.Add(btnAddCategory);
+            pnlActions.Controls.Add(btnGenerateReport);
+            pnlActions.Controls.Add(btnAddOrder);
             pnlActions.Controls.Add(btnAddEmployee);
             pnlActions.Controls.Add(btnSaveChanges);
             pnlActions.Dock = DockStyle.Right;
@@ -244,7 +246,7 @@
             // btnAddOrder
             // 
             btnAddOrder.AutoSize = true;
-            btnAddOrder.Location = new Point(344, 6);
+            btnAddOrder.Location = new Point(344, 8);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(153, 52);
             btnAddOrder.TabIndex = 0;
@@ -266,7 +268,7 @@
             // 
             // btnAddEmployee
             // 
-            btnAddEmployee.Location = new Point(344, 6);
+            btnAddEmployee.Location = new Point(344, 5);
             btnAddEmployee.Name = "btnAddEmployee";
             btnAddEmployee.Size = new Size(153, 52);
             btnAddEmployee.TabIndex = 5;
@@ -327,6 +329,17 @@
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(344, 6);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
+            // 
             // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -379,5 +392,6 @@
         private Button btnSaveChanges;
         private Button btnAddStock;
         private Button btnAddCategory;
+        private Button btnAddItem;
     }
 }

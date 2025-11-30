@@ -33,6 +33,7 @@ namespace Surf_Cafe.Forms
             {
                 var card = new CategoryCard
                 {
+                    categoryID = category.CategoryID,
                     CategoryName = category.CategoryName,
                     Width = 300,
                     Height = 100,

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Surf_Cafe.Forms
         private User _loggedInUser;
         private CategoriesUserControl categoriesUC;
         private InventoryUserControl inventoryUC;
+        private int _selectedCategoryID;
+        private string _selectedCategoryName;
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace Surf_Cafe.Forms
         /// <summary>
         /// Method to hide all action buttons in the action button panel
         /// </summary>
-        private void HideButtons()
+        public void HideButtons()
         {
             foreach (Control ctrl in pnlActions.Controls)
             {
@@ -107,12 +110,21 @@ namespace Surf_Cafe.Forms
             HideButtons();
             lblSubHeading.Text = "Categories";
             categoriesUC = new CategoriesUserControl();
+
+
             categoriesUC.CategorySelected += (categoryID, categoryName) =>
             {
+                _selectedCategoryID = categoryID;
+                _selectedCategoryName = categoryName;
+
                 var productUC = new ProductsInCategoryUserControl(categoryID, categoryName);
                 lblSubHeading.Text = $"Category - {categoryName}";
                 LoadUserControl(productUC);
+
+                btnAddCategory.Visible = false;
+                btnAddItem.Visible = true;
             };
+
 
             LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
@@ -200,6 +212,21 @@ namespace Surf_Cafe.Forms
         {
             _loggedInUser = null;
             this.Close();
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            AddMenuItemForm form = new AddMenuItemForm(_selectedCategoryID, _selectedCategoryName);
+
+            form.ItemAdded += () =>
+            {
+                if (pnlContent.Controls.Count > 0 && pnlContent.Controls[0] is ProductsInCategoryUserControl productUC)
+                {
+                    productUC.LoadProducts();
+                }
+            };
+
+            form.ShowDialog();
         }
     }
 }

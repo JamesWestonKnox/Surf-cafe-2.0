@@ -25,6 +25,7 @@ namespace Surf_Cafe.Forms
 
         public void LoadProducts() 
         {
+            flpProducts.Controls.Clear();
             using var db = new DBContext();
             var products = db.MenuItems.Where(p => p.CategoryID == CategoryID).ToList();
 

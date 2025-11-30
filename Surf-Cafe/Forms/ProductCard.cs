@@ -14,6 +14,10 @@ namespace Surf_Cafe.Forms
     {
         public int ProductID { get; set; }
 
+        public ProductCard()
+        {
+            InitializeComponent();
+        }
         public string ProductName
         {
             get => lblProductName.Text;

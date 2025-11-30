@@ -27,6 +27,7 @@ namespace Surf_Cafe
             AdminLogin adminLoginForm = new AdminLogin();
             adminLoginForm.ShowDialog();
             base.Show();
+            this.Close();
         }
 
         //------------------------ Employee Login Button Logic  -----------------------//

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Surf_Cafe.Forms;
 
 namespace Surf_Cafe.Forms
 {
     public partial class CategoryCard : UserControl
     {
+       
         private string categoryName;
         public int categoryID {  get; set; }
 
@@ -35,7 +37,9 @@ namespace Surf_Cafe.Forms
 
         private void CategoryCard_Click(object sender, EventArgs e)
         {
+            
             CategoryClicked?.Invoke(categoryID, categoryName);
+           
         }
 
     }
