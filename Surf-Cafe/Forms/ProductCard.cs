@@ -17,6 +17,8 @@ namespace Surf_Cafe.Forms
         public ProductCard()
         {
             InitializeComponent();
+            this.Click += ProductCard_Click;
+            lblProductName.Click += ProductCard_Click;
         }
         public string ProductName
         {
@@ -25,6 +27,12 @@ namespace Surf_Cafe.Forms
         }
 
         public decimal Price { get; set; }
-        
+
+        public event Action<int> ProductClicked;
+
+        private void ProductCard_Click(object sender, EventArgs e)
+        {
+            ProductClicked?.Invoke(ProductID);
+        }
     }
 }

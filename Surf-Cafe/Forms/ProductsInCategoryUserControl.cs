@@ -41,7 +41,17 @@ namespace Surf_Cafe.Forms
                     Margin = new Padding(10)
                 };
 
+                card.ProductClicked += OpenEditProductForm;
+
                 flpProducts.Controls.Add(card); 
+            }
+        }
+        private void OpenEditProductForm(int productID)
+        {
+            using var editForm = new EditProductForm(productID);
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadProducts();
             }
         }
     }

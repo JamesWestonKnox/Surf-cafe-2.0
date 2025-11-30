@@ -153,6 +153,7 @@
             Controls.Add(lblCategory);
             Controls.Add(label1);
             Name = "AddMenuItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddMenuItemForm";
             ResumeLayout(false);
             PerformLayout();
