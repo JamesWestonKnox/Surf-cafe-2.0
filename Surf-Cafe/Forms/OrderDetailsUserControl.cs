@@ -104,6 +104,57 @@ namespace Surf_Cafe.Forms
                 dataGridView1.Rows.Add(item.MenuItem.Name, item.Quantity, item.ItemSubTotal);
             }
         }
+
+        /// <summary>
+        /// On click method for Increase, Decrease and delete buttons for order items.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // prevents index out of range errors from header clicks
+            if (e.RowIndex < 0) return;
+
+            // fetches column and product names
+            var columnName = dataGridView1.Columns[e.ColumnIndex].Name;
+            string productName = dataGridView1.Rows[e.RowIndex].Cells["Product"].Value.ToString();
+
+            using var db = new DBContext();
+
+            // fetches product and order item.
+            var product = db.MenuItems.FirstOrDefault(p => p.Name == productName);
+            var orderItem = db.OrderItems.FirstOrDefault(i => i.OrderID == _order.OrderID && i.MenuItemID == product.MenuItemID);
+
+            // ensures product and order item are not null
+            if (product != null && orderItem != null)
+            {
+                // if column is increase, quantity gets 1 added and subtotal gets recalculated
+                if (columnName == "IncreaseQty")
+                {
+                    orderItem.Quantity += 1;
+                    orderItem.ItemSubTotal = orderItem.Quantity * product.Price;
+                }
+                // if column is decrease and quantity is more than 1, quantity gets 1 subtracted and subtotal gets recalculated
+                else if (columnName == "DecreaseQty" && orderItem.Quantity > 1)
+                {
+                    orderItem.Quantity -= 1;
+                    orderItem.ItemSubTotal = orderItem.Quantity * product.Price;
+                }
+                // if column is delete order item gets removed
+                else if (columnName == "Delete")
+                {
+                    db.OrderItems.Remove(orderItem);
+                }
+            }
+            else
+            {
+                return;
+            }
+            // saves database changes
+            db.SaveChanges();
+            // repopulates data grid view
+            PopulateDataGridView();
+        }
         private void OrderDetailsUserControl_Load(object sender, EventArgs e)
         {
 
@@ -145,11 +196,6 @@ namespace Surf_Cafe.Forms
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
