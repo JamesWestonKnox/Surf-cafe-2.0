@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Contracts;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Surf_Cafe.Models;
+﻿using Surf_Cafe.Models;
 namespace Surf_Cafe.Forms
 {
     public partial class AdminDashboardForm : Form
@@ -21,6 +11,7 @@ namespace Surf_Cafe.Forms
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
+            _loggedInUser = user;
         }
 
         /// <summary>

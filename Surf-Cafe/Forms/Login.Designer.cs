@@ -98,6 +98,7 @@ namespace Surf_Cafe
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            WindowState = FormWindowState.Maximized;
             Load += Login_Load;
             ((ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

@@ -1,11 +1,6 @@
 using Surf_Cafe.Database;
 using Surf_Cafe.Forms;
 using Surf_Cafe.Models;
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Surf_Cafe
 {
@@ -78,7 +73,7 @@ namespace Surf_Cafe
         private void label1_Click(object sender, EventArgs e)
         {
         }
-       
+
     }
 }
 

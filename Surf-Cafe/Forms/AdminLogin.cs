@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using Surf_Cafe.Models;
+﻿using Surf_Cafe.Models;
 
 //-------------------------------------------------------- START OF FILE --------------------------------------------------------//
 
@@ -32,7 +30,7 @@ namespace Surf_Cafe.Forms
                 MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-           User authenticatedUser = Authentication.AuthenticationUser(username, password, UserRole.Admin);
+            User authenticatedUser = Authentication.AuthenticationUser(username, password, UserRole.Admin);
             if (authenticatedUser != null)
             {
                 MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,7 +60,7 @@ namespace Surf_Cafe.Forms
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
         }
- 
+
     }
 }
 
