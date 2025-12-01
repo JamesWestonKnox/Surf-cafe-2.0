@@ -28,100 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlContent = new Panel();
-            flpOrderSummary = new FlowLayoutPanel();
-            btnLoyalty = new Button();
-            btnPay = new Button();
             btnSave = new Button();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
+            btnPay = new Button();
+            btnLoyalty = new Button();
+            splitContainer1 = new SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlContent
+            // btnSave
             // 
-            pnlContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlContent.BackColor = SystemColors.Control;
-            pnlContent.Location = new Point(0, 0);
-            pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(821, 616);
-            pnlContent.TabIndex = 0;
-            pnlContent.Paint += pnlContent_Paint;
-            // 
-            // flpOrderSummary
-            // 
-            flpOrderSummary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            flpOrderSummary.BackColor = SystemColors.HotTrack;
-            flpOrderSummary.Location = new Point(827, 0);
-            flpOrderSummary.Name = "flpOrderSummary";
-            flpOrderSummary.Size = new Size(362, 535);
-            flpOrderSummary.TabIndex = 1;
-            // 
-            // btnLoyalty
-            // 
-            btnLoyalty.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnLoyalty.Location = new Point(869, 541);
-            btnLoyalty.Name = "btnLoyalty";
-            btnLoyalty.Size = new Size(94, 23);
-            btnLoyalty.TabIndex = 0;
-            btnLoyalty.Text = "Loyalty";
-            btnLoyalty.UseVisualStyleBackColor = true;
-            btnLoyalty.Click += btnLoyalty_Click;
+            btnSave.Dock = DockStyle.Bottom;
+            btnSave.Location = new Point(0, 499);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(369, 39);
+            btnSave.TabIndex = 3;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
             // 
             // btnPay
             // 
-            btnPay.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnPay.Location = new Point(969, 541);
+            btnPay.Dock = DockStyle.Bottom;
+            btnPay.Location = new Point(0, 577);
             btnPay.Name = "btnPay";
-            btnPay.Size = new Size(84, 23);
+            btnPay.Size = new Size(369, 39);
             btnPay.TabIndex = 2;
             btnPay.Text = "Payment";
             btnPay.UseVisualStyleBackColor = true;
             btnPay.Click += btnPay_Click;
             // 
-            // btnSave
+            // btnLoyalty
             // 
-            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnSave.Location = new Point(1059, 541);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(90, 23);
-            btnSave.TabIndex = 3;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnLoyalty.Dock = DockStyle.Bottom;
+            btnLoyalty.Location = new Point(0, 538);
+            btnLoyalty.Name = "btnLoyalty";
+            btnLoyalty.Size = new Size(369, 39);
+            btnLoyalty.TabIndex = 0;
+            btnLoyalty.Text = "Loyalty";
+            btnLoyalty.UseVisualStyleBackColor = true;
+            btnLoyalty.Click += btnLoyalty_Click;
             // 
-            // panel1
+            // splitContainer1
             // 
-            panel1.Controls.Add(btnLoyalty);
-            panel1.Controls.Add(btnPay);
-            panel1.Controls.Add(btnSave);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1189, 616);
-            panel1.TabIndex = 4;
-            panel1.Paint += panel1_Paint_1;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.BackColor = SystemColors.HotTrack;
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.BackColor = SystemColors.Info;
+            splitContainer1.Panel2.Controls.Add(btnSave);
+            splitContainer1.Panel2.Controls.Add(btnLoyalty);
+            splitContainer1.Panel2.Controls.Add(btnPay);
+            splitContainer1.Size = new Size(1189, 616);
+            splitContainer1.SplitterDistance = 816;
+            splitContainer1.TabIndex = 4;
             // 
             // OrderDetailsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            Controls.Add(flpOrderSummary);
-            Controls.Add(pnlContent);
-            Controls.Add(panel1);
+            Controls.Add(splitContainer1);
             Name = "OrderDetailsUserControl";
             Size = new Size(1189, 616);
             Load += OrderDetailsUserControl_Load;
-            panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel pnlContent;
-        private FlowLayoutPanel flpOrderSummary;
-        private Button btnLoyalty;
-        private Button btnPay;
         private Button btnSave;
-        private Panel panel1;
+        private Button btnPay;
+        private Button btnLoyalty;
+        private SplitContainer splitContainer1;
     }
 }
