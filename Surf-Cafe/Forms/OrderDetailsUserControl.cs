@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Surf_Cafe.Models;
+﻿using Surf_Cafe.Models;
 
 namespace Surf_Cafe.Forms
 {
@@ -17,6 +8,36 @@ namespace Surf_Cafe.Forms
         public OrderDetailsUserControl(Order order)
         {
             InitializeComponent();
+        }
+
+        private void OrderDetailsUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpOrderSummary_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLoyalty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

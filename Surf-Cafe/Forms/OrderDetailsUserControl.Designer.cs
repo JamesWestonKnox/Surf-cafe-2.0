@@ -33,60 +33,85 @@
             btnLoyalty = new Button();
             btnPay = new Button();
             btnSave = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlContent
             // 
-            pnlContent.Location = new Point(17, 109);
+            pnlContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlContent.BackColor = SystemColors.Control;
+            pnlContent.Location = new Point(0, 0);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(627, 421);
+            pnlContent.Size = new Size(821, 616);
             pnlContent.TabIndex = 0;
+            pnlContent.Paint += pnlContent_Paint;
             // 
             // flpOrderSummary
             // 
-            flpOrderSummary.Location = new Point(666, 109);
+            flpOrderSummary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            flpOrderSummary.BackColor = SystemColors.HotTrack;
+            flpOrderSummary.Location = new Point(827, 0);
             flpOrderSummary.Name = "flpOrderSummary";
-            flpOrderSummary.Size = new Size(280, 421);
+            flpOrderSummary.Size = new Size(362, 535);
             flpOrderSummary.TabIndex = 1;
             // 
             // btnLoyalty
             // 
-            btnLoyalty.Location = new Point(666, 553);
+            btnLoyalty.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLoyalty.Location = new Point(869, 541);
             btnLoyalty.Name = "btnLoyalty";
             btnLoyalty.Size = new Size(94, 23);
             btnLoyalty.TabIndex = 0;
             btnLoyalty.Text = "Loyalty";
             btnLoyalty.UseVisualStyleBackColor = true;
+            btnLoyalty.Click += btnLoyalty_Click;
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(766, 553);
+            btnPay.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnPay.Location = new Point(969, 541);
             btnPay.Name = "btnPay";
             btnPay.Size = new Size(84, 23);
             btnPay.TabIndex = 2;
             btnPay.Text = "Payment";
             btnPay.UseVisualStyleBackColor = true;
+            btnPay.Click += btnPay_Click;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(856, 553);
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSave.Location = new Point(1059, 541);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 23);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnLoyalty);
+            panel1.Controls.Add(btnPay);
+            panel1.Controls.Add(btnSave);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1189, 616);
+            panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint_1;
+            // 
             // OrderDetailsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnSave);
-            Controls.Add(btnPay);
-            Controls.Add(btnLoyalty);
+            BackColor = SystemColors.Window;
             Controls.Add(flpOrderSummary);
             Controls.Add(pnlContent);
+            Controls.Add(panel1);
             Name = "OrderDetailsUserControl";
-            Size = new Size(1058, 616);
+            Size = new Size(1189, 616);
+            Load += OrderDetailsUserControl_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -97,5 +122,6 @@
         private Button btnLoyalty;
         private Button btnPay;
         private Button btnSave;
+        private Panel panel1;
     }
 }
