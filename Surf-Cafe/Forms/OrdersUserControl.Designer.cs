@@ -33,6 +33,7 @@
             // 
             // flpOrders
             // 
+            flpOrders.BackColor = SystemColors.Window;
             flpOrders.Dock = DockStyle.Fill;
             flpOrders.Location = new Point(0, 0);
             flpOrders.Name = "flpOrders";
