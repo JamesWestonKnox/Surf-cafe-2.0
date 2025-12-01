@@ -14,6 +14,8 @@ namespace Surf_Cafe.Forms
 {
     public partial class OrdersUserControl : UserControl
     {
+        public event Action<Order> OrderSelected;
+        
         public OrdersUserControl()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace Surf_Cafe.Forms
 
                 foreach (var order in openOrders)
                 {
+                   
                     AddOrderCard(order);
                 }
 
@@ -47,6 +50,7 @@ namespace Surf_Cafe.Forms
                 Margin = new Padding(10)
             };
 
+            orderCard.OrderClicked += card_OrderCardClicked;
             flpOrders.Controls.Add(orderCard);
 
         }
@@ -56,5 +60,9 @@ namespace Surf_Cafe.Forms
             LoadOrders();
         }
         
+        private void card_OrderCardClicked(Order order)
+        {
+            OrderSelected?.Invoke(order);
+        }
     }
 }

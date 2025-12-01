@@ -54,6 +54,7 @@
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
             pnlContent = new Panel();
+            btnBack = new Button();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -209,12 +210,13 @@
             // 
             // pnlActions
             // 
-            pnlActions.Controls.Add(btnAddItem);
+            pnlActions.Controls.Add(btnBack);
             pnlActions.Controls.Add(btnAddStock);
-            pnlActions.Controls.Add(btnAddCategory);
-            pnlActions.Controls.Add(btnGenerateReport);
             pnlActions.Controls.Add(btnAddOrder);
+            pnlActions.Controls.Add(btnAddItem);
+            pnlActions.Controls.Add(btnGenerateReport);
             pnlActions.Controls.Add(btnAddEmployee);
+            pnlActions.Controls.Add(btnAddCategory);
             pnlActions.Controls.Add(btnSaveChanges);
             pnlActions.Dock = DockStyle.Right;
             pnlActions.Location = new Point(430, 68);
@@ -246,7 +248,7 @@
             // 
             // btnAddCategory
             // 
-            btnAddCategory.Location = new Point(344, 6);
+            btnAddCategory.Location = new Point(344, 8);
             btnAddCategory.Name = "btnAddCategory";
             btnAddCategory.Size = new Size(153, 52);
             btnAddCategory.TabIndex = 1;
@@ -257,7 +259,7 @@
             // 
             // btnGenerateReport
             // 
-            btnGenerateReport.Location = new Point(344, 6);
+            btnGenerateReport.Location = new Point(344, 8);
             btnGenerateReport.Name = "btnGenerateReport";
             btnGenerateReport.Size = new Size(153, 52);
             btnGenerateReport.TabIndex = 4;
@@ -279,7 +281,7 @@
             // 
             // btnAddEmployee
             // 
-            btnAddEmployee.Location = new Point(344, 5);
+            btnAddEmployee.Location = new Point(344, 6);
             btnAddEmployee.Name = "btnAddEmployee";
             btnAddEmployee.Size = new Size(153, 52);
             btnAddEmployee.TabIndex = 5;
@@ -340,6 +342,17 @@
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
+            // btnBack
+            // 
+            btnBack.AutoSize = true;
+            btnBack.Location = new Point(344, 8);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(153, 52);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back to all Orders";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Visible = false;
+            // 
             // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -394,5 +407,6 @@
         private Button btnAddStock;
         private Button btnAddCategory;
         private Button btnAddItem;
+        private Button btnBack;
     }
 }

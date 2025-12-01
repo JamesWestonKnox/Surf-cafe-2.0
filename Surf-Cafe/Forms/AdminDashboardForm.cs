@@ -8,6 +8,7 @@ namespace Surf_Cafe.Forms
         private InventoryUserControl inventoryUC;
         private int _selectedCategoryID;
         private string _selectedCategoryName;
+        private OrdersUserControl ordersUC;
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
@@ -78,8 +79,19 @@ namespace Surf_Cafe.Forms
         {
             HideButtons();
             lblSubHeading.Text = "Orders";
-            OrdersUserControl orders = new OrdersUserControl();
-            LoadUserControl(orders);
+            ordersUC = new OrdersUserControl();
+
+            ordersUC.OrderSelected += (order) =>
+            {
+                var orderDetailsUC = new OrderDetailsUserControl(order);
+                lblSubHeading.Text = $"Order - {order.OrderName}";
+                LoadUserControl(orderDetailsUC);
+                btnAddOrder.Visible = false;
+                btnBack.Visible = true;
+            };
+
+
+            LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
 
 

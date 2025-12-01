@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Surf_Cafe.Models;
 
 namespace Surf_Cafe.Forms
 {
     public partial class OrderDetailsUserControl : UserControl
     {
-        public OrderDetailsUserControl()
+
+        public OrderDetailsUserControl(Order order)
         {
             InitializeComponent();
         }
