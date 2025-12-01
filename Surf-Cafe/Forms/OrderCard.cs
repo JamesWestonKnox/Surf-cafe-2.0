@@ -16,6 +16,9 @@ namespace Surf_Cafe.Forms
             lblOrderName.Text = order.OrderName;
             lblDateCreated.Text = order.OrderDateTime.ToString("g");
             lblTotal.Text = $"Total: {order.OrderTotal.ToString("C", CultureInfo.CreateSpecificCulture("en-ZA"))}";
+            lblOrderName.Click += OrderCard_Click;
+            lblDateCreated.Click += OrderCard_Click;
+            lblTotal.Click += OrderCard_Click;
         }
 
         private void OrderCard_Click(object sender, EventArgs e)
