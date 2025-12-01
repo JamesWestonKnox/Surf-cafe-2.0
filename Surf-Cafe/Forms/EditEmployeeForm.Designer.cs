@@ -144,8 +144,9 @@
             Controls.Add(label2);
             Controls.Add(lblEmployee);
             Name = "EditEmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditEmployeeForm";
-            this.Load += new EventHandler(this.EditEmployeeForm_Load);
+            Load += EditEmployeeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

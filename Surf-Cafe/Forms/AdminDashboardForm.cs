@@ -9,6 +9,7 @@ namespace Surf_Cafe.Forms
         private int _selectedCategoryID;
         private string _selectedCategoryName;
         private OrdersUserControl ordersUC;
+        private EmployeesManagementUserControl employeesManagementUC;
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
@@ -146,14 +147,19 @@ namespace Surf_Cafe.Forms
         {
             HideButtons();
             lblSubHeading.Text = "Employee Management";
-            EmployeesManagementUserControl employees = new EmployeesManagementUserControl();
-            LoadUserControl(employees);
+            employeesManagementUC = new EmployeesManagementUserControl();
+            LoadUserControl(employeesManagementUC);
             btnAddEmployee.Visible = true;
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployeeForm form = new AddEmployeeForm();
+            form.EmployeeAdded += () =>
+            {
+                employeesManagementUC?.LoadEmployees();
+            };
+
             form.ShowDialog();
         }
 
@@ -230,6 +236,18 @@ namespace Surf_Cafe.Forms
             };
 
             form.ShowDialog();
+        }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            if (inventoryUC != null)
+            {
+                inventoryUC.GenerateStockReport();
+            }
+            else
+            {
+                MessageBox.Show("Inventory failed to load");
+            }
         }
     }
 }

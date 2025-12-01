@@ -32,7 +32,7 @@
             btnConfirm = new Button();
             btnCancel = new Button();
             txtUsername = new TextBox();
-            txtPasscode = new TextBox();
+            txtPassword = new TextBox();
             cmbRole = new ComboBox();
             label2 = new Label();
             label3 = new Label();
@@ -57,6 +57,7 @@
             btnConfirm.TabIndex = 3;
             btnConfirm.Text = "Save";
             btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // btnCancel
             // 
@@ -78,23 +79,23 @@
             txtUsername.Size = new Size(238, 29);
             txtUsername.TabIndex = 5;
             // 
-            // txtPasscode
+            // txtPassword
             // 
-            txtPasscode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPasscode.Location = new Point(36, 219);
-            txtPasscode.Name = "txtPasscode";
-            txtPasscode.PasswordChar = '*';
-            txtPasscode.PlaceholderText = "E.g. 1234";
-            txtPasscode.Size = new Size(238, 29);
-            txtPasscode.TabIndex = 7;
-            txtPasscode.UseSystemPasswordChar = true;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(36, 219);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.PlaceholderText = "E.g. Password";
+            txtPassword.Size = new Size(238, 29);
+            txtPassword.TabIndex = 7;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // cmbRole
             // 
             cmbRole.DisplayMember = "Employee";
             cmbRole.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbRole.FormattingEnabled = true;
-            cmbRole.Items.AddRange(new object[] { "Employee", "Admin" });
+            cmbRole.Items.AddRange(new object[] { "Staff", "Admin" });
             cmbRole.Location = new Point(36, 134);
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(238, 29);
@@ -117,9 +118,9 @@
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(36, 186);
             label3.Name = "label3";
-            label3.Size = new Size(180, 30);
+            label3.Size = new Size(111, 30);
             label3.TabIndex = 10;
-            label3.Text = "4-digit passcode:";
+            label3.Text = "Password:";
             // 
             // AddEmployeeForm
             // 
@@ -129,7 +130,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(cmbRole);
-            Controls.Add(txtPasscode);
+            Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
@@ -147,7 +148,7 @@
         private Button btnConfirm;
         private Button btnCancel;
         private TextBox txtUsername;
-        private TextBox txtPasscode;
+        private TextBox txtPassword;
         private ComboBox cmbRole;
         private Label label2;
         private Label label3;
