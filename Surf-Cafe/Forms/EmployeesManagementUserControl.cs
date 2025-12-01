@@ -47,5 +47,17 @@ namespace Surf_Cafe.Forms
 
             }
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e) 
+        {
+            AddEmployeeForm form = new AddEmployeeForm();
+
+            form.EmployeeAdded += () =>
+            {
+                LoadEmployees();
+            };
+
+            form.ShowDialog();
+        }
     }
 }
