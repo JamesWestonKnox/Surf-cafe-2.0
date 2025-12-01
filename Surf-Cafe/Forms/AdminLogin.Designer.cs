@@ -46,7 +46,6 @@ namespace Surf_Cafe.Forms
             txtUsername.PlaceholderText = "Username";
             txtUsername.Size = new Size(100, 23);
             txtUsername.TabIndex = 0;
-            txtUsername.Visible = false;
             txtUsername.TextChanged += textBox1_TextChanged;
             // 
             // txtPassword

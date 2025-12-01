@@ -43,17 +43,17 @@
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
             pnlActions = new Panel();
-            btnGenerateReport = new Button();
+            btnAddItem = new Button();
             btnAddStock = new Button();
-            btnAddOrder = new Button();
             btnAddCategory = new Button();
+            btnGenerateReport = new Button();
+            btnAddOrder = new Button();
             btnAddEmployee = new Button();
             btnSaveChanges = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
             pnlContent = new Panel();
-            btnAddItem = new Button();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -222,15 +222,16 @@
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
             // 
-            // btnGenerateReport
+            // btnAddItem
             // 
-            btnGenerateReport.Location = new Point(344, 6);
-            btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(153, 52);
-            btnGenerateReport.TabIndex = 4;
-            btnGenerateReport.Text = "Generate Report";
-            btnGenerateReport.UseVisualStyleBackColor = true;
-            btnGenerateReport.Visible = false;
+            btnAddItem.Location = new Point(344, 6);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
             // 
             // btnAddStock
             // 
@@ -243,6 +244,27 @@
             btnAddStock.Visible = false;
             btnAddStock.Click += btnAddStock_Click;
             // 
+            // btnAddCategory
+            // 
+            btnAddCategory.Location = new Point(344, 6);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            btnAddCategory.Visible = false;
+            btnAddCategory.Click += btnAddCategory_Click;
+            // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.Location = new Point(344, 6);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 4;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Visible = false;
+            // 
             // btnAddOrder
             // 
             btnAddOrder.AutoSize = true;
@@ -254,17 +276,6 @@
             btnAddOrder.UseVisualStyleBackColor = true;
             btnAddOrder.Visible = false;
             btnAddOrder.Click += btnAddOrder_Click;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.Location = new Point(344, 6);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = true;
-            btnAddCategory.Visible = false;
-            btnAddCategory.Click += btnAddCategory_Click;
             // 
             // btnAddEmployee
             // 
@@ -329,21 +340,11 @@
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
-            // btnAddItem
-            // 
-            btnAddItem.Location = new Point(344, 6);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(153, 52);
-            btnAddItem.TabIndex = 5;
-            btnAddItem.Text = "+ Add Item";
-            btnAddItem.UseVisualStyleBackColor = true;
-            btnAddItem.Visible = false;
-            btnAddItem.Click += btnAddItem_Click;
-            // 
             // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(1173, 583);
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
