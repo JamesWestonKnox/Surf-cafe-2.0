@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Surf_Cafe.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,35 @@ namespace Surf_Cafe.Forms
         public EmployeesManagementUserControl()
         {
             InitializeComponent();
+            LoadEmployees();
+        }
+
+        public void LoadEmployees()
+        {
+            flpEmployees.Controls.Clear();
+
+            using var db = new DBContext();
+            var employees = db.Users.ToList();
+
+            foreach (var employee in employees)
+            {
+                UserCard card = new UserCard();
+                card.UserID = employee.UserID;
+                card.Username = employee.Username;
+                card.Role = employee.Role.ToString();
+                card.UserClicked += (id) => OnUserClicked(id);
+                flpEmployees.Controls.Add(card);
+            }
+        }
+
+        private void OnUserClicked(int userID)
+        {
+            EditEmployeeForm form = new EditEmployeeForm(userID);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                LoadEmployees();
+
+            }
         }
     }
 }

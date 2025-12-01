@@ -28,10 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            flpEmployees = new FlowLayoutPanel();
+            SuspendLayout();
+            // 
+            // flpEmployees
+            // 
+            flpEmployees.Dock = DockStyle.Fill;
+            flpEmployees.Location = new Point(0, 0);
+            flpEmployees.Name = "flpEmployees";
+            flpEmployees.Size = new Size(778, 533);
+            flpEmployees.TabIndex = 0;
+            // 
+            // EmployeesManagementUserControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(flpEmployees);
+            Name = "EmployeesManagementUserControl";
+            Size = new Size(778, 533);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private FlowLayoutPanel flpEmployees;
     }
 }
