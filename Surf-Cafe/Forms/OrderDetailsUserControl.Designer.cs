@@ -37,21 +37,21 @@
             // 
             // pnlContent
             // 
-            pnlContent.Location = new Point(17, 109);
+            pnlContent.Location = new Point(26, 18);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(627, 421);
+            pnlContent.Size = new Size(615, 535);
             pnlContent.TabIndex = 0;
             // 
             // flpOrderSummary
             // 
-            flpOrderSummary.Location = new Point(666, 109);
+            flpOrderSummary.Location = new Point(680, 36);
             flpOrderSummary.Name = "flpOrderSummary";
-            flpOrderSummary.Size = new Size(280, 421);
+            flpOrderSummary.Size = new Size(385, 455);
             flpOrderSummary.TabIndex = 1;
             // 
             // btnLoyalty
             // 
-            btnLoyalty.Location = new Point(666, 553);
+            btnLoyalty.Location = new Point(688, 519);
             btnLoyalty.Name = "btnLoyalty";
             btnLoyalty.Size = new Size(94, 23);
             btnLoyalty.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(766, 553);
+            btnPay.Location = new Point(788, 519);
             btnPay.Name = "btnPay";
             btnPay.Size = new Size(84, 23);
             btnPay.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(856, 553);
+            btnSave.Location = new Point(895, 519);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 23);
             btnSave.TabIndex = 3;
@@ -80,13 +80,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnSave);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(btnPay);
+            Controls.Add(btnSave);
             Controls.Add(btnLoyalty);
             Controls.Add(flpOrderSummary);
             Controls.Add(pnlContent);
             Name = "OrderDetailsUserControl";
-            Size = new Size(1058, 616);
+            Size = new Size(1068, 556);
             ResumeLayout(false);
         }
 
