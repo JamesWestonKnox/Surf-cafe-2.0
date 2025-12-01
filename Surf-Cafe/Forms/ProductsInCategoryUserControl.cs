@@ -1,13 +1,5 @@
 ﻿using Surf_Cafe.Database;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Surf_Cafe.Forms
 {
@@ -15,21 +7,23 @@ namespace Surf_Cafe.Forms
     {
         private int CategoryID;
         private string CategoryName;
-        public ProductsInCategoryUserControl(int categoryID, string categoryName)
+        public event Action<int> ProductClicked;
+        public ProductsInCategoryUserControl(int categoryID, string categoryName, Action<int> productClicked = null)
         {
             InitializeComponent();
             CategoryID = categoryID;
             CategoryName = categoryName;
+            ProductClicked = productClicked;
             LoadProducts();
         }
 
-        public void LoadProducts() 
+        public void LoadProducts()
         {
             flpProducts.Controls.Clear();
             using var db = new DBContext();
             var products = db.MenuItems.Where(p => p.CategoryID == CategoryID).ToList();
 
-            foreach(var product in products)
+            foreach (var product in products)
             {
                 var card = new ProductCard
                 {
@@ -41,9 +35,18 @@ namespace Surf_Cafe.Forms
                     Margin = new Padding(10)
                 };
 
-                card.ProductClicked += OpenEditProductForm;
-
-                flpProducts.Controls.Add(card); 
+                card.ProductClicked += (id) =>
+                {
+                    if (ProductClicked != null)
+                    {
+                        ProductClicked.Invoke(product.MenuItemID);
+                    }
+                    else
+                    {
+                        OpenEditProductForm(id);
+                    }
+                };
+                flpProducts.Controls.Add(card);
             }
         }
         private void OpenEditProductForm(int productID)

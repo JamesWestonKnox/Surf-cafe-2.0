@@ -35,9 +35,9 @@
             btnLoyalty = new Button();
             splitContainer1 = new SplitContainer();
             dataGridView1 = new DataGridView();
-            ProductColumn = new DataGridViewTextBoxColumn();
-            QuantityColumn = new DataGridViewTextBoxColumn();
-            PriceColumn = new DataGridViewTextBoxColumn();
+            Product = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -116,7 +116,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductColumn, QuantityColumn, PriceColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product, Quantity, Price });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = SystemColors.MenuText;
             dataGridView1.Location = new Point(0, 0);
@@ -127,31 +127,31 @@
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // ProductColumn
+            // Product
             // 
-            ProductColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Product.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.BackColor = Color.DodgerBlue;
-            ProductColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            ProductColumn.HeaderText = "Product";
-            ProductColumn.Name = "ProductColumn";
-            ProductColumn.Resizable = DataGridViewTriState.False;
-            ProductColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Product.DefaultCellStyle = dataGridViewCellStyle2;
+            Product.HeaderText = "Product";
+            Product.Name = "Product";
+            Product.Resizable = DataGridViewTriState.False;
+            Product.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // QuantityColumn
+            // Quantity
             // 
-            QuantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            QuantityColumn.HeaderText = "Quantity";
-            QuantityColumn.Name = "QuantityColumn";
-            QuantityColumn.Resizable = DataGridViewTriState.False;
-            QuantityColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.Resizable = DataGridViewTriState.False;
+            Quantity.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // PriceColumn
+            // Price
             // 
-            PriceColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PriceColumn.HeaderText = "Price";
-            PriceColumn.Name = "PriceColumn";
-            PriceColumn.Resizable = DataGridViewTriState.False;
-            PriceColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            Price.Resizable = DataGridViewTriState.False;
+            Price.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // OrderDetailsUserControl
             // 
@@ -176,8 +176,8 @@
         private Button btnLoyalty;
         private SplitContainer splitContainer1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ProductColumn;
-        private DataGridViewTextBoxColumn QuantityColumn;
-        private DataGridViewTextBoxColumn PriceColumn;
+        private DataGridViewTextBoxColumn Product;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
     }
 }

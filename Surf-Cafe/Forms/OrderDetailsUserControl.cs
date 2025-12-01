@@ -1,4 +1,6 @@
-﻿using Surf_Cafe.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Surf_Cafe.Database;
+using Surf_Cafe.Models;
 
 namespace Surf_Cafe.Forms
 {
@@ -9,6 +11,7 @@ namespace Surf_Cafe.Forms
         {
             InitializeComponent();
             _order = order;
+            PopulateDataGridView();
             LoadMenu();
         }
 
@@ -37,11 +40,69 @@ namespace Surf_Cafe.Forms
         /// <param name="categoryName"></param>
         private void LoadProducts(int categoryID, string categoryName)
         {
-            var productsUC = new ProductsInCategoryUserControl(categoryID, categoryName);
+            var productsUC = new ProductsInCategoryUserControl(categoryID, categoryName, AddProductToOrder);
             productsUC.Dock = DockStyle.Fill;
 
             splitContainer1.Panel1.Controls.Clear();
             splitContainer1.Panel1.Controls.Add(productsUC);
+        }
+
+        /// <summary>
+        /// Method that adds selected product to and order, if product is already found it increases the quantity.
+        /// </summary>
+        /// <param name="productID"></param>
+        private void AddProductToOrder(int productID)
+        {
+            using var db = new DBContext();
+
+            var product = db.MenuItems.FirstOrDefault(p => p.MenuItemID == productID);
+            var orderItem = db.OrderItems.FirstOrDefault(i => i.OrderID == _order.OrderID && i.MenuItemID == productID);
+
+            // If product and orderitem are found increase quantity by 1 and calculate subtotal
+            if (product != null && orderItem != null)
+            {
+                orderItem.Quantity += 1;
+                orderItem.ItemSubTotal = orderItem.Quantity * product.Price;
+            }
+            // if no order item found, then adds new item to order table in database
+            else if (product != null)
+            {
+                orderItem = new OrderItem
+                {
+                    OrderID = _order.OrderID,
+                    MenuItemID = product.MenuItemID,
+                    Quantity = 1,
+                    ItemSubTotal = product.Price
+                };
+                db.OrderItems.Add(orderItem);
+            }
+            // returns if product is null
+            else if (product == null)
+            {
+                return;
+            }
+
+            db.SaveChanges();
+            // calls method to populate the grid to display order items
+            PopulateDataGridView();
+
+        }
+
+        /// <summary>
+        /// Method that fetches all order items and displays them in the datagridview
+        /// </summary>
+        private void PopulateDataGridView()
+        {
+            dataGridView1.Rows.Clear();
+            using var db = new DBContext();
+            // fetches all order items in order table
+            var orderItems = db.OrderItems.Where(oi => oi.OrderID == _order.OrderID).Include(oi => oi.MenuItem).ToList();
+
+            // adds new row for each order item
+            foreach (var item in orderItems)
+            {
+                dataGridView1.Rows.Add(item.MenuItem.Name, item.Quantity, item.ItemSubTotal);
+            }
         }
         private void OrderDetailsUserControl_Load(object sender, EventArgs e)
         {

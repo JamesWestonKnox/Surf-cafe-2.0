@@ -11,7 +11,7 @@ namespace Surf_Cafe.Models
         public int Quantity { get; set; } = 0;
 
         [MaxLength(300)]
-        public string ItemNotes { get; set; }
+        public string? ItemNotes { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18,2)")]
