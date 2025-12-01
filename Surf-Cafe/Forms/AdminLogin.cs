@@ -16,7 +16,7 @@ namespace Surf_Cafe.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            base.Close();
+            Application.Exit();
         }
 
         //------------------------ Login Button Loigc  -----------------------//
@@ -70,6 +70,10 @@ namespace Surf_Cafe.Forms
         {
         }
 
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
