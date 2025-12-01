@@ -1,13 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Surf_Cafe.Models;
 
 namespace Surf_Cafe.Forms
 {
@@ -18,9 +9,10 @@ namespace Surf_Cafe.Forms
         private InventoryUserControl inventoryUC;
         private object pnlActions;
 
-        public EmployeeDashboardForm()
+        public EmployeeDashboardForm(User user)
         {
             InitializeComponent();
+            _loggedInUser = user;
         }
 
         private void HideButtons()

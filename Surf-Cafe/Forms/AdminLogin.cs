@@ -30,13 +30,22 @@ namespace Surf_Cafe.Forms
                 MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            User authenticatedUser = Authentication.AuthenticationUser(username, password, UserRole.Admin);
-            if (authenticatedUser != null)
+            User authenticatedUser = Authentication.AuthenticationUser(username, password);
+            if (authenticatedUser != null && authenticatedUser.Role == UserRole.Admin)
             {
                 MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 AdminDashboardForm adminDashboardForm = new AdminDashboardForm(authenticatedUser);
                 adminDashboardForm.ShowDialog();
+                this.Close();
+
+            }
+            else if (authenticatedUser != null && authenticatedUser.Role == UserRole.Staff)
+            {
+                MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                EmployeeDashboardForm employeeDashboardForm = new EmployeeDashboardForm(authenticatedUser);
+                employeeDashboardForm.ShowDialog();
                 this.Close();
 
             }

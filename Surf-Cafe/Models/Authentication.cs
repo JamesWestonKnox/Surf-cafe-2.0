@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Surf_Cafe.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Surf_Cafe.Database;
 
 //-------------------------------------------------------- START OF FILE --------------------------------------------------------//
 
@@ -29,11 +23,11 @@ namespace Surf_Cafe.Models
 
         //------------------------ User Authentication -----------------------//
 
-        public static User AuthenticationUser(string username, string password, UserRole expectedRole)
+        public static User AuthenticationUser(string username, string password)
         {
             using (var context = new DBContext())
             {
-                var user = context.Users.FirstOrDefault(u => u.Username == username && u.Role == expectedRole);
+                var user = context.Users.FirstOrDefault(u => u.Username == username);
                 if (user != null && VerifyPassword(password, user.PasscodeHash))
                 {
                     return user;
