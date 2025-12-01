@@ -4,12 +4,45 @@ namespace Surf_Cafe.Forms
 {
     public partial class OrderDetailsUserControl : UserControl
     {
-
+        private Order _order;
         public OrderDetailsUserControl(Order order)
         {
             InitializeComponent();
+            _order = order;
+            LoadMenu();
         }
 
+        /// <summary>
+        /// Method to pull up existing menu categories on the order details page
+        /// </summary>
+        private void LoadMenu()
+        {
+            var categoriesUC = new CategoriesUserControl();
+            categoriesUC.Dock = DockStyle.Fill;
+
+            // Call method to load products when a category card is clicked
+            categoriesUC.CategorySelected += (categoryID, categoryName) =>
+            {
+                LoadProducts(categoryID, categoryName);
+            };
+
+            splitContainer1.Panel1.Controls.Clear();
+            splitContainer1.Panel1.Controls.Add(categoriesUC);
+        }
+
+        /// <summary>
+        /// Method to load all products withing a category
+        /// </summary>
+        /// <param name="categoryID"></param>
+        /// <param name="categoryName"></param>
+        private void LoadProducts(int categoryID, string categoryName)
+        {
+            var productsUC = new ProductsInCategoryUserControl(categoryID, categoryName);
+            productsUC.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel1.Controls.Clear();
+            splitContainer1.Panel1.Controls.Add(productsUC);
+        }
         private void OrderDetailsUserControl_Load(object sender, EventArgs e)
         {
 
