@@ -39,6 +39,7 @@
             flpOrders.Name = "flpOrders";
             flpOrders.Size = new Size(765, 545);
             flpOrders.TabIndex = 0;
+            flpOrders.Paint += flpOrders_Paint;
             // 
             // OrdersUserControl
             // 

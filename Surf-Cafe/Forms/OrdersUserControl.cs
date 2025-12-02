@@ -1,21 +1,13 @@
 ﻿using Surf_Cafe.Database;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Surf_Cafe.Models;
+using System.Data;
 
 namespace Surf_Cafe.Forms
 {
     public partial class OrdersUserControl : UserControl
     {
         public event Action<Order> OrderSelected;
-        
+
         public OrdersUserControl()
         {
             InitializeComponent();
@@ -39,7 +31,7 @@ namespace Surf_Cafe.Forms
 
                 foreach (var order in openOrders)
                 {
-                   //Calling the method that creates a card for each order
+                    //Calling the method that creates a card for each order
                     AddOrderCard(order);
                 }
 
@@ -73,11 +65,16 @@ namespace Surf_Cafe.Forms
         {
             LoadOrders();
         }
-        
+
         //Method calles the OrderSelected Event
         private void card_OrderCardClicked(Order order)
         {
             OrderSelected?.Invoke(order);
+        }
+
+        private void flpOrders_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

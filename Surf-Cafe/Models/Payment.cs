@@ -26,6 +26,6 @@ namespace Surf_Cafe.Models
         [Required]
         public int OrderID { get; set; }
         [ForeignKey("OrderID")]
-        public User Order { get; set; }
+        public Order Order { get; set; }
     }
 }

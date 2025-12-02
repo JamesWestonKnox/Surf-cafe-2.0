@@ -94,7 +94,7 @@ namespace Surf_Cafe.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnOrders_Click(object sender, EventArgs e)
+        public void btnOrders_Click(object sender, EventArgs e)
         {
             HideButtons();
             lblSubHeading.Text = "Orders";
