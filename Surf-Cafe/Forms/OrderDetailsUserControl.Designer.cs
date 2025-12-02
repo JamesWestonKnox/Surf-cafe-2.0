@@ -34,10 +34,16 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            btnSave = new Button();
             btnPay = new Button();
             btnLoyalty = new Button();
             splitContainer1 = new SplitContainer();
+            panel1 = new Panel();
+            label1 = new Label();
+            tbOrderTotal = new TextBox();
+            tbSubTotal = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            tbVatAmount = new TextBox();
             dataGridView1 = new DataGridView();
             Product = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
@@ -48,18 +54,9 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // btnSave
-            // 
-            btnSave.Dock = DockStyle.Bottom;
-            btnSave.Location = new Point(0, 499);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(369, 39);
-            btnSave.TabIndex = 3;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
             // 
             // btnPay
             // 
@@ -79,13 +76,14 @@
             btnLoyalty.Name = "btnLoyalty";
             btnLoyalty.Size = new Size(369, 39);
             btnLoyalty.TabIndex = 0;
-            btnLoyalty.Text = "Loyalty";
+            btnLoyalty.Text = "Loyalty Points";
             btnLoyalty.UseVisualStyleBackColor = true;
             btnLoyalty.Click += btnLoyalty_Click;
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.IsSplitterFixed = true;
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             // 
@@ -97,14 +95,101 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = SystemColors.Window;
+            splitContainer1.Panel2.Controls.Add(panel1);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
-            splitContainer1.Panel2.Controls.Add(btnSave);
             splitContainer1.Panel2.Controls.Add(btnLoyalty);
             splitContainer1.Panel2.Controls.Add(btnPay);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1189, 616);
             splitContainer1.SplitterDistance = 816;
             splitContainer1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(tbOrderTotal);
+            panel1.Controls.Add(tbSubTotal);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(tbVatAmount);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 450);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(369, 88);
+            panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(0, 57);
+            label1.Name = "label1";
+            label1.Size = new Size(92, 28);
+            label1.TabIndex = 5;
+            label1.Text = "Order Total:";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            label1.Click += label1_Click_2;
+            // 
+            // tbOrderTotal
+            // 
+            tbOrderTotal.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tbOrderTotal.BackColor = SystemColors.Window;
+            tbOrderTotal.Cursor = Cursors.No;
+            tbOrderTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbOrderTotal.Location = new Point(91, 56);
+            tbOrderTotal.Name = "tbOrderTotal";
+            tbOrderTotal.ReadOnly = true;
+            tbOrderTotal.Size = new Size(278, 29);
+            tbOrderTotal.TabIndex = 10;
+            // 
+            // tbSubTotal
+            // 
+            tbSubTotal.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tbSubTotal.BackColor = SystemColors.Window;
+            tbSubTotal.Cursor = Cursors.No;
+            tbSubTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSubTotal.Location = new Point(91, 0);
+            tbSubTotal.Name = "tbSubTotal";
+            tbSubTotal.ReadOnly = true;
+            tbSubTotal.Size = new Size(278, 29);
+            tbSubTotal.TabIndex = 8;
+            tbSubTotal.TextChanged += tbSubTotal_TextChanged;
+            // 
+            // label3
+            // 
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(0, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 29);
+            label3.TabIndex = 7;
+            label3.Text = "SubTotal:";
+            label3.TextAlign = ContentAlignment.MiddleRight;
+            label3.Click += label3_Click;
+            // 
+            // label2
+            // 
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(0, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 29);
+            label2.TabIndex = 6;
+            label2.Text = "VAT:";
+            label2.TextAlign = ContentAlignment.MiddleRight;
+            label2.Click += label2_Click;
+            // 
+            // tbVatAmount
+            // 
+            tbVatAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tbVatAmount.BackColor = SystemColors.Window;
+            tbVatAmount.Cursor = Cursors.No;
+            tbVatAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbVatAmount.Location = new Point(91, 28);
+            tbVatAmount.Name = "tbVatAmount";
+            tbVatAmount.ReadOnly = true;
+            tbVatAmount.Size = new Size(278, 29);
+            tbVatAmount.TabIndex = 9;
             // 
             // dataGridView1
             // 
@@ -149,7 +234,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.ScrollBars = ScrollBars.Vertical;
-            dataGridView1.Size = new Size(369, 499);
+            dataGridView1.Size = new Size(369, 538);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -157,6 +242,7 @@
             // 
             Product.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
@@ -229,17 +315,24 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button btnSave;
         private Button btnPay;
         private Button btnLoyalty;
         private SplitContainer splitContainer1;
         private DataGridView dataGridView1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Panel panel1;
+        private TextBox tbOrderTotal;
+        private TextBox tbVatAmount;
+        private TextBox tbSubTotal;
         private DataGridViewTextBoxColumn Product;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;

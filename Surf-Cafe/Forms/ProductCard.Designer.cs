@@ -35,7 +35,7 @@
             // 
             lblProductName.AutoSize = true;
             lblProductName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProductName.ForeColor = SystemColors.ControlLight;
+            lblProductName.ForeColor = SystemColors.Window;
             lblProductName.Location = new Point(65, 65);
             lblProductName.Name = "lblProductName";
             lblProductName.Size = new Size(100, 40);
@@ -46,8 +46,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblProductName);
+            ForeColor = SystemColors.Window;
             Name = "ProductCard";
             Size = new Size(301, 180);
             ResumeLayout(false);

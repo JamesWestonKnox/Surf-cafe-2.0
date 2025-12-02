@@ -33,20 +33,29 @@ namespace Surf_Cafe.Forms
             User authenticatedUser = Authentication.AuthenticationUser(username, password);
             if (authenticatedUser != null && authenticatedUser.Role == UserRole.Admin)
             {
-                MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
+
                 AdminDashboardForm adminDashboardForm = new AdminDashboardForm(authenticatedUser);
-                adminDashboardForm.ShowDialog();
-                this.Close();
+                this.Hide();
+                adminDashboardForm.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                    this.txtUsername.Text = "";
+                    this.txtPassword.Text = "";
+                };
+                adminDashboardForm.Show();
 
             }
             else if (authenticatedUser != null && authenticatedUser.Role == UserRole.Staff)
             {
-                MessageBox.Show($"Login successful, {authenticatedUser.Username}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
                 EmployeeDashboardForm employeeDashboardForm = new EmployeeDashboardForm(authenticatedUser);
-                employeeDashboardForm.ShowDialog();
-                this.Close();
+                this.Hide();
+                employeeDashboardForm.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                    this.txtUsername.Text = "";
+                    this.txtPassword.Text = "";
+                };
+                employeeDashboardForm.Show();
 
             }
             else
@@ -71,6 +80,11 @@ namespace Surf_Cafe.Forms
         }
 
         private void AdminLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }
