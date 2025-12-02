@@ -76,6 +76,11 @@ namespace Surf_Cafe.Forms
 
         }
 
+        /// <summary>
+        /// Opens the order user control inside the adminDashboard and loads all orders inside it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOrders_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -91,13 +96,15 @@ namespace Surf_Cafe.Forms
                 btnBack.Visible = true;
             };
 
-
             LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
-
-
         }
 
+        /// <summary>
+        /// Opens the inventoryUserControl and loads all the stock items in a table inside the AdminDashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInventory_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -109,12 +116,16 @@ namespace Surf_Cafe.Forms
             btnAddStock.Visible = true;
         }
 
+        /// <summary>
+        /// Opens the menuUserControl which displays the categories and menuItems inside the adminDashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMenu_Click(object sender, EventArgs e)
         {
             HideButtons();
             lblSubHeading.Text = "Categories";
             categoriesUC = new CategoriesUserControl();
-
 
             categoriesUC.CategorySelected += (categoryID, categoryName) =>
             {
@@ -129,12 +140,15 @@ namespace Surf_Cafe.Forms
                 btnAddItem.Visible = true;
             };
 
-
             LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
-
         }
 
+        /// <summary>
+        /// Opens the reportUserControl inside the AdminDashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReports_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -143,6 +157,11 @@ namespace Surf_Cafe.Forms
             LoadUserControl(reports);
         }
 
+        /// <summary>
+        /// Opens the EmployeeManagementUserControl inside the AdminDashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -152,6 +171,11 @@ namespace Surf_Cafe.Forms
             btnAddEmployee.Visible = true;
         }
 
+        /// <summary>
+        /// Opens the addEmployee popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployeeForm form = new AddEmployeeForm();
@@ -163,6 +187,11 @@ namespace Surf_Cafe.Forms
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Opens the AddStock popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddStock_Click(object sender, EventArgs e)
         {
             AddProductForm form = new AddProductForm();
@@ -174,6 +203,11 @@ namespace Surf_Cafe.Forms
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Opens the AddCategory popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             AddCategoryForm form = new AddCategoryForm();
@@ -181,6 +215,11 @@ namespace Surf_Cafe.Forms
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Opens up the NewOrder popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
@@ -198,6 +237,11 @@ namespace Surf_Cafe.Forms
 
         }
 
+        /// <summary>
+        /// Saves changes made to the start and end of day quantities within the inventory table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             if (inventoryUC != null)
@@ -217,12 +261,22 @@ namespace Surf_Cafe.Forms
 
         }
 
+        /// <summary>
+        /// Logs the current user out and ends the program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogout_Click(object sender, EventArgs e)
         {
             _loggedInUser = null;
             this.Close();
         }
 
+        /// <summary>
+        /// Opens up the AddMenuItem popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             AddMenuItemForm form = new AddMenuItemForm(_selectedCategoryID, _selectedCategoryName);
@@ -238,6 +292,11 @@ namespace Surf_Cafe.Forms
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Generates a report based on the stock inside the stock table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGenerateReport_Click(object sender, EventArgs e)
         {
             if (inventoryUC != null)

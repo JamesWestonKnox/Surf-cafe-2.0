@@ -26,8 +26,14 @@ namespace Surf_Cafe.Forms
             txtCategory.Text = categoryName;
         }
 
+        /// <summary>
+        /// Adds a new menu item within a specific menu category
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //Input validaition to ensure the required input is filled in and in a valid format
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Please enter the item name");
@@ -42,6 +48,7 @@ namespace Surf_Cafe.Forms
 
             using var db = new DBContext();
 
+            //Creating the new menuItem
             var newItem = new MenuItem
             {
                 Name = txtName.Text.Trim(),
@@ -51,6 +58,7 @@ namespace Surf_Cafe.Forms
                 IsAvailable = true
             };
 
+            //Adding and saving it to the database
             db.MenuItems.Add(newItem);
             db.SaveChanges();
 

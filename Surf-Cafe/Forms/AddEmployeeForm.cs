@@ -27,12 +27,19 @@ namespace Surf_Cafe.Forms
             this.Close();
         }
 
+        /// <summary>
+        /// Creates a new employee and saves it to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            //Retrieving the data from the textboxes
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
             string role = cmbRole.SelectedItem?.ToString();
 
+            //Validation checking if all required fields are filled in
             if (string.IsNullOrWhiteSpace(username)) 
             {
                 MessageBox.Show("Please enter username");
@@ -58,6 +65,7 @@ namespace Surf_Cafe.Forms
                 return;
             }
 
+            //Opening the database connection and adding the new user if the user doesn't already exist.
             using (var db = new DBContext())
             {
                 if (db.Users.Any(u => u.Username == username))
@@ -73,6 +81,7 @@ namespace Surf_Cafe.Forms
                     PasscodeHash = BCrypt.Net.BCrypt.HashPassword(password)
                 };
 
+                //Adding and saving to database
                 db.Users.Add(newUser);
                 db.SaveChanges();
             }

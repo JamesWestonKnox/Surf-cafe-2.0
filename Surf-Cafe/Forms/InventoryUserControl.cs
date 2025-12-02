@@ -73,6 +73,7 @@ namespace Surf_Cafe.Forms
                 var stock = db.StockItems.Find(id);
                 if(stock != null)
                 {
+                    stock.StartOfDayQuantity = Convert.ToInt32(row.Cells["StartOfDayQuantity"].Value);
                     stock.EndOfDayQuantity = Convert.ToInt32(row.Cells["EndOfDayQuantity"].Value);
                     stock.LastUpdated = DateTime.Now;
                 }

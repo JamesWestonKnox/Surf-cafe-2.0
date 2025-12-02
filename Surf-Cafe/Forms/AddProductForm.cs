@@ -25,24 +25,34 @@ namespace Surf_Cafe.Forms
             this.Close();
         }
 
+        /// <summary>
+        /// Adds stock to the inventory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Retrieves the input from the textboxes and other input elements
             string name = txtStockName.Text.Trim();
             string unit = txtUnit.Text.Trim();
             int startQty = (int)numStartQuant.Value;
             int threshold = (int)numThreshold.Value;
 
+
+            //Input validation to ensure all required fields are filled in
             if (string.IsNullOrWhiteSpace(name))
             {
                 MessageBox.Show("Enter a valid stock name");
             }
             if (string.IsNullOrWhiteSpace(unit))
             {
-                MessageBox.Show("Entere a valid unit");
+                MessageBox.Show("Enter a valid unit");
             }
-
+            
+            //Opening the database connection
             using var db = new DBContext();
 
+            //Creating the new stockItem
             var stockItem = new StockItem()
             {
                 StockItemName = name,
@@ -53,6 +63,7 @@ namespace Surf_Cafe.Forms
                 LastUpdated = DateTime.Now,
             };
 
+            //Adding it and saving the database
             db.StockItems.Add(stockItem);
             db.SaveChanges();
 

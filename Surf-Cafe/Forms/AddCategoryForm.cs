@@ -27,10 +27,16 @@ namespace Surf_Cafe.Forms
             this.Close();
         }
 
+        /// <summary>
+        /// Saves a new menu category to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtCategoryName.Text.Trim();
 
+            //Validation to check if they have inputted a category name
             if (string.IsNullOrEmpty(name)) {
                 MessageBox.Show("Please enter a valid category name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -38,6 +44,7 @@ namespace Surf_Cafe.Forms
 
             using var db = new DBContext();
 
+            //Only adding the new category if it doesn't exist already
             if(db.Categories.Any(c => c.CategoryName == name))
             {
                 MessageBox.Show("Category Already Exists");
@@ -49,6 +56,7 @@ namespace Surf_Cafe.Forms
                 CategoryName = name
             };
 
+            //Adding it and saving the database 
             db.Categories.Add(category);
             db.SaveChanges();
 
