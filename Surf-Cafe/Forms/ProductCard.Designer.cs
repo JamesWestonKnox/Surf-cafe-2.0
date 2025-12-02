@@ -33,12 +33,15 @@
             // 
             // lblProductName
             // 
+            lblProductName.AllowDrop = true;
             lblProductName.AutoSize = true;
+            lblProductName.Dock = DockStyle.Fill;
             lblProductName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProductName.ForeColor = SystemColors.Window;
-            lblProductName.Location = new Point(51, 25);
+            lblProductName.Location = new Point(0, 0);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(100, 40);
+            lblProductName.Padding = new Padding(30);
+            lblProductName.Size = new Size(160, 100);
             lblProductName.TabIndex = 0;
             lblProductName.Text = "label1";
             // 
@@ -46,11 +49,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblProductName);
             ForeColor = SystemColors.Window;
             Name = "ProductCard";
-            Size = new Size(301, 180);
+            Size = new Size(160, 100);
             ResumeLayout(false);
             PerformLayout();
         }

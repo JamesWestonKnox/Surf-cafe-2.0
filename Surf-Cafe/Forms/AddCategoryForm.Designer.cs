@@ -39,10 +39,11 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Window;
             label1.Location = new Point(50, 27);
             label1.Name = "label1";
-            label1.Size = new Size(309, 37);
+            label1.Size = new Size(329, 40);
             label1.TabIndex = 0;
             label1.Text = "Create a new Category";
             // 
@@ -56,33 +57,42 @@
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = Color.FromArgb(22, 78, 99);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI", 15.75F);
+            btnCancel.ForeColor = SystemColors.Window;
             btnCancel.Location = new Point(62, 173);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(118, 37);
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.FromArgb(22, 78, 99);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 15.75F);
+            btnSave.ForeColor = SystemColors.Window;
             btnSave.Location = new Point(224, 173);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(118, 37);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Window;
             label2.Location = new Point(57, 83);
             label2.Name = "label2";
-            label2.Size = new Size(172, 30);
+            label2.Size = new Size(156, 25);
             label2.TabIndex = 4;
             label2.Text = "Category Name:";
             // 
@@ -90,6 +100,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(14, 116, 144);
             ClientSize = new Size(418, 241);
             Controls.Add(label2);
             Controls.Add(btnSave);

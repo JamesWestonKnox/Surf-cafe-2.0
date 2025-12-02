@@ -41,33 +41,42 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(39, 22);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Window;
+            label1.Location = new Point(36, 27);
             label1.Name = "label1";
-            label1.Size = new Size(116, 30);
+            label1.Size = new Size(106, 25);
             label1.TabIndex = 0;
             label1.Text = "Username:";
             // 
             // btnConfirm
             // 
-            btnConfirm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConfirm.BackColor = Color.FromArgb(22, 78, 99);
+            btnConfirm.FlatAppearance.BorderSize = 0;
+            btnConfirm.FlatStyle = FlatStyle.Flat;
+            btnConfirm.Font = new Font("Segoe UI", 14.25F);
+            btnConfirm.ForeColor = SystemColors.Window;
             btnConfirm.Location = new Point(170, 268);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(104, 37);
             btnConfirm.TabIndex = 3;
             btnConfirm.Text = "Save";
-            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.BackColor = Color.FromArgb(22, 78, 99);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 14.25F);
+            btnCancel.ForeColor = SystemColors.Window;
             btnCancel.Location = new Point(36, 268);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(104, 37);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // txtUsername
@@ -105,20 +114,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Window;
             label2.Location = new Point(36, 104);
             label2.Name = "label2";
-            label2.Size = new Size(62, 30);
+            label2.Size = new Size(56, 25);
             label2.TabIndex = 9;
             label2.Text = "Role:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(36, 186);
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.Window;
+            label3.Location = new Point(36, 191);
             label3.Name = "label3";
-            label3.Size = new Size(111, 30);
+            label3.Size = new Size(102, 25);
             label3.TabIndex = 10;
             label3.Text = "Password:";
             // 
@@ -126,6 +137,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(14, 116, 144);
             ClientSize = new Size(319, 356);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -135,6 +147,8 @@
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AddEmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddEmployeeForm";

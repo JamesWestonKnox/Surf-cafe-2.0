@@ -33,14 +33,15 @@
             // 
             // lblCategoryName
             // 
-            lblCategoryName.Anchor = AnchorStyles.None;
             lblCategoryName.AutoSize = true;
             lblCategoryName.BackColor = Color.FromArgb(22, 78, 99);
+            lblCategoryName.Dock = DockStyle.Fill;
             lblCategoryName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCategoryName.ForeColor = SystemColors.Window;
-            lblCategoryName.Location = new Point(87, 78);
+            lblCategoryName.Location = new Point(0, 0);
             lblCategoryName.Name = "lblCategoryName";
-            lblCategoryName.Size = new Size(100, 40);
+            lblCategoryName.Padding = new Padding(30);
+            lblCategoryName.Size = new Size(160, 100);
             lblCategoryName.TabIndex = 0;
             lblCategoryName.Text = "label1";
             // 
@@ -48,10 +49,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblCategoryName);
             Name = "CategoryCard";
-            Size = new Size(414, 212);
+            Size = new Size(160, 100);
             ResumeLayout(false);
             PerformLayout();
         }
