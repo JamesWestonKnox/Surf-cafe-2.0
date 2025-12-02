@@ -22,6 +22,7 @@ namespace Surf_Cafe.Forms
         private int _selectedCategoryID;
         private string _selectedCategoryName;
         private InventoryUserControl inventoryUC;
+        private OrderDetailsUserControl orderDetailsUC;
 
         // -------------------Constructor----------------------- \\
         public EmployeeDashboardForm(User user)
@@ -90,6 +91,8 @@ namespace Surf_Cafe.Forms
             btnGenerateReport.Visible = true;
             btnSaveChanges.Visible = true;
             btnAddStock.Visible = true;
+
+
         }
 
         // -------------------Logo Picture Box Logix----------------------- \\
@@ -153,11 +156,12 @@ namespace Surf_Cafe.Forms
 
             ordersUC.OrderSelected += (order) =>
             {
-                var orderDetailsUC = new OrderDetailsUserControl(order);
+                orderDetailsUC = new OrderDetailsUserControl(order);
                 lblSubHeading.Text = $"Order - {order.OrderName}";
                 LoadUserControl(orderDetailsUC);
                 btnAddOrder.Visible = false;
                 btnBack.Visible = true;
+                btnBack2.Visible = true;
             };
 
 
@@ -231,7 +235,7 @@ namespace Surf_Cafe.Forms
             }
         }
 
-       
+
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
@@ -246,11 +250,17 @@ namespace Surf_Cafe.Forms
                 LoadUserControl(orderDetailsUC);
                 btnAddOrder.Visible = false;
                 btnBack.Visible = true;
+                btnBack2.Visible = true;
             };
 
             LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
 
+        }
+
+        private void btnBack2_Click(object sender, EventArgs e)
+        {
+            orderDetailsUC.LoadMenu();
         }
     }
 }

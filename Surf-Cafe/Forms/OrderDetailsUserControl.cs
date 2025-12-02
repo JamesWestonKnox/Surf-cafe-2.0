@@ -19,7 +19,7 @@ namespace Surf_Cafe.Forms
         /// <summary>
         /// Method to pull up existing menu categories on the order details page
         /// </summary>
-        private void LoadMenu()
+        public void LoadMenu()
         {
             var categoriesUC = new CategoriesUserControl();
             categoriesUC.Dock = DockStyle.Fill;

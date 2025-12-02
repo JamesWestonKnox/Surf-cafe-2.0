@@ -43,13 +43,14 @@
             btnAddItem = new Button();
             pnlHeader = new Panel();
             pnlActions = new Panel();
+            btnBack2 = new Button();
+            btnAddCategory = new Button();
+            btnGenerateReport = new Button();
             btnAddStock = new Button();
             btnBack = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
-            btnGenerateReport = new Button();
-            btnAddCategory = new Button();
             pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
@@ -216,7 +217,7 @@
             btnSaveChanges.FlatAppearance.BorderSize = 0;
             btnSaveChanges.FlatStyle = FlatStyle.Flat;
             btnSaveChanges.ForeColor = SystemColors.Window;
-            btnSaveChanges.Location = new Point(178, 6);
+            btnSaveChanges.Location = new Point(182, 6);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(153, 52);
             btnSaveChanges.TabIndex = 3;
@@ -249,12 +250,13 @@
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(234, 0);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(747, 131);
+            pnlHeader.Size = new Size(1002, 131);
             pnlHeader.TabIndex = 1;
             // 
             // pnlActions
             // 
             pnlActions.BackColor = Color.FromArgb(14, 116, 144);
+            pnlActions.Controls.Add(btnBack2);
             pnlActions.Controls.Add(btnAddOrder);
             pnlActions.Controls.Add(btnAddCategory);
             pnlActions.Controls.Add(btnGenerateReport);
@@ -263,10 +265,56 @@
             pnlActions.Controls.Add(btnBack);
             pnlActions.Controls.Add(btnAddItem);
             pnlActions.Dock = DockStyle.Right;
-            pnlActions.Location = new Point(238, 68);
+            pnlActions.Location = new Point(493, 68);
             pnlActions.Name = "pnlActions";
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
+            // 
+            // btnBack2
+            // 
+            btnBack2.BackColor = Color.FromArgb(22, 78, 99);
+            btnBack2.BackgroundImageLayout = ImageLayout.None;
+            btnBack2.FlatAppearance.BorderSize = 0;
+            btnBack2.FlatStyle = FlatStyle.Flat;
+            btnBack2.ForeColor = SystemColors.Window;
+            btnBack2.Location = new Point(182, 5);
+            btnBack2.Name = "btnBack2";
+            btnBack2.Size = new Size(153, 52);
+            btnBack2.TabIndex = 4;
+            btnBack2.Text = "Back";
+            btnBack2.UseVisualStyleBackColor = false;
+            btnBack2.Visible = false;
+            btnBack2.Click += btnBack2_Click;
+            // 
+            // btnAddCategory
+            // 
+            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddCategory.FlatAppearance.BorderSize = 0;
+            btnAddCategory.FlatStyle = FlatStyle.Flat;
+            btnAddCategory.ForeColor = SystemColors.Window;
+            btnAddCategory.Location = new Point(344, 6);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            btnAddCategory.Visible = false;
+            btnAddCategory.Click += btnAddCategory_Click;
+            // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.BackColor = Color.FromArgb(22, 78, 99);
+            btnGenerateReport.FlatAppearance.BorderSize = 0;
+            btnGenerateReport.FlatStyle = FlatStyle.Flat;
+            btnGenerateReport.ForeColor = SystemColors.Window;
+            btnGenerateReport.Location = new Point(344, 5);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 5;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = false;
+            btnGenerateReport.Visible = false;
+            btnGenerateReport.Click += btnGenerateReport_Click;
             // 
             // btnAddStock
             // 
@@ -319,7 +367,7 @@
             pnlMainHeading.Dock = DockStyle.Top;
             pnlMainHeading.Location = new Point(0, 0);
             pnlMainHeading.Name = "pnlMainHeading";
-            pnlMainHeading.Size = new Size(747, 68);
+            pnlMainHeading.Size = new Size(1002, 68);
             pnlMainHeading.TabIndex = 0;
             // 
             // lblMainHeading
@@ -330,47 +378,17 @@
             lblMainHeading.ForeColor = SystemColors.Window;
             lblMainHeading.Location = new Point(0, 0);
             lblMainHeading.Name = "lblMainHeading";
-            lblMainHeading.Size = new Size(747, 68);
+            lblMainHeading.Size = new Size(1002, 68);
             lblMainHeading.TabIndex = 0;
             lblMainHeading.Text = "Employee Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
-            // 
-            // btnGenerateReport
-            // 
-            btnGenerateReport.BackColor = Color.FromArgb(22, 78, 99);
-            btnGenerateReport.FlatAppearance.BorderSize = 0;
-            btnGenerateReport.FlatStyle = FlatStyle.Flat;
-            btnGenerateReport.ForeColor = SystemColors.Window;
-            btnGenerateReport.Location = new Point(344, 5);
-            btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(153, 52);
-            btnGenerateReport.TabIndex = 5;
-            btnGenerateReport.Text = "Generate Report";
-            btnGenerateReport.UseVisualStyleBackColor = false;
-            btnGenerateReport.Visible = false;
-            btnGenerateReport.Click += btnGenerateReport_Click;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
-            btnAddCategory.FlatAppearance.BorderSize = 0;
-            btnAddCategory.FlatStyle = FlatStyle.Flat;
-            btnAddCategory.ForeColor = SystemColors.Window;
-            btnAddCategory.Location = new Point(344, 6);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = true;
-            btnAddCategory.Visible = false;
-            btnAddCategory.Click += btnAddCategory_Click;
             // 
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(747, 477);
+            pnlContent.Size = new Size(1002, 477);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -378,7 +396,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 608);
+            ClientSize = new Size(1236, 608);
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
@@ -428,5 +446,6 @@
         private Button btnBack;
         internal Panel pnlMenuButtons;
         private Button btnCollapse;
+        private Button btnBack2;
     }
 }
