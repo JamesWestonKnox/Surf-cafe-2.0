@@ -385,6 +385,7 @@
             // 
             // pnlContent
             // 
+            pnlContent.BackColor = SystemColors.Window;
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
@@ -424,8 +425,8 @@
         private Button btnLogout;
         private Button btnReports;
         private Button btnEmployees;
-        private Button btnInventory;
         private Button btnMenu;
+        private Button btnInventory;
         private Button btnOrders;
         private Panel pnlHeader;
         private Panel pnlContent;

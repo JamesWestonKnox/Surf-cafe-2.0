@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Surf_Cafe.Models;
+﻿using Surf_Cafe.Models;
 
 // -------------------------------------------------------------------------------START OF FILE--------------------------------------------------------------------------------- //
 
@@ -66,7 +57,7 @@ namespace Surf_Cafe.Forms
                 pnlSidebar.Width = expandedWidth;
                 btnCollapse.Text = "Collapse";
                 btnOrders.Text = "Orders";
-                btnMenu.Text = "Menu";
+                btnMenu.Text = "Inventory";
                 btnLogout.Text = "Logout";
             }
             else
