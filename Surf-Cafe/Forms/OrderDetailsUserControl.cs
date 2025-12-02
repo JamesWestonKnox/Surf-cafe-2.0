@@ -191,7 +191,8 @@ namespace Surf_Cafe.Forms
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-
+            PaymentForm paymentForm = new PaymentForm();
+            paymentForm.ShowDialog();
         }
 
         private void flpOrderSummary_Paint(object sender, PaintEventArgs e)

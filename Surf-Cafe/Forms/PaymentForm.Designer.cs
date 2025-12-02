@@ -47,7 +47,7 @@
             // 
             lblOrderName.AutoSize = true;
             lblOrderName.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblOrderName.Location = new Point(158, 54);
+            lblOrderName.Location = new Point(157, 67);
             lblOrderName.Name = "lblOrderName";
             lblOrderName.Size = new Size(121, 25);
             lblOrderName.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             cmbPaymentType.FormattingEnabled = true;
             cmbPaymentType.Items.AddRange(new object[] { "Card", "Cash", "EFT" });
-            cmbPaymentType.Location = new Point(88, 120);
+            cmbPaymentType.Location = new Point(87, 133);
             cmbPaymentType.Name = "cmbPaymentType";
             cmbPaymentType.Size = new Size(191, 23);
             cmbPaymentType.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(88, 87);
+            label1.Location = new Point(87, 105);
             label1.Name = "label1";
             label1.Size = new Size(142, 25);
             label1.TabIndex = 2;
@@ -76,23 +76,26 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label2.Location = new Point(90, 166);
+            label2.Location = new Point(87, 179);
             label2.Name = "label2";
             label2.Size = new Size(87, 25);
             label2.TabIndex = 3;
             label2.Text = "Add Tip:";
+            label2.Click += label2_Click;
             // 
             // txtTip
             // 
-            txtTip.Location = new Point(90, 194);
+            txtTip.Location = new Point(87, 207);
             txtTip.Name = "txtTip";
             txtTip.Size = new Size(189, 23);
             txtTip.TabIndex = 4;
             // 
             // txtPaymentAmount
             // 
-            txtPaymentAmount.Location = new Point(90, 268);
+            txtPaymentAmount.BackColor = SystemColors.Window;
+            txtPaymentAmount.Location = new Point(87, 349);
             txtPaymentAmount.Name = "txtPaymentAmount";
+            txtPaymentAmount.ReadOnly = true;
             txtPaymentAmount.Size = new Size(189, 23);
             txtPaymentAmount.TabIndex = 5;
             // 
@@ -100,7 +103,7 @@
             // 
             lbl.AutoSize = true;
             lbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lbl.Location = new Point(90, 240);
+            lbl.Location = new Point(86, 321);
             lbl.Name = "lbl";
             lbl.Size = new Size(143, 25);
             lbl.TabIndex = 6;
@@ -110,7 +113,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(115, 9);
+            label3.Location = new Point(114, 22);
             label3.Name = "label3";
             label3.Size = new Size(138, 40);
             label3.TabIndex = 7;
@@ -120,7 +123,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(90, 54);
+            label4.Location = new Point(89, 67);
             label4.Name = "label4";
             label4.Size = new Size(77, 25);
             label4.TabIndex = 8;
@@ -128,7 +131,7 @@
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(204, 393);
+            btnPay.Location = new Point(203, 406);
             btnPay.Name = "btnPay";
             btnPay.Size = new Size(75, 23);
             btnPay.TabIndex = 9;
@@ -137,7 +140,7 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(88, 393);
+            btnBack.Location = new Point(87, 406);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(75, 23);
             btnBack.TabIndex = 10;
@@ -148,7 +151,7 @@
             // 
             cmbDiscount.FormattingEnabled = true;
             cmbDiscount.Items.AddRange(new object[] { "Week Breakfast Special (8am - 9am)", "Weekend Lunch Special (11am - 2pm)" });
-            cmbDiscount.Location = new Point(90, 342);
+            cmbDiscount.Location = new Point(87, 284);
             cmbDiscount.Name = "cmbDiscount";
             cmbDiscount.Size = new Size(189, 23);
             cmbDiscount.TabIndex = 11;
@@ -157,7 +160,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label5.Location = new Point(88, 314);
+            label5.Location = new Point(87, 256);
             label5.Name = "label5";
             label5.Size = new Size(153, 25);
             label5.TabIndex = 12;
@@ -167,6 +170,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(365, 451);
             Controls.Add(label5);
             Controls.Add(cmbDiscount);
@@ -182,7 +186,9 @@
             Controls.Add(label1);
             Controls.Add(cmbPaymentType);
             Name = "PaymentForm";
-            Text = "PaymentForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Payment";
+            Load += PaymentForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
