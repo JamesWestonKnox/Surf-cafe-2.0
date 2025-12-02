@@ -12,7 +12,7 @@ namespace Surf_Cafe.Models
         public string Name { get; set; }
 
         [MaxLength(300)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18,2)")]
