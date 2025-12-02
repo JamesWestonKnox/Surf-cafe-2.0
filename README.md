@@ -4,7 +4,7 @@ A Point of sale system built for the surf cafe in blouberg strand for our final 
 a seperate admin and employee dashboard with ordering capabilities, inventroy management, stock reports, menu items, auto calaculations, and the capability to add new users and give them login
 details based on their role at the cafe. 
 
-#Admin Dashboard
+# Admin Dashboard
 Menu: Add, Edit, and orgranise your menu with custom pricing and catergories
 
 Employee Management: Create new employee accounts and managae login details for new staff
