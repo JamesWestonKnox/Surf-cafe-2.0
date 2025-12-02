@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCategoryForm));
             label1 = new Label();
             txtCategoryName = new TextBox();
             btnCancel = new Button();
@@ -98,18 +99,24 @@
             // 
             // AddCategoryForm
             // 
+            AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(14, 116, 144);
+            CancelButton = btnCancel;
             ClientSize = new Size(418, 241);
             Controls.Add(label2);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(txtCategoryName);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AddCategoryForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddCategoryForm";
+            Text = "Add Category";
             ResumeLayout(false);
             PerformLayout();
         }

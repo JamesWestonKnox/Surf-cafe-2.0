@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeeForm));
             label1 = new Label();
             btnConfirm = new Button();
             btnCancel = new Button();
@@ -135,9 +136,11 @@
             // 
             // AddEmployeeForm
             // 
+            AcceptButton = btnConfirm;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(14, 116, 144);
+            CancelButton = btnCancel;
             ClientSize = new Size(319, 356);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -147,6 +150,8 @@
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddEmployeeForm";

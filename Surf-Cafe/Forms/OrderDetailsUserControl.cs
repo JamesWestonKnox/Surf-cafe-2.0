@@ -206,17 +206,18 @@ namespace Surf_Cafe.Forms
             paymentForm.ShowDialog();
         }
 
+        private void btnLoyalty_Click(object sender, EventArgs e)
+        {
+            LoyaltyForm loyaltyForm = new LoyaltyForm();
+            loyaltyForm.ShowDialog();
+        }
+
         private void flpOrderSummary_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnLoyalty_Click(object sender, EventArgs e)
         {
 
         }

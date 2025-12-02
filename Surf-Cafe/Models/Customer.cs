@@ -8,10 +8,6 @@ namespace Surf_Cafe.Models
 
         [Required]
         [MaxLength(100)]
-        public string CustomerName { get; set; }
-
-        [Required]
-        [MaxLength(100)]
         [EmailAddress]
         public string EmailAddress { get; set; }
 

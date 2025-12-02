@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMenuItemForm));
             label1 = new Label();
             lblCategory = new Label();
             txtCategory = new TextBox();
@@ -161,9 +162,11 @@
             // 
             // AddMenuItemForm
             // 
+            AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(14, 116, 144);
+            CancelButton = btnCancel;
             ClientSize = new Size(339, 422);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -176,11 +179,13 @@
             Controls.Add(txtCategory);
             Controls.Add(lblCategory);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddMenuItemForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddMenuItemForm";
+            Text = "Add Product";
             ResumeLayout(false);
             PerformLayout();
         }

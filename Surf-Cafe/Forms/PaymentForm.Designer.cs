@@ -170,6 +170,7 @@
             btnBack.TabIndex = 10;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // cmbDiscount
             // 
