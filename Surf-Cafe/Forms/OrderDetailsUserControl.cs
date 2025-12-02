@@ -264,5 +264,10 @@ namespace Surf_Cafe.Forms
         {
 
         }
+
+        private void tbVatAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

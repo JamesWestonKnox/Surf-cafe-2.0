@@ -43,14 +43,14 @@
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
             pnlActions = new Panel();
-            btnAddItem = new Button();
-            btnBack = new Button();
-            btnAddOrder = new Button();
-            btnAddStock = new Button();
             btnGenerateReport = new Button();
             btnAddEmployee = new Button();
+            btnAddOrder = new Button();
+            btnAddStock = new Button();
             btnAddCategory = new Button();
             btnSaveChanges = new Button();
+            btnBack = new Button();
+            btnAddItem = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
@@ -292,35 +292,35 @@
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
             // 
-            // btnAddItem
+            // btnGenerateReport
             // 
-            btnAddItem.BackColor = Color.FromArgb(22, 78, 99);
-            btnAddItem.FlatAppearance.BorderSize = 0;
-            btnAddItem.FlatStyle = FlatStyle.Flat;
-            btnAddItem.ForeColor = SystemColors.Window;
-            btnAddItem.Location = new Point(344, 5);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(153, 52);
-            btnAddItem.TabIndex = 5;
-            btnAddItem.Text = "+ Add Item";
-            btnAddItem.UseVisualStyleBackColor = false;
-            btnAddItem.Visible = false;
-            btnAddItem.Click += btnAddItem_Click;
+            btnGenerateReport.BackColor = Color.FromArgb(22, 78, 99);
+            btnGenerateReport.FlatAppearance.BorderSize = 0;
+            btnGenerateReport.FlatStyle = FlatStyle.Flat;
+            btnGenerateReport.ForeColor = SystemColors.Window;
+            btnGenerateReport.Location = new Point(344, 5);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 4;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = false;
+            btnGenerateReport.Visible = false;
+            btnGenerateReport.Click += btnGenerateReport_Click;
             // 
-            // btnBack
+            // btnAddEmployee
             // 
-            btnBack.AutoSize = true;
-            btnBack.BackColor = Color.FromArgb(22, 78, 99);
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = SystemColors.Window;
-            btnBack.Location = new Point(344, 6);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(153, 52);
-            btnBack.TabIndex = 6;
-            btnBack.Text = "Back to all Orders";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Visible = false;
+            btnAddEmployee.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddEmployee.FlatAppearance.BorderSize = 0;
+            btnAddEmployee.FlatStyle = FlatStyle.Flat;
+            btnAddEmployee.ForeColor = SystemColors.Window;
+            btnAddEmployee.Location = new Point(344, 5);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(153, 52);
+            btnAddEmployee.TabIndex = 5;
+            btnAddEmployee.Text = "+ Add Employee";
+            btnAddEmployee.UseVisualStyleBackColor = false;
+            btnAddEmployee.Visible = false;
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // btnAddOrder
             // 
@@ -354,36 +354,6 @@
             btnAddStock.Visible = false;
             btnAddStock.Click += btnAddStock_Click;
             // 
-            // btnGenerateReport
-            // 
-            btnGenerateReport.BackColor = Color.FromArgb(22, 78, 99);
-            btnGenerateReport.FlatAppearance.BorderSize = 0;
-            btnGenerateReport.FlatStyle = FlatStyle.Flat;
-            btnGenerateReport.ForeColor = SystemColors.Window;
-            btnGenerateReport.Location = new Point(344, 5);
-            btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(153, 52);
-            btnGenerateReport.TabIndex = 4;
-            btnGenerateReport.Text = "Generate Report";
-            btnGenerateReport.UseVisualStyleBackColor = false;
-            btnGenerateReport.Visible = false;
-            btnGenerateReport.Click += btnGenerateReport_Click;
-            // 
-            // btnAddEmployee
-            // 
-            btnAddEmployee.BackColor = Color.FromArgb(22, 78, 99);
-            btnAddEmployee.FlatAppearance.BorderSize = 0;
-            btnAddEmployee.FlatStyle = FlatStyle.Flat;
-            btnAddEmployee.ForeColor = SystemColors.Window;
-            btnAddEmployee.Location = new Point(344, 5);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(153, 52);
-            btnAddEmployee.TabIndex = 5;
-            btnAddEmployee.Text = "+ Add Employee";
-            btnAddEmployee.UseVisualStyleBackColor = false;
-            btnAddEmployee.Visible = false;
-            btnAddEmployee.Click += btnAddEmployee_Click;
-            // 
             // btnAddCategory
             // 
             btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
@@ -413,6 +383,36 @@
             btnSaveChanges.UseVisualStyleBackColor = false;
             btnSaveChanges.Visible = false;
             btnSaveChanges.Click += btnSaveChanges_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.AutoSize = true;
+            btnBack.BackColor = Color.FromArgb(22, 78, 99);
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = SystemColors.Window;
+            btnBack.Location = new Point(344, 6);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(153, 52);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back to all Orders";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddItem.FlatAppearance.BorderSize = 0;
+            btnAddItem.FlatStyle = FlatStyle.Flat;
+            btnAddItem.ForeColor = SystemColors.Window;
+            btnAddItem.Location = new Point(344, 5);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = false;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
             // 
             // lblSubHeading
             // 
@@ -467,10 +467,11 @@
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminDashboardForm";
+            Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
             Load += AdminDashboardForm_Load;
             pnlSidebar.ResumeLayout(false);

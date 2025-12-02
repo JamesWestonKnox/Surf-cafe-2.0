@@ -36,7 +36,7 @@
             lblProductName.AutoSize = true;
             lblProductName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProductName.ForeColor = SystemColors.Window;
-            lblProductName.Location = new Point(65, 65);
+            lblProductName.Location = new Point(51, 25);
             lblProductName.Name = "lblProductName";
             lblProductName.Size = new Size(100, 40);
             lblProductName.TabIndex = 0;
