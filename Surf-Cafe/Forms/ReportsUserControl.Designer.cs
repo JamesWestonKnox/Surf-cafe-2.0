@@ -28,10 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            dgvReports = new DataGridView();
+            colReportName = new DataGridViewTextBoxColumn();
+            colDateCreated = new DataGridViewTextBoxColumn();
+            Open = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvReports).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvReports
+            // 
+            dgvReports.AllowUserToAddRows = false;
+            dgvReports.AllowUserToDeleteRows = false;
+            dgvReports.AllowUserToResizeColumns = false;
+            dgvReports.AllowUserToResizeRows = false;
+            dgvReports.BackgroundColor = SystemColors.Control;
+            dgvReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReports.Columns.AddRange(new DataGridViewColumn[] { colReportName, colDateCreated, Open });
+            dgvReports.Dock = DockStyle.Fill;
+            dgvReports.Location = new Point(0, 0);
+            dgvReports.Name = "dgvReports";
+            dgvReports.RowHeadersVisible = false;
+            dgvReports.Size = new Size(510, 393);
+            dgvReports.TabIndex = 0;
+            dgvReports.CellContentClick += dgvReports_CellContentClick_1;
+            // 
+            // colReportName
+            // 
+            colReportName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colReportName.DataPropertyName = "FileName";
+            colReportName.HeaderText = "Report Name";
+            colReportName.Name = "colReportName";
+            colReportName.ReadOnly = true;
+            // 
+            // colDateCreated
+            // 
+            colDateCreated.HeaderText = "Date Created";
+            colDateCreated.Name = "colDateCreated";
+            colDateCreated.ReadOnly = true;
+            colDateCreated.Width = 150;
+            // 
+            // Open
+            // 
+            Open.FlatStyle = FlatStyle.Flat;
+            Open.HeaderText = "Open";
+            Open.Name = "Open";
+            Open.Resizable = DataGridViewTriState.True;
+            Open.SortMode = DataGridViewColumnSortMode.Automatic;
+            Open.Text = "Open";
+            Open.UseColumnTextForButtonValue = true;
+            // 
+            // ReportsUserControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(dgvReports);
+            Name = "ReportsUserControl";
+            Size = new Size(510, 393);
+            ((System.ComponentModel.ISupportInitialize)dgvReports).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvReports;
+        private DataGridViewTextBoxColumn colReportName;
+        private DataGridViewTextBoxColumn colDateCreated;
+        private DataGridViewButtonColumn Open;
     }
 }
