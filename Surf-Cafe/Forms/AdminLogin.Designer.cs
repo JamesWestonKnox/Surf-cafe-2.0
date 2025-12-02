@@ -104,9 +104,11 @@ namespace Surf_Cafe.Forms
             // 
             // AdminLogin
             // 
+            AcceptButton = LoginBtn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
+            CancelButton = CancelBtn;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -116,7 +118,7 @@ namespace Surf_Cafe.Forms
             Controls.Add(txtUsername);
             Name = "AdminLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminLogin";
+            Text = "Login";
             Load += AdminLogin_Load;
             ((ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

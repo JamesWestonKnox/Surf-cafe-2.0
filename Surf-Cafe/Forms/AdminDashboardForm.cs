@@ -52,12 +52,25 @@ namespace Surf_Cafe.Forms
                 // Expand
                 pnlSidebar.Width = expandedWidth;
                 btnCollapse.Text = "Collapse";
+                btnOrders.Text = "Orders";
+                btnMenu.Text = "Menu";
+                btnInventory.Text = "Inventory";
+                btnEmployees.Text = "Employees";
+                btnReports.Text = "Reports";
+                btnLogout.Text = "Logout";
             }
             else
             {
                 // Collapse
                 pnlSidebar.Width = collapsedWidth;
-                btnCollapse.Text = "Open";
+                btnCollapse.Text = "";
+                btnOrders.Text = "";
+                btnMenu.Text = "";
+                btnInventory.Text = "";
+                btnEmployees.Text = "";
+                btnReports.Text = "";
+                btnLogout.Text = "";
+
             }
         }
 
@@ -307,6 +320,11 @@ namespace Surf_Cafe.Forms
             {
                 MessageBox.Show("Inventory failed to load");
             }
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
