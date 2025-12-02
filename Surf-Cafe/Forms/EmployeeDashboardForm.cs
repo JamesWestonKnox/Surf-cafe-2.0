@@ -21,7 +21,7 @@ namespace Surf_Cafe.Forms
         private OrdersUserControl ordersUC;
         private int _selectedCategoryID;
         private string _selectedCategoryName;
-        private object inventoryUC;
+        private InventoryUserControl inventoryUC;
 
         // -------------------Constructor----------------------- \\
         public EmployeeDashboardForm(User user)
@@ -33,7 +33,7 @@ namespace Surf_Cafe.Forms
         // -------------------Hide Buttons Logic----------------------- \\
         private void HideButtons()
         {
-           
+
             foreach (Control ctrl in pnlActions.Controls)
             {
                 if (ctrl is Button)
@@ -41,7 +41,7 @@ namespace Surf_Cafe.Forms
                     ctrl.Visible = false;
                 }
             }
-           
+
         }
 
         // -------------------Load User Control Logic----------------------- \\
@@ -84,27 +84,12 @@ namespace Surf_Cafe.Forms
         private void btnMenu_Click(object sender, EventArgs e)
         {
             HideButtons();
-            lblSubHeading.Text = "Categories";
-            categoriesUC = new CategoriesUserControl();
-
-
-            categoriesUC.CategorySelected += (categoryID, categoryName) =>
-            {
-                _selectedCategoryID = categoryID;
-                _selectedCategoryName = categoryName;
-
-                var productUC = new ProductsInCategoryUserControl(categoryID, categoryName);
-                lblSubHeading.Text = $"Category - {categoryName}";
-                LoadUserControl(productUC);
-
-                btnAddCategory.Visible = false;
-                btnAddItem.Visible = true;
-            };
-
-
-            LoadUserControl(categoriesUC);
-            btnAddCategory.Visible = true;
-
+            lblSubHeading.Text = "Inventory Management";
+            inventoryUC = new InventoryUserControl();
+            LoadUserControl(inventoryUC);
+            btnGenerateReport.Visible = true;
+            btnSaveChanges.Visible = true;
+            btnAddStock.Visible = true;
         }
 
         // -------------------Logo Picture Box Logix----------------------- \\
@@ -132,12 +117,12 @@ namespace Surf_Cafe.Forms
         // -------------------Panel Paint Events----------------------- \\
         private void pnlContent_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void pnlSidebar_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         //  -------------------Add Item Button Logic----------------------- \\
@@ -198,13 +183,13 @@ namespace Surf_Cafe.Forms
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
-             if (form.ShowDialog() == DialogResult.OK)
-             {
-                 if (pnlContent.Controls[0] is OrdersUserControl ordersControl)
-                 {
-                     ordersControl.AddOrderCard(form.newOrder);
-                 }
-             } 
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                if (pnlContent.Controls[0] is OrdersUserControl ordersControl)
+                {
+                    ordersControl.AddOrderCard(form.newOrder);
+                }
+            }
         }
 
         //  -------------------Add Category Button Click Event----------------------- \\
@@ -220,6 +205,52 @@ namespace Surf_Cafe.Forms
         {
             _loggedInUser = null;
             this.Close();
+        }
+
+        private void btnAddStock_Click(object sender, EventArgs e)
+        {
+            AddProductForm form = new AddProductForm();
+            form.StockAdded += () =>
+            {
+                inventoryUC?.LoadStockItems();
+            };
+
+            form.ShowDialog();
+        }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+
+            if (inventoryUC != null)
+            {
+                inventoryUC.GenerateStockReport();
+            }
+            else
+            {
+                MessageBox.Show("Inventory failed to load");
+            }
+        }
+
+       
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            HideButtons();
+            lblSubHeading.Text = "Orders";
+            ordersUC = new OrdersUserControl();
+
+            ordersUC.OrderSelected += (order) =>
+            {
+                var orderDetailsUC = new OrderDetailsUserControl(order);
+                lblSubHeading.Text = $"Order - {order.OrderName}";
+                LoadUserControl(orderDetailsUC);
+                btnAddOrder.Visible = false;
+                btnBack.Visible = true;
+            };
+
+            LoadUserControl(ordersUC);
+            btnAddOrder.Visible = true;
+
         }
     }
 }

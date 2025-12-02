@@ -39,19 +39,16 @@
             pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
             btnAddOrder = new Button();
-            btnRemoveOrder = new Button();
             btnSaveChanges = new Button();
             btnAddItem = new Button();
             pnlHeader = new Panel();
             pnlActions = new Panel();
-            btnAddOrder = new Button();
-            btnAddCategory = new Button();
-            btnSaveChanges = new Button();
+            btnAddStock = new Button();
             btnBack = new Button();
-            btnAddItem = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
+            btnGenerateReport = new Button();
             btnAddCategory = new Button();
             pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
@@ -72,7 +69,7 @@
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(234, 579);
+            pnlSidebar.Size = new Size(234, 608);
             pnlSidebar.TabIndex = 0;
             pnlSidebar.Paint += pnlSidebar_Paint;
             // 
@@ -85,9 +82,9 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = SystemColors.Window;
-            btnLogout.Image = Properties.Resources.logout;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleRight;
-            btnLogout.Location = new Point(0, 534);
+            btnLogout.Location = new Point(0, 563);
             btnLogout.Margin = new Padding(0);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(234, 45);
@@ -118,13 +115,13 @@
             btnMenu.FlatStyle = FlatStyle.Flat;
             btnMenu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMenu.ForeColor = SystemColors.Window;
-            btnMenu.Image = Properties.Resources.restaurant1;
+            btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
             btnMenu.ImageAlign = ContentAlignment.MiddleRight;
             btnMenu.Location = new Point(0, 118);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(234, 59);
             btnMenu.TabIndex = 2;
-            btnMenu.Text = "Menu";
+            btnMenu.Text = "Inventory";
             btnMenu.TextAlign = ContentAlignment.MiddleLeft;
             btnMenu.UseVisualStyleBackColor = false;
             btnMenu.Click += btnMenu_Click;
@@ -156,7 +153,7 @@
             btnCollapse.FlatStyle = FlatStyle.Flat;
             btnCollapse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCollapse.ForeColor = SystemColors.Window;
-            btnCollapse.Image = Properties.Resources.menu1;
+            btnCollapse.Image = (Image)resources.GetObject("btnCollapse.Image");
             btnCollapse.ImageAlign = ContentAlignment.MiddleRight;
             btnCollapse.Location = new Point(0, 0);
             btnCollapse.Name = "btnCollapse";
@@ -197,32 +194,6 @@
             pbLogo.TabStop = false;
             pbLogo.Click += pbLogo_Click;
             // 
-            // btnBack
-            // 
-            pnlHeader.BackColor = Color.FromArgb(14, 116, 144);
-            pnlHeader.Controls.Add(pnlActions);
-            pnlHeader.Controls.Add(lblSubHeading);
-            pnlHeader.Controls.Add(pnlMainHeading);
-            pnlHeader.Dock = DockStyle.Top;
-            pnlHeader.Location = new Point(234, 0);
-            pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(747, 131);
-            pnlHeader.TabIndex = 1;
-            // 
-            // pnlActions
-            // 
-            pnlActions.BackColor = Color.FromArgb(14, 116, 144);
-            pnlActions.Controls.Add(btnAddOrder);
-            pnlActions.Controls.Add(btnAddCategory);
-            pnlActions.Controls.Add(btnSaveChanges);
-            pnlActions.Controls.Add(btnBack);
-            pnlActions.Controls.Add(btnAddItem);
-            pnlActions.Dock = DockStyle.Right;
-            pnlActions.Location = new Point(238, 68);
-            pnlActions.Name = "pnlActions";
-            pnlActions.Size = new Size(509, 63);
-            pnlActions.TabIndex = 1;
-            // 
             // btnAddOrder
             // 
             btnAddOrder.AutoSize = true;
@@ -230,7 +201,7 @@
             btnAddOrder.FlatAppearance.BorderSize = 0;
             btnAddOrder.FlatStyle = FlatStyle.Flat;
             btnAddOrder.ForeColor = SystemColors.Window;
-            btnAddOrder.Location = new Point(344, 5);
+            btnAddOrder.Location = new Point(344, 6);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(153, 52);
             btnAddOrder.TabIndex = 0;
@@ -238,21 +209,6 @@
             btnAddOrder.UseVisualStyleBackColor = false;
             btnAddOrder.Visible = false;
             btnAddOrder.Click += btnAddOrder_Click;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
-            btnAddCategory.FlatAppearance.BorderSize = 0;
-            btnAddCategory.FlatStyle = FlatStyle.Flat;
-            btnAddCategory.ForeColor = SystemColors.Window;
-            btnAddCategory.Location = new Point(344, 5);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = false;
-            btnAddCategory.Visible = false;
-            btnAddCategory.Click += btnAddCategory_Click;
             // 
             // btnSaveChanges
             // 
@@ -269,21 +225,6 @@
             btnSaveChanges.Visible = false;
             btnSaveChanges.Click += btnSaveChanges_Click;
             // 
-            // btnBack
-            // 
-            btnBack.AutoSize = true;
-            btnBack.BackColor = Color.FromArgb(22, 78, 99);
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = SystemColors.Window;
-            btnBack.Location = new Point(344, 6);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(153, 52);
-            btnBack.TabIndex = 6;
-            btnBack.Text = "Back to all Orders";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Visible = false;
-            // 
             // btnAddItem
             // 
             btnAddItem.BackColor = Color.FromArgb(22, 78, 99);
@@ -298,6 +239,66 @@
             btnAddItem.UseVisualStyleBackColor = false;
             btnAddItem.Visible = false;
             btnAddItem.Click += btnAddItem_Click;
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(14, 116, 144);
+            pnlHeader.Controls.Add(pnlActions);
+            pnlHeader.Controls.Add(lblSubHeading);
+            pnlHeader.Controls.Add(pnlMainHeading);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(234, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(747, 131);
+            pnlHeader.TabIndex = 1;
+            // 
+            // pnlActions
+            // 
+            pnlActions.BackColor = Color.FromArgb(14, 116, 144);
+            pnlActions.Controls.Add(btnAddOrder);
+            pnlActions.Controls.Add(btnAddCategory);
+            pnlActions.Controls.Add(btnGenerateReport);
+            pnlActions.Controls.Add(btnAddStock);
+            pnlActions.Controls.Add(btnSaveChanges);
+            pnlActions.Controls.Add(btnBack);
+            pnlActions.Controls.Add(btnAddItem);
+            pnlActions.Dock = DockStyle.Right;
+            pnlActions.Location = new Point(238, 68);
+            pnlActions.Name = "pnlActions";
+            pnlActions.Size = new Size(509, 63);
+            pnlActions.TabIndex = 1;
+            // 
+            // btnAddStock
+            // 
+            btnAddStock.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddStock.BackgroundImageLayout = ImageLayout.None;
+            btnAddStock.FlatAppearance.BorderSize = 0;
+            btnAddStock.FlatStyle = FlatStyle.Flat;
+            btnAddStock.ForeColor = SystemColors.Window;
+            btnAddStock.Location = new Point(19, 6);
+            btnAddStock.Name = "btnAddStock";
+            btnAddStock.Size = new Size(153, 52);
+            btnAddStock.TabIndex = 3;
+            btnAddStock.Text = "+ Add Stock";
+            btnAddStock.UseVisualStyleBackColor = false;
+            btnAddStock.Visible = false;
+            btnAddStock.Click += btnAddStock_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.AutoSize = true;
+            btnBack.BackColor = Color.FromArgb(22, 78, 99);
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = SystemColors.Window;
+            btnBack.Location = new Point(344, 6);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(153, 52);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back to all Orders";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
+            btnBack.Click += btnBack_Click_1;
             // 
             // lblSubHeading
             // 
@@ -334,9 +335,28 @@
             lblMainHeading.Text = "Employee Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
             // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.BackColor = Color.FromArgb(22, 78, 99);
+            btnGenerateReport.FlatAppearance.BorderSize = 0;
+            btnGenerateReport.FlatStyle = FlatStyle.Flat;
+            btnGenerateReport.ForeColor = SystemColors.Window;
+            btnGenerateReport.Location = new Point(344, 5);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(153, 52);
+            btnGenerateReport.TabIndex = 5;
+            btnGenerateReport.Text = "Generate Report";
+            btnGenerateReport.UseVisualStyleBackColor = false;
+            btnGenerateReport.Visible = false;
+            btnGenerateReport.Click += btnGenerateReport_Click;
+            // 
             // btnAddCategory
             // 
-            btnAddCategory.Location = new Point(344, 8);
+            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddCategory.FlatAppearance.BorderSize = 0;
+            btnAddCategory.FlatStyle = FlatStyle.Flat;
+            btnAddCategory.ForeColor = SystemColors.Window;
+            btnAddCategory.Location = new Point(344, 6);
             btnAddCategory.Name = "btnAddCategory";
             btnAddCategory.Size = new Size(153, 52);
             btnAddCategory.TabIndex = 1;
@@ -350,7 +370,7 @@
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(747, 448);
+            pnlContent.Size = new Size(747, 477);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -358,13 +378,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 579);
+            ClientSize = new Size(981, 608);
             Controls.Add(pnlContent);
             Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmployeeDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeDashboard";
+            WindowState = FormWindowState.Maximized;
             Load += EmployeeDashboardForm_Load;
             pnlSidebar.ResumeLayout(false);
             pnlMenuButtons.ResumeLayout(false);
