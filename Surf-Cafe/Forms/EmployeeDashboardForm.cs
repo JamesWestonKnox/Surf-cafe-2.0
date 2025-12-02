@@ -255,6 +255,7 @@ namespace Surf_Cafe.Forms
 
             LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
+            btnBack2.Visible = false;
 
         }
 
