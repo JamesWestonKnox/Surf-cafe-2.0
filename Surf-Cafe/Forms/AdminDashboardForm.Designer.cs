@@ -280,9 +280,9 @@
             pnlActions.BackColor = Color.FromArgb(14, 116, 144);
             pnlActions.Controls.Add(btnGenerateReport);
             pnlActions.Controls.Add(btnAddEmployee);
+            pnlActions.Controls.Add(btnAddCategory);
             pnlActions.Controls.Add(btnAddOrder);
             pnlActions.Controls.Add(btnAddStock);
-            pnlActions.Controls.Add(btnAddCategory);
             pnlActions.Controls.Add(btnSaveChanges);
             pnlActions.Controls.Add(btnBack);
             pnlActions.Controls.Add(btnAddItem);
@@ -298,7 +298,7 @@
             btnGenerateReport.FlatAppearance.BorderSize = 0;
             btnGenerateReport.FlatStyle = FlatStyle.Flat;
             btnGenerateReport.ForeColor = SystemColors.Window;
-            btnGenerateReport.Location = new Point(344, 5);
+            btnGenerateReport.Location = new Point(344, 6);
             btnGenerateReport.Name = "btnGenerateReport";
             btnGenerateReport.Size = new Size(153, 52);
             btnGenerateReport.TabIndex = 4;
@@ -313,7 +313,7 @@
             btnAddEmployee.FlatAppearance.BorderSize = 0;
             btnAddEmployee.FlatStyle = FlatStyle.Flat;
             btnAddEmployee.ForeColor = SystemColors.Window;
-            btnAddEmployee.Location = new Point(344, 5);
+            btnAddEmployee.Location = new Point(344, 6);
             btnAddEmployee.Name = "btnAddEmployee";
             btnAddEmployee.Size = new Size(153, 52);
             btnAddEmployee.TabIndex = 5;
@@ -329,7 +329,7 @@
             btnAddOrder.FlatAppearance.BorderSize = 0;
             btnAddOrder.FlatStyle = FlatStyle.Flat;
             btnAddOrder.ForeColor = SystemColors.Window;
-            btnAddOrder.Location = new Point(344, 5);
+            btnAddOrder.Location = new Point(344, 6);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(153, 52);
             btnAddOrder.TabIndex = 0;
@@ -360,7 +360,7 @@
             btnAddCategory.FlatAppearance.BorderSize = 0;
             btnAddCategory.FlatStyle = FlatStyle.Flat;
             btnAddCategory.ForeColor = SystemColors.Window;
-            btnAddCategory.Location = new Point(344, 5);
+            btnAddCategory.Location = new Point(344, 6);
             btnAddCategory.Name = "btnAddCategory";
             btnAddCategory.Size = new Size(153, 52);
             btnAddCategory.TabIndex = 1;
@@ -398,6 +398,7 @@
             btnBack.Text = "Back to all Orders";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Visible = false;
+            btnBack.Click += btnBack_Click;
             // 
             // btnAddItem
             // 

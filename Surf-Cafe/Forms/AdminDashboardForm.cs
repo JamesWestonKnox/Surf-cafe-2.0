@@ -326,5 +326,25 @@ namespace Surf_Cafe.Forms
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HideButtons();
+            lblSubHeading.Text = "Orders";
+            ordersUC = new OrdersUserControl();
+
+            ordersUC.OrderSelected += (order) =>
+            {
+                var orderDetailsUC = new OrderDetailsUserControl(order);
+                lblSubHeading.Text = $"Order - {order.OrderName}";
+                LoadUserControl(orderDetailsUC);
+                btnAddOrder.Visible = false;
+                btnBack.Visible = true;
+            };
+
+            LoadUserControl(ordersUC);
+            btnAddOrder.Visible = true;
+
+        }
     }
 }

@@ -191,7 +191,10 @@ namespace Surf_Cafe.Forms
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            PaymentForm paymentForm = new PaymentForm();
+            using var db = new DBContext();
+            var order = db.Orders.First(o => o.OrderID == _order.OrderID);
+
+            PaymentForm paymentForm = new PaymentForm(order);
             paymentForm.ShowDialog();
         }
 
