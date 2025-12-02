@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             lblUser = new Label();
-            lblRole = new Label();
             SuspendLayout();
             // 
             // lblUser
@@ -44,19 +43,6 @@
             lblUser.TabIndex = 0;
             lblUser.Text = "Set To Username";
             // 
-            // lblRole
-            // 
-            lblRole.AutoSize = true;
-            lblRole.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRole.ForeColor = SystemColors.Window;
-            lblRole.Location = new Point(25, 74);
-            lblRole.Margin = new Padding(3, 20, 3, 0);
-            lblRole.Name = "lblRole";
-            lblRole.Padding = new Padding(20);
-            lblRole.Size = new Size(194, 77);
-            lblRole.TabIndex = 1;
-            lblRole.Text = "Set To role";
-            // 
             // UserCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -64,10 +50,9 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(22, 78, 99);
-            Controls.Add(lblRole);
             Controls.Add(lblUser);
             Name = "UserCard";
-            Size = new Size(298, 151);
+            Size = new Size(298, 97);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -75,6 +60,5 @@
         #endregion
 
         private Label lblUser;
-        private Label lblRole;
     }
 }

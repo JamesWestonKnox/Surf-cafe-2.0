@@ -1,14 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Surf_Cafe.Database;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Surf_Cafe.Database;
 
 namespace Surf_Cafe.Forms
 {
@@ -37,7 +27,6 @@ namespace Surf_Cafe.Forms
                 UserCard card = new UserCard();
                 card.UserID = employee.UserID;
                 card.Username = employee.Username;
-                card.Role = employee.Role.ToString();
                 card.UserClicked += (id) => OnUserClicked(id);
 
                 //Adding the employee card to the flow layout panel
@@ -64,7 +53,7 @@ namespace Surf_Cafe.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddEmployee_Click(object sender, EventArgs e) 
+        private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployeeForm form = new AddEmployeeForm();
 

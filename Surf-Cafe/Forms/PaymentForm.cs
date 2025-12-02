@@ -32,11 +32,12 @@ namespace Surf_Cafe.Forms
         }
 
         /// <summary>
-        /// Ensures tip text box allows only numbers
         /// 
+        /// Ensures tip text box allows only numbers
+        ///
         /// ChatGpt Generated method
         /// Reference:
-        /// 
+        /// Available at: https://chat.openai.com
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

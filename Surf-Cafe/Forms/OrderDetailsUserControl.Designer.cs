@@ -71,7 +71,7 @@
             btnPay.ForeColor = SystemColors.Window;
             btnPay.Location = new Point(0, 577);
             btnPay.Name = "btnPay";
-            btnPay.Size = new Size(369, 39);
+            btnPay.Size = new Size(451, 39);
             btnPay.TabIndex = 2;
             btnPay.Text = "Payment";
             btnPay.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@
             btnLoyalty.ForeColor = SystemColors.Window;
             btnLoyalty.Location = new Point(0, 538);
             btnLoyalty.Name = "btnLoyalty";
-            btnLoyalty.Size = new Size(369, 39);
+            btnLoyalty.Size = new Size(451, 39);
             btnLoyalty.TabIndex = 0;
             btnLoyalty.Text = "Loyalty Points";
             btnLoyalty.UseVisualStyleBackColor = false;
@@ -114,7 +114,7 @@
             splitContainer1.Panel2.Controls.Add(btnPay);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1189, 616);
-            splitContainer1.SplitterDistance = 816;
+            splitContainer1.SplitterDistance = 734;
             splitContainer1.TabIndex = 4;
             // 
             // panel1
@@ -128,7 +128,7 @@
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 450);
             panel1.Name = "panel1";
-            panel1.Size = new Size(369, 88);
+            panel1.Size = new Size(451, 88);
             panel1.TabIndex = 5;
             // 
             // label1
@@ -153,7 +153,7 @@
             tbOrderTotal.Location = new Point(91, 60);
             tbOrderTotal.Name = "tbOrderTotal";
             tbOrderTotal.ReadOnly = true;
-            tbOrderTotal.Size = new Size(278, 29);
+            tbOrderTotal.Size = new Size(360, 29);
             tbOrderTotal.TabIndex = 10;
             // 
             // tbSubTotal
@@ -165,7 +165,7 @@
             tbSubTotal.Location = new Point(91, 4);
             tbSubTotal.Name = "tbSubTotal";
             tbSubTotal.ReadOnly = true;
-            tbSubTotal.Size = new Size(278, 29);
+            tbSubTotal.Size = new Size(360, 29);
             tbSubTotal.TabIndex = 8;
             tbSubTotal.TextChanged += tbSubTotal_TextChanged;
             // 
@@ -204,7 +204,7 @@
             tbVatAmount.Location = new Point(91, 33);
             tbVatAmount.Name = "tbVatAmount";
             tbVatAmount.ReadOnly = true;
-            tbVatAmount.Size = new Size(278, 29);
+            tbVatAmount.Size = new Size(360, 29);
             tbVatAmount.TabIndex = 9;
             tbVatAmount.TextChanged += tbVatAmount_TextChanged;
             // 
@@ -251,7 +251,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.ScrollBars = ScrollBars.Vertical;
-            dataGridView1.Size = new Size(369, 538);
+            dataGridView1.Size = new Size(451, 538);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -260,6 +260,7 @@
             Product.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Product.DefaultCellStyle = dataGridViewCellStyle2;
+            Product.FillWeight = 120F;
             Product.HeaderText = "Product";
             Product.Name = "Product";
             Product.ReadOnly = true;
@@ -269,10 +270,12 @@
             // Quantity
             // 
             Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.SelectionBackColor = Color.White;
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             Quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            Quantity.FillWeight = 70F;
             Quantity.HeaderText = "Quantity";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
@@ -282,10 +285,12 @@
             // Price
             // 
             Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle4.SelectionBackColor = Color.White;
             dataGridViewCellStyle4.SelectionForeColor = Color.Black;
             Price.DefaultCellStyle = dataGridViewCellStyle4;
+            Price.FillWeight = 70F;
             Price.HeaderText = "Price";
             Price.Name = "Price";
             Price.ReadOnly = true;
@@ -335,6 +340,7 @@
             dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(22, 78, 99);
             dataGridViewCellStyle7.SelectionForeColor = Color.White;
             Delete.DefaultCellStyle = dataGridViewCellStyle7;
+            Delete.FillWeight = 80F;
             Delete.FlatStyle = FlatStyle.Flat;
             Delete.HeaderText = "Delete";
             Delete.Name = "Delete";
