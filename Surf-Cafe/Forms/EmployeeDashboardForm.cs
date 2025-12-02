@@ -64,12 +64,18 @@ namespace Surf_Cafe.Forms
                 // Expand
                 pnlSidebar.Width = expandedWidth;
                 btnCollapse.Text = "Collapse";
+                btnOrders.Text = "Orders";
+                btnMenu.Text = "Menu";
+                btnLogout.Text = "Logout";
             }
             else
             {
                 // Collapse
                 pnlSidebar.Width = collapsedWidth;
-                btnCollapse.Text = "Open";
+                btnCollapse.Text = "";
+                btnOrders.Text = "";
+                btnMenu.Text = "";
+                btnLogout.Text = "";
             }
         }
 
@@ -122,6 +128,16 @@ namespace Surf_Cafe.Forms
         private void lblSubHeading_Click(object sender, EventArgs e)
         {
 
+        }
+        // -------------------Panel Paint Events----------------------- \\
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
         //  -------------------Add Item Button Logic----------------------- \\
