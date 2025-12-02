@@ -11,6 +11,7 @@ namespace Surf_Cafe.Forms
         {
             InitializeComponent();
             _order = order;
+            GetOrderTotals();
             PopulateDataGridView();
             LoadMenu();
         }
@@ -83,6 +84,8 @@ namespace Surf_Cafe.Forms
             }
 
             db.SaveChanges();
+            // Recalculate totals
+            GetOrderTotals();
             // calls method to populate the grid to display order items
             PopulateDataGridView();
 
@@ -152,8 +155,34 @@ namespace Surf_Cafe.Forms
             }
             // saves database changes
             db.SaveChanges();
+            // Recalculate totals
+            GetOrderTotals();
             // repopulates data grid view
             PopulateDataGridView();
+        }
+
+        /// <summary>
+        /// Method that fetches all order items into a list and calcualtes totals, then populates order model and total text boxes.
+        /// </summary>
+        private void GetOrderTotals()
+        {
+            using var db = new DBContext();
+
+            var orderItems = db.OrderItems.Where(i => i.OrderID == _order.OrderID).Include(i => i.MenuItem).ToList();
+            var order = db.Orders.First(o => o.OrderID == _order.OrderID);
+
+            decimal subTotal = orderItems.Sum(i => i.ItemSubTotal);
+            decimal vatAmount = subTotal * 0.15m;
+            decimal orderTotal = subTotal + vatAmount;
+
+            order.VATAmount = vatAmount;
+            order.OrderTotal = orderTotal;
+
+            db.SaveChanges();
+
+            tbSubTotal.Text = $"   R {subTotal:0.00}";
+            tbVatAmount.Text = $"   R {vatAmount:0.00}";
+            tbOrderTotal.Text = $"   R {orderTotal:0.00}";
         }
         private void OrderDetailsUserControl_Load(object sender, EventArgs e)
         {
@@ -196,6 +225,41 @@ namespace Surf_Cafe.Forms
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSubTotal_TextChanged(object sender, EventArgs e)
         {
 
         }
