@@ -52,6 +52,7 @@
             dgvStock.Dock = DockStyle.Fill;
             dgvStock.Location = new Point(0, 0);
             dgvStock.Name = "dgvStock";
+            dgvStock.RowHeadersVisible = false;
             dgvStock.Size = new Size(840, 554);
             dgvStock.TabIndex = 0;
             // 

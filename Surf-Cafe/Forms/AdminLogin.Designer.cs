@@ -68,7 +68,7 @@ namespace Surf_Cafe.Forms
             LoginBtn.FlatAppearance.BorderSize = 0;
             LoginBtn.FlatStyle = FlatStyle.Flat;
             LoginBtn.ForeColor = SystemColors.Window;
-            LoginBtn.Location = new Point(403, 356);
+            LoginBtn.Location = new Point(409, 356);
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(75, 37);
             LoginBtn.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace Surf_Cafe.Forms
             CancelBtn.FlatAppearance.BorderSize = 0;
             CancelBtn.FlatStyle = FlatStyle.Flat;
             CancelBtn.ForeColor = SystemColors.Window;
-            CancelBtn.Location = new Point(311, 356);
+            CancelBtn.Location = new Point(317, 356);
             CancelBtn.Margin = new Padding(0);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(75, 37);
