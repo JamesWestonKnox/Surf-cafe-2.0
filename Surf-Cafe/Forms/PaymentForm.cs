@@ -125,5 +125,10 @@ namespace Surf_Cafe.Forms
         {
             UpdatePaymentFormTotal();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

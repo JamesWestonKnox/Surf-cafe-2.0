@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEmployeeForm));
             lblEmployee = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -181,11 +182,13 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(lblEmployee);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "EditEmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EditEmployeeForm";
+            Text = "Edit Employee";
             Load += EditEmployeeForm_Load;
             ResumeLayout(false);
             PerformLayout();

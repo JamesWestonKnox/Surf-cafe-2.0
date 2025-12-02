@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -173,9 +174,11 @@
             // 
             // AddProductForm
             // 
+            AcceptButton = btnAdd;
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(14, 116, 144);
+            CancelButton = btnCancel;
             ClientSize = new Size(381, 489);
             Controls.Add(label5);
             Controls.Add(numStartQuant);
@@ -189,10 +192,14 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 15.75F);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 6, 5, 6);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AddProductForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddProductForm";
+            Text = "Add Stock Item";
             ((System.ComponentModel.ISupportInitialize)numThreshold).EndInit();
             ((System.ComponentModel.ISupportInitialize)numStartQuant).EndInit();
             ResumeLayout(false);
