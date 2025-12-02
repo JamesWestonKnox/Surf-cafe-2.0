@@ -23,36 +23,10 @@ namespace Surf_Cafe.Forms
         public InventoryUserControl()
         {
             InitializeComponent();
-            SetUpDataGridView();
             LoadStockItems();
         }
 
-        public void SetUpDataGridView()
-        {
-            dgvStock.Columns.Add("StockItemID", "ID");
-            dgvStock.Columns.Add("StockItemName", "Item Name");
-            dgvStock.Columns.Add("StartOfDayQuantity", "Start of Day Qty");
-            dgvStock.Columns.Add("EndOfDayQuantity", "End of Day Qty");
-            dgvStock.Columns.Add("Unit", "Unit");
-            dgvStock.Columns.Add("Threshold", "Threshold");
-            dgvStock.Columns.Add("LastUpdated", "Last Updated");
-            dgvStock.Columns.Add("Status", "Status");
-
-            dgvStock.Columns["StockItemID"].Visible = false;
-
-            foreach (DataGridViewColumn col in dgvStock.Columns)
-            {
-                if (col.Name != "EndOfDayQuantity")
-                {
-                    col.ReadOnly = true;
-                }
-            }
-
-            dgvStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-        }
-
+       
         public void LoadStockItems()
         {
             dgvStock.Rows.Clear();
@@ -62,6 +36,7 @@ namespace Surf_Cafe.Forms
 
             foreach (var stock in stockList)
             {
+                string status = stock.EndOfDayQuantity < stock.Threshold ? "LOW" : "OK";
                 dgvStock.Rows.Add(
                     stock.StockItemID,
                     stock.StockItemName,
@@ -69,7 +44,8 @@ namespace Surf_Cafe.Forms
                     stock.EndOfDayQuantity,
                     stock.Unit,
                     stock.Threshold,
-                    stock.LastUpdated.ToString("g")
+                    stock.LastUpdated.ToString("g"),
+                    status
                     );
                 
                 var addedRow = dgvStock.Rows[dgvStock.Rows.Count - 1];
@@ -107,7 +83,6 @@ namespace Surf_Cafe.Forms
             MessageBox.Show("Stock Quantities Updated!");
             LoadStockItems();
 
-
         }
 
         public void GenerateStockReport()
@@ -137,13 +112,14 @@ namespace Surf_Cafe.Forms
                 .SetTextAlignment(TextAlignment.CENTER)
                 .SetFontSize(12));
 
-            Table table = new Table(5, true);
+            Table table = new Table(6, true);
             table.AddHeaderCell("Item name");
             table.AddHeaderCell("Start of day Quantity");
             table.AddHeaderCell("End of day Quantity");
             table.AddHeaderCell("Unit");
             table.AddHeaderCell("Threshold");
-            
+            table.AddHeaderCell("Status");
+
             foreach (DataGridViewRow row in dgvStock.Rows)
             {
                 if (row.IsNewRow)
@@ -155,6 +131,7 @@ namespace Surf_Cafe.Forms
                 table.AddCell(row.Cells["EndOfDayQuantity"].Value?.ToString() ?? "");
                 table.AddCell(row.Cells["Unit"].Value?.ToString() ?? "");
                 table.AddCell(row.Cells["Threshold"].Value?.ToString() ?? "");
+                table.AddCell(row.Cells["Status"].Value?.ToString() ?? "");
 
             }
             document.Add(table);
