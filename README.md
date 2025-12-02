@@ -20,9 +20,9 @@ note: The admin has full access to the entirity of the Point of sales system and
 # Employee Dashboard
 Oder Processing - The Exact same capabilities as the admin dashboard and when an order is created it is synced to both pages so that both Employees and an Admin is capable of viewing it 
 
-Menu: The Exact same capabilities as before in the AdminDashboard and it is also linked so that when a menu item is added it is added on both ends and capable of editing from both ends. 
-
+Inventory Control: The ability to monitor stock levels and add thresholds to get notified when they are running low 
 # How to run the project
+
 
 You will need access to .NET Framework, preferable 8.0 
 
