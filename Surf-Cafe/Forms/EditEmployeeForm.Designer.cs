@@ -104,7 +104,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 14.25F);
             btnDelete.ForeColor = SystemColors.Window;
-            btnDelete.Location = new Point(147, 294);
+            btnDelete.Location = new Point(170, 294);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(85, 38);
             btnDelete.TabIndex = 5;
@@ -119,7 +119,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 14.25F);
             btnSave.ForeColor = SystemColors.Window;
-            btnSave.Location = new Point(238, 294);
+            btnSave.Location = new Point(280, 294);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(81, 38);
             btnSave.TabIndex = 6;
@@ -132,7 +132,7 @@
             txtUsername.Font = new Font("Segoe UI", 12F);
             txtUsername.Location = new Point(61, 100);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(258, 29);
+            txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 7;
             // 
             // txtPassword
@@ -140,7 +140,7 @@
             txtPassword.Font = new Font("Segoe UI", 12F);
             txtPassword.Location = new Point(61, 239);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(258, 29);
+            txtPassword.Size = new Size(300, 29);
             txtPassword.TabIndex = 8;
             // 
             // cmbRole
@@ -150,7 +150,7 @@
             cmbRole.Items.AddRange(new object[] { "Admin", "Staff" });
             cmbRole.Location = new Point(61, 170);
             cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(258, 29);
+            cmbRole.Size = new Size(300, 29);
             cmbRole.TabIndex = 9;
             // 
             // label1
@@ -169,7 +169,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(14, 116, 144);
-            ClientSize = new Size(373, 384);
+            ClientSize = new Size(418, 373);
             Controls.Add(label1);
             Controls.Add(cmbRole);
             Controls.Add(txtPassword);

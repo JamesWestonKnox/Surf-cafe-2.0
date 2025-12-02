@@ -32,24 +32,23 @@
             pnlSidebar = new Panel();
             pnlMenuButtons = new Panel();
             btnMenu = new Button();
-            btnBack = new Button();
             btnOrders = new Button();
             btnCollapse = new Button();
             btnLogout = new Button();
             pnlLogo = new Panel();
             pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
+            btnBack = new Button();
             btnAddOrder = new Button();
             btnRemoveOrder = new Button();
             btnSaveChanges = new Button();
             btnAddItem = new Button();
             pnlHeader = new Panel();
             pnlActions = new Panel();
-            btnAddOrder = new Button();
             lblSubHeading = new Label();
             pnlMainHeading = new Panel();
-            btnAddCategory = new Button();
             lblMainHeading = new Label();
+            btnAddCategory = new Button();
             pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
@@ -157,6 +156,58 @@
             pbLogo.TabStop = false;
             pbLogo.Click += pbLogo_Click;
             // 
+            // btnBack
+            // 
+            btnBack.AutoSize = true;
+            btnBack.Location = new Point(344, 6);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(153, 52);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back to all Orders";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Visible = false;
+            // 
+            // btnAddOrder
+            // 
+            btnAddOrder.AutoSize = true;
+            btnAddOrder.Location = new Point(344, 6);
+            btnAddOrder.Name = "btnAddOrder";
+            btnAddOrder.Size = new Size(153, 52);
+            btnAddOrder.TabIndex = 0;
+            btnAddOrder.Text = "+ New Order";
+            btnAddOrder.UseVisualStyleBackColor = true;
+            btnAddOrder.Visible = false;
+            btnAddOrder.Click += btnAddOrder_Click;
+            // 
+            // btnRemoveOrder
+            // 
+            btnRemoveOrder.Location = new Point(0, 0);
+            btnRemoveOrder.Name = "btnRemoveOrder";
+            btnRemoveOrder.Size = new Size(75, 23);
+            btnRemoveOrder.TabIndex = 0;
+            // 
+            // btnSaveChanges
+            // 
+            btnSaveChanges.Location = new Point(178, 6);
+            btnSaveChanges.Name = "btnSaveChanges";
+            btnSaveChanges.Size = new Size(153, 52);
+            btnSaveChanges.TabIndex = 3;
+            btnSaveChanges.Text = "Save Changes";
+            btnSaveChanges.UseVisualStyleBackColor = true;
+            btnSaveChanges.Visible = false;
+            btnSaveChanges.Click += btnSaveChanges_Click;
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(344, 8);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
+            // 
             // pnlHeader
             // 
             pnlHeader.Controls.Add(pnlActions);
@@ -177,69 +228,13 @@
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 2;
             // 
-            // btnAddOrder
-            // 
-            btnAddOrder.AutoSize = true;
-            btnAddOrder.Location = new Point(344, 6);
-            btnAddOrder.Name = "btnAddOrder";
-            btnAddOrder.Size = new Size(153, 52);
-            btnAddOrder.TabIndex = 0;
-            btnAddOrder.Text = "+ New Order";
-            btnAddOrder.UseVisualStyleBackColor = true;
-            btnAddOrder.Visible = false;
-            btnAddOrder.Click += btnAddOrder_Click;
-            // 
-            // btnAddItem
-            // 
-            btnAddItem.Location = new Point(344, 8);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(153, 52);
-            btnAddItem.TabIndex = 5;
-            btnAddItem.Text = "+ Add Item";
-            btnAddItem.UseVisualStyleBackColor = true;
-            btnAddItem.Visible = false;
-            btnAddItem.Click += btnAddItem_Click;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.Location = new Point(344, 8);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = true;
-            btnAddCategory.Visible = false;
-            btnAddCategory.Click += btnAddCategory_Click;
-            // 
-            // btnBack
-            // 
-            btnBack.AutoSize = true;
-            btnBack.Location = new Point(344, 6);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(153, 52);
-            btnBack.TabIndex = 6;
-            btnBack.Text = "Back to all Orders";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Visible = false;
-            // 
-            // btnSaveChanges
-            // 
-            btnSaveChanges.Location = new Point(178, 6);
-            btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(153, 52);
-            btnSaveChanges.TabIndex = 3;
-            btnSaveChanges.Text = "Save Changes";
-            btnSaveChanges.UseVisualStyleBackColor = true;
-            btnSaveChanges.Visible = false;
-            btnSaveChanges.Click += btnSaveChanges_Click;
-            // 
             // lblSubHeading
             // 
             lblSubHeading.AutoSize = true;
             lblSubHeading.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubHeading.Location = new Point(0, 71);
             lblSubHeading.Name = "lblSubHeading";
-            lblSubHeading.Size = new Size(209, 50);
+            lblSubHeading.Size = new Size(202, 50);
             lblSubHeading.TabIndex = 1;
             lblSubHeading.Text = "Dashboard";
             lblSubHeading.TextAlign = ContentAlignment.MiddleCenter;
@@ -264,6 +259,17 @@
             lblMainHeading.TabIndex = 0;
             lblMainHeading.Text = "Employee Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
+            // 
+            // btnAddCategory
+            // 
+            btnAddCategory.Location = new Point(344, 8);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            btnAddCategory.Visible = false;
+            btnAddCategory.Click += btnAddCategory_Click;
             // 
             // pnlContent
             // 
