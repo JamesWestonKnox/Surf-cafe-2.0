@@ -45,9 +45,9 @@
             pnlActions = new Panel();
             btnGenerateReport = new Button();
             btnAddEmployee = new Button();
+            btnAddCategory = new Button();
             btnAddOrder = new Button();
             btnAddStock = new Button();
-            btnAddCategory = new Button();
             btnSaveChanges = new Button();
             btnBack = new Button();
             btnAddItem = new Button();
@@ -322,6 +322,21 @@
             btnAddEmployee.Visible = false;
             btnAddEmployee.Click += btnAddEmployee_Click;
             // 
+            // btnAddCategory
+            // 
+            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
+            btnAddCategory.FlatAppearance.BorderSize = 0;
+            btnAddCategory.FlatStyle = FlatStyle.Flat;
+            btnAddCategory.ForeColor = SystemColors.Window;
+            btnAddCategory.Location = new Point(344, 6);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = false;
+            btnAddCategory.Visible = false;
+            btnAddCategory.Click += btnAddCategory_Click;
+            // 
             // btnAddOrder
             // 
             btnAddOrder.AutoSize = true;
@@ -353,21 +368,6 @@
             btnAddStock.UseVisualStyleBackColor = false;
             btnAddStock.Visible = false;
             btnAddStock.Click += btnAddStock_Click;
-            // 
-            // btnAddCategory
-            // 
-            btnAddCategory.BackColor = Color.FromArgb(22, 78, 99);
-            btnAddCategory.FlatAppearance.BorderSize = 0;
-            btnAddCategory.FlatStyle = FlatStyle.Flat;
-            btnAddCategory.ForeColor = SystemColors.Window;
-            btnAddCategory.Location = new Point(344, 6);
-            btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(153, 52);
-            btnAddCategory.TabIndex = 1;
-            btnAddCategory.Text = "+ Add Category";
-            btnAddCategory.UseVisualStyleBackColor = false;
-            btnAddCategory.Visible = false;
-            btnAddCategory.Click += btnAddCategory_Click;
             // 
             // btnSaveChanges
             // 
