@@ -20,6 +20,10 @@ namespace Surf_Cafe.Forms
             this.Click += ProductCard_Click;
             lblProductName.Click += ProductCard_Click;
         }
+
+        /// <summary>
+        /// Setting the label of the card to the productname
+        /// </summary>
         public string ProductName
         {
             get => lblProductName.Text;
@@ -30,6 +34,7 @@ namespace Surf_Cafe.Forms
 
         public event Action<int> ProductClicked;
 
+        //Calling the productClicked event
         private void ProductCard_Click(object sender, EventArgs e)
         {
             ProductClicked?.Invoke(ProductID);
