@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboardForm));
             pnlSidebar = new Panel();
+            btnLogout = new Button();
             pnlMenuButtons = new Panel();
             btnReports = new Button();
             btnEmployees = new Button();
@@ -37,16 +38,15 @@
             btnMenu = new Button();
             btnOrders = new Button();
             btnCollapse = new Button();
-            btnLogout = new Button();
             pnlLogo = new Panel();
             pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
             pnlHeader = new Panel();
             pnlActions = new Panel();
-            btnBack = new Button();
-            btnAddStock = new Button();
-            btnAddOrder = new Button();
             btnAddItem = new Button();
+            btnBack = new Button();
+            btnAddOrder = new Button();
+            btnAddStock = new Button();
             btnGenerateReport = new Button();
             btnAddEmployee = new Button();
             btnAddCategory = new Button();
@@ -66,8 +66,9 @@
             // 
             // pnlSidebar
             // 
-            pnlSidebar.Controls.Add(pnlMenuButtons);
+            pnlSidebar.BackColor = Color.FromArgb(22, 78, 99);
             pnlSidebar.Controls.Add(btnLogout);
+            pnlSidebar.Controls.Add(pnlMenuButtons);
             pnlSidebar.Controls.Add(pnlLogo);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
@@ -76,8 +77,30 @@
             pnlSidebar.TabIndex = 0;
             pnlSidebar.Paint += pnlSidebar_Paint;
             // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.FromArgb(22, 78, 99);
+            btnLogout.BackgroundImageLayout = ImageLayout.None;
+            btnLogout.Dock = DockStyle.Bottom;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = SystemColors.Window;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = ContentAlignment.MiddleRight;
+            btnLogout.Location = new Point(0, 538);
+            btnLogout.Margin = new Padding(0);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(234, 45);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Logout";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // pnlMenuButtons
             // 
+            pnlMenuButtons.BackgroundImageLayout = ImageLayout.None;
             pnlMenuButtons.Controls.Add(btnReports);
             pnlMenuButtons.Controls.Add(btnEmployees);
             pnlMenuButtons.Controls.Add(btnInventory);
@@ -86,87 +109,129 @@
             pnlMenuButtons.Controls.Add(btnCollapse);
             pnlMenuButtons.Dock = DockStyle.Top;
             pnlMenuButtons.Location = new Point(0, 131);
+            pnlMenuButtons.Margin = new Padding(0);
             pnlMenuButtons.Name = "pnlMenuButtons";
             pnlMenuButtons.Size = new Size(234, 364);
             pnlMenuButtons.TabIndex = 8;
             // 
             // btnReports
             // 
+            btnReports.BackColor = Color.FromArgb(22, 78, 99);
+            btnReports.BackgroundImageLayout = ImageLayout.None;
             btnReports.Dock = DockStyle.Top;
+            btnReports.FlatAppearance.BorderSize = 0;
+            btnReports.FlatStyle = FlatStyle.Flat;
+            btnReports.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReports.ForeColor = SystemColors.Window;
+            btnReports.Image = (Image)resources.GetObject("btnReports.Image");
+            btnReports.ImageAlign = ContentAlignment.MiddleRight;
             btnReports.Location = new Point(0, 295);
+            btnReports.Margin = new Padding(0);
             btnReports.Name = "btnReports";
             btnReports.Size = new Size(234, 59);
             btnReports.TabIndex = 5;
+            btnReports.TabStop = false;
             btnReports.Text = "Reports";
-            btnReports.UseVisualStyleBackColor = true;
+            btnReports.TextAlign = ContentAlignment.MiddleLeft;
+            btnReports.UseMnemonic = false;
+            btnReports.UseVisualStyleBackColor = false;
             btnReports.Click += btnReports_Click;
             // 
             // btnEmployees
             // 
+            btnEmployees.BackColor = Color.FromArgb(22, 78, 99);
             btnEmployees.Dock = DockStyle.Top;
+            btnEmployees.FlatAppearance.BorderSize = 0;
+            btnEmployees.FlatStyle = FlatStyle.Flat;
+            btnEmployees.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEmployees.ForeColor = SystemColors.Window;
+            btnEmployees.Image = (Image)resources.GetObject("btnEmployees.Image");
+            btnEmployees.ImageAlign = ContentAlignment.MiddleRight;
             btnEmployees.Location = new Point(0, 236);
             btnEmployees.Name = "btnEmployees";
             btnEmployees.Size = new Size(234, 59);
             btnEmployees.TabIndex = 4;
+            btnEmployees.TabStop = false;
             btnEmployees.Text = "Employees";
-            btnEmployees.UseVisualStyleBackColor = true;
+            btnEmployees.TextAlign = ContentAlignment.MiddleLeft;
+            btnEmployees.UseVisualStyleBackColor = false;
             btnEmployees.Click += btnEmployees_Click;
             // 
             // btnInventory
             // 
+            btnInventory.BackColor = Color.FromArgb(22, 78, 99);
             btnInventory.Dock = DockStyle.Top;
+            btnInventory.FlatAppearance.BorderSize = 0;
+            btnInventory.FlatStyle = FlatStyle.Flat;
+            btnInventory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInventory.ForeColor = SystemColors.Window;
+            btnInventory.Image = (Image)resources.GetObject("btnInventory.Image");
+            btnInventory.ImageAlign = ContentAlignment.MiddleRight;
             btnInventory.Location = new Point(0, 177);
             btnInventory.Name = "btnInventory";
             btnInventory.Size = new Size(234, 59);
             btnInventory.TabIndex = 3;
             btnInventory.Text = "Inventory";
-            btnInventory.UseVisualStyleBackColor = true;
+            btnInventory.TextAlign = ContentAlignment.MiddleLeft;
+            btnInventory.UseVisualStyleBackColor = false;
             btnInventory.Click += btnInventory_Click;
             // 
             // btnMenu
             // 
+            btnMenu.BackColor = Color.FromArgb(22, 78, 99);
             btnMenu.Dock = DockStyle.Top;
+            btnMenu.FlatAppearance.BorderSize = 0;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+            btnMenu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenu.ForeColor = SystemColors.Window;
+            btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
+            btnMenu.ImageAlign = ContentAlignment.MiddleRight;
             btnMenu.Location = new Point(0, 118);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(234, 59);
             btnMenu.TabIndex = 2;
             btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.TextAlign = ContentAlignment.MiddleLeft;
+            btnMenu.UseVisualStyleBackColor = false;
             btnMenu.Click += btnMenu_Click;
             // 
             // btnOrders
             // 
+            btnOrders.BackColor = Color.FromArgb(22, 78, 99);
             btnOrders.Dock = DockStyle.Top;
+            btnOrders.FlatAppearance.BorderSize = 0;
+            btnOrders.FlatStyle = FlatStyle.Flat;
+            btnOrders.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrders.ForeColor = SystemColors.Window;
+            btnOrders.Image = (Image)resources.GetObject("btnOrders.Image");
+            btnOrders.ImageAlign = ContentAlignment.MiddleRight;
             btnOrders.Location = new Point(0, 59);
             btnOrders.Name = "btnOrders";
             btnOrders.Size = new Size(234, 59);
             btnOrders.TabIndex = 1;
             btnOrders.Text = "Orders";
-            btnOrders.UseVisualStyleBackColor = true;
+            btnOrders.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrders.UseVisualStyleBackColor = false;
             btnOrders.Click += btnOrders_Click;
             // 
             // btnCollapse
             // 
+            btnCollapse.BackColor = Color.FromArgb(22, 78, 99);
             btnCollapse.Dock = DockStyle.Top;
+            btnCollapse.FlatAppearance.BorderSize = 0;
+            btnCollapse.FlatStyle = FlatStyle.Flat;
+            btnCollapse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCollapse.ForeColor = SystemColors.Window;
+            btnCollapse.Image = (Image)resources.GetObject("btnCollapse.Image");
             btnCollapse.ImageAlign = ContentAlignment.MiddleRight;
             btnCollapse.Location = new Point(0, 0);
             btnCollapse.Name = "btnCollapse";
             btnCollapse.Size = new Size(234, 59);
             btnCollapse.TabIndex = 0;
             btnCollapse.Text = "Collapse";
-            btnCollapse.UseVisualStyleBackColor = true;
+            btnCollapse.TextAlign = ContentAlignment.MiddleLeft;
+            btnCollapse.UseVisualStyleBackColor = false;
             btnCollapse.Click += btnCollapse_Click;
-            // 
-            // btnLogout
-            // 
-            btnLogout.Dock = DockStyle.Bottom;
-            btnLogout.Location = new Point(0, 538);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(234, 45);
-            btnLogout.TabIndex = 6;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
             // 
             // pnlLogo
             // 
@@ -187,7 +252,7 @@
             // 
             // pbLogo
             // 
-            pbLogo.BackColor = SystemColors.MenuHighlight;
+            pbLogo.BackColor = Color.FromArgb(22, 78, 99);
             pbLogo.Dock = DockStyle.Fill;
             pbLogo.Image = Properties.Resources.Surf_Cafe_logo1;
             pbLogo.Location = new Point(0, 0);
@@ -196,9 +261,11 @@
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pbLogo.TabIndex = 0;
             pbLogo.TabStop = false;
+            pbLogo.Click += pbLogo_Click;
             // 
             // pnlHeader
             // 
+            pnlHeader.BackColor = Color.FromArgb(14, 116, 144);
             pnlHeader.Controls.Add(pnlActions);
             pnlHeader.Controls.Add(lblSubHeading);
             pnlHeader.Controls.Add(pnlMainHeading);
@@ -210,6 +277,7 @@
             // 
             // pnlActions
             // 
+            pnlActions.BackColor = Color.FromArgb(14, 116, 144);
             pnlActions.Controls.Add(btnAddItem);
             pnlActions.Controls.Add(btnBack);
             pnlActions.Controls.Add(btnAddOrder);
@@ -224,6 +292,17 @@
             pnlActions.Size = new Size(509, 63);
             pnlActions.TabIndex = 1;
             // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(344, 8);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
+            // 
             // btnBack
             // 
             btnBack.AutoSize = true;
@@ -234,17 +313,6 @@
             btnBack.Text = "Back to all Orders";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Visible = false;
-            // 
-            // btnAddStock
-            // 
-            btnAddStock.Location = new Point(13, 6);
-            btnAddStock.Name = "btnAddStock";
-            btnAddStock.Size = new Size(153, 52);
-            btnAddStock.TabIndex = 2;
-            btnAddStock.Text = "+ Add Stock";
-            btnAddStock.UseVisualStyleBackColor = true;
-            btnAddStock.Visible = false;
-            btnAddStock.Click += btnAddStock_Click;
             // 
             // btnAddOrder
             // 
@@ -258,16 +326,16 @@
             btnAddOrder.Visible = false;
             btnAddOrder.Click += btnAddOrder_Click;
             // 
-            // btnAddItem
+            // btnAddStock
             // 
-            btnAddItem.Location = new Point(344, 8);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(153, 52);
-            btnAddItem.TabIndex = 5;
-            btnAddItem.Text = "+ Add Item";
-            btnAddItem.UseVisualStyleBackColor = true;
-            btnAddItem.Visible = false;
-            btnAddItem.Click += btnAddItem_Click;
+            btnAddStock.Location = new Point(13, 6);
+            btnAddStock.Name = "btnAddStock";
+            btnAddStock.Size = new Size(153, 52);
+            btnAddStock.TabIndex = 2;
+            btnAddStock.Text = "+ Add Stock";
+            btnAddStock.UseVisualStyleBackColor = true;
+            btnAddStock.Visible = false;
+            btnAddStock.Click += btnAddStock_Click;
             // 
             // btnGenerateReport
             // 
@@ -317,6 +385,7 @@
             // 
             lblSubHeading.AutoSize = true;
             lblSubHeading.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubHeading.ForeColor = SystemColors.Window;
             lblSubHeading.Location = new Point(0, 71);
             lblSubHeading.Name = "lblSubHeading";
             lblSubHeading.Size = new Size(415, 50);
@@ -336,8 +405,10 @@
             // 
             // lblMainHeading
             // 
+            lblMainHeading.BackColor = Color.FromArgb(14, 116, 144);
             lblMainHeading.Dock = DockStyle.Top;
             lblMainHeading.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMainHeading.ForeColor = SystemColors.Window;
             lblMainHeading.Location = new Point(0, 0);
             lblMainHeading.Name = "lblMainHeading";
             lblMainHeading.Size = new Size(939, 68);
@@ -390,10 +461,8 @@
         private Button btnInventory;
         private Button btnMenu;
         private Button btnOrders;
-        private Button btnCollapse;
         private Panel pnlHeader;
         private Panel pnlContent;
-        private Panel pnlMenuButtons;
         private Panel pnlLogo;
         private PictureBox pbLogo;
         private Panel pnlMainHeading;
@@ -409,5 +478,7 @@
         private Button btnAddCategory;
         private Button btnAddItem;
         private Button btnBack;
+        internal Panel pnlMenuButtons;
+        private Button btnCollapse;
     }
 }
