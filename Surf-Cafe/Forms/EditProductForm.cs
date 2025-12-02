@@ -21,10 +21,18 @@ namespace Surf_Cafe.Forms
             LoadProductDetails();
         }
 
+        /// <summary>
+        /// Loads the details of a specific product selected
+        /// </summary>
         private void LoadProductDetails()
         {
+            //Opening the database connection
             using var db = new DBContext();
+
+            //Finding the specific menu item selected
             var product = db.MenuItems.FirstOrDefault(p => p.MenuItemID == _productID);
+
+            //If the product exists populate the fields with the data from the database
             if (product != null)
             {
                 lblName.Text = product.Name;
@@ -33,14 +41,27 @@ namespace Surf_Cafe.Forms
                 txtPrice.Text = product.Price.ToString();
             }
         }
+
+        /// <summary>
+        /// Saves the changes made in the popup form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //Opens the database connection
             using var db = new DBContext();
+
+            //Finding the specific product selected
             var product = db.MenuItems.FirstOrDefault(p => p.MenuItemID == _productID);
+
+            //If product is not null set the product details to the new inputs
             if (product != null)
             {
                 product.Name = txtName.Text;
                 product.Description = txtDescription.Text;
+
+                //Validation ensuring correct input format and required fields are filled in
                 if (decimal.TryParse(txtPrice.Text, out decimal price))
                 {
                     product.Price = price;
@@ -50,22 +71,32 @@ namespace Surf_Cafe.Forms
                     MessageBox.Show("Enter a valid price");
                     return;
                 }
+
+                //Saving changes to the database
                 db.SaveChanges();
                 MessageBox.Show("Product updated successfully");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-
-
         }
 
+        /// <summary>
+        /// Deleting a product from the menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //Prompting the user if they are sure they want to delete the product
             var confirm = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+          
             if (confirm == DialogResult.Yes)
             {
+                //Opening database connection and finding the specific product
                 using var db = new DBContext();
                 var product = db.MenuItems.FirstOrDefault(p => p.MenuItemID == _productID);
+
+                //Deleting the product and saving the database
                 if (product != null)
                 {
                     db.MenuItems.Remove(product);
@@ -75,8 +106,6 @@ namespace Surf_Cafe.Forms
                     this.Close();
                 }
             }
-
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

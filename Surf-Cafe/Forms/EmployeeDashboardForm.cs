@@ -1,23 +1,39 @@
-﻿using Surf_Cafe.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Surf_Cafe.Models;
+
+// -------------------------------------------------------------------------------START OF FILE--------------------------------------------------------------------------------- //
 
 namespace Surf_Cafe.Forms
 {
+    // -------------------Employee Dashboard Form----------------------- \\
     public partial class EmployeeDashboardForm : Form
     {
         private User _loggedInUser;
         private CategoriesUserControl categoriesUC;
-        private InventoryUserControl inventoryUC;
-        private object pnlActions;
+        private OrdersUserControl ordersUC;
+        private int _selectedCategoryID;
+        private string _selectedCategoryName;
+        private object inventoryUC;
 
+        // -------------------Constructor----------------------- \\
         public EmployeeDashboardForm(User user)
         {
             InitializeComponent();
             _loggedInUser = user;
         }
 
+        // -------------------Hide Buttons Logic----------------------- \\
         private void HideButtons()
         {
-            /*
+           
             foreach (Control ctrl in pnlActions.Controls)
             {
                 if (ctrl is Button)
@@ -25,15 +41,18 @@ namespace Surf_Cafe.Forms
                     ctrl.Visible = false;
                 }
             }
-            */
+           
         }
 
+        // -------------------Load User Control Logic----------------------- \\
         private void LoadUserControl(UserControl uc)
         {
             pnlContent.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
+
+        // -------------------Collapse Button Logix----------------------- \\
 
         private void btnCollapse_Click(object sender, EventArgs e)
         {
@@ -54,86 +73,133 @@ namespace Surf_Cafe.Forms
             }
         }
 
+        // -------------------Menu Button Logic----------------------- \\
+
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            /*
-             HideButtons();
+            HideButtons();
             lblSubHeading.Text = "Categories";
             categoriesUC = new CategoriesUserControl();
+
+
             categoriesUC.CategorySelected += (categoryID, categoryName) =>
             {
+                _selectedCategoryID = categoryID;
+                _selectedCategoryName = categoryName;
+
                 var productUC = new ProductsInCategoryUserControl(categoryID, categoryName);
                 lblSubHeading.Text = $"Category - {categoryName}";
                 LoadUserControl(productUC);
+
+                btnAddCategory.Visible = false;
+                btnAddItem.Visible = true;
             };
+
 
             LoadUserControl(categoriesUC);
             btnAddCategory.Visible = true;
-            */
+
         }
+
+        // -------------------Logo Picture Box Logix----------------------- \\
 
         private void pbLogo_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
-        {
-            /*
-            HideButtons();
-            lblSubHeading.Text = "Inventory Management";
-            inventoryUC = new InventoryUserControl();
-            LoadUserControl(inventoryUC);
-            btnGenerateReport.Visible = true;
-            btnSaveChanges.Visible = true;
-            btnAddStock.Visible = true;
-            */
-
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // -------------------Form Load Event----------------------- \\
         private void EmployeeDashboardForm_Load(object sender, EventArgs e)
         {
 
         }
+        // -------------------Main and Sub Heading Label Click Events----------------------- \\
 
         private void lblMainHeading_Click(object sender, EventArgs e)
         {
 
         }
+        private void lblSubHeading_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //  -------------------Add Item Button Logic----------------------- \\
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            AddMenuItemForm form = new AddMenuItemForm(_selectedCategoryID, _selectedCategoryName);
+
+            form.ItemAdded += () =>
+            {
+                if (pnlContent.Controls.Count > 0 && pnlContent.Controls[0] is ProductsInCategoryUserControl productUC)
+                {
+                    productUC.LoadProducts();
+                }
+            };
+
+            form.ShowDialog();
+        }
+
+
+        // -------------------Orders Button Logic----------------------- \\
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            /*
             HideButtons();
             lblSubHeading.Text = "Orders";
-            OrdersUserControl orders = new OrdersUserControl();
-            LoadUserControl(orders);
+            ordersUC = new OrdersUserControl();
+
+            ordersUC.OrderSelected += (order) =>
+            {
+                var orderDetailsUC = new OrderDetailsUserControl(order);
+                lblSubHeading.Text = $"Order - {order.OrderName}";
+                LoadUserControl(orderDetailsUC);
+                btnAddOrder.Visible = false;
+                btnBack.Visible = true;
+            };
+
+
+            LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
-            */
+
+
         }
 
+        //  -------------------Save Changes Button Click Event----------------------- \\
+
+        // Github Co-Pilot helped me fix this error ('object' does not contain a definition for 'SaveChanges' and no accessible extension method 'SaveChanges' accepting a first argument of type 'object' could be found (are you missing a using directive or an assembly reference?))
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (inventoryUC is InventoryUserControl invUC)
+            {
+                invUC.SaveChanges();
+            }
+        }
+
+        //  -------------------Add order Button Click Event----------------------- \\
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            /* NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
+            NewOrderForm form = new NewOrderForm(_loggedInUser.UserID);
              if (form.ShowDialog() == DialogResult.OK)
              {
                  if (pnlContent.Controls[0] is OrdersUserControl ordersControl)
                  {
                      ordersControl.AddOrderCard(form.newOrder);
                  }
-             } */
+             } 
         }
 
+        //  -------------------Add Category Button Click Event----------------------- \\
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            AddCategoryForm form = new AddCategoryForm();
+            form.CategoryAdded += () => categoriesUC.LoadCategories();
+            form.ShowDialog();
+        }
+
+        // -------------------Logout Button Click Event----------------------- \\
         private void btnLogout_Click(object sender, EventArgs e)
         {
             _loggedInUser = null;
@@ -141,3 +207,5 @@ namespace Surf_Cafe.Forms
         }
     }
 }
+
+// -------------------------------------------------------------------------------END OF FILE--------------------------------------------------------------------------------- //

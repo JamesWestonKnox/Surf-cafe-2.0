@@ -31,20 +31,33 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboardForm));
             pnlSidebar = new Panel();
             pnlMenuButtons = new Panel();
-            btnInventory = new Button();
             btnMenu = new Button();
+            btnBack = new Button();
             btnOrders = new Button();
             btnCollapse = new Button();
             btnLogout = new Button();
             pnlLogo = new Panel();
             pnlSubHeading = new Panel();
             pbLogo = new PictureBox();
+            btnAddOrder = new Button();
+            btnRemoveOrder = new Button();
+            btnSaveChanges = new Button();
+            btnAddItem = new Button();
+            pnlHeader = new Panel();
+            pnlActions = new Panel();
+            btnAddOrder = new Button();
+            lblSubHeading = new Label();
+            pnlMainHeading = new Panel();
+            btnAddCategory = new Button();
             lblMainHeading = new Label();
             pnlContent = new Panel();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
+            pnlHeader.SuspendLayout();
+            pnlActions.SuspendLayout();
+            pnlMainHeading.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSidebar
@@ -60,7 +73,6 @@
             // 
             // pnlMenuButtons
             // 
-            pnlMenuButtons.Controls.Add(btnInventory);
             pnlMenuButtons.Controls.Add(btnMenu);
             pnlMenuButtons.Controls.Add(btnOrders);
             pnlMenuButtons.Controls.Add(btnCollapse);
@@ -70,23 +82,12 @@
             pnlMenuButtons.Size = new Size(234, 364);
             pnlMenuButtons.TabIndex = 8;
             // 
-            // btnInventory
-            // 
-            btnInventory.Dock = DockStyle.Top;
-            btnInventory.Location = new Point(0, 261);
-            btnInventory.Name = "btnInventory";
-            btnInventory.Size = new Size(234, 100);
-            btnInventory.TabIndex = 3;
-            btnInventory.Text = "Inventory";
-            btnInventory.UseVisualStyleBackColor = true;
-            btnInventory.Click += btnInventory_Click;
-            // 
             // btnMenu
             // 
             btnMenu.Dock = DockStyle.Top;
-            btnMenu.Location = new Point(0, 177);
+            btnMenu.Location = new Point(0, 242);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(234, 84);
+            btnMenu.Size = new Size(234, 121);
             btnMenu.TabIndex = 2;
             btnMenu.Text = "Menu";
             btnMenu.UseVisualStyleBackColor = true;
@@ -95,9 +96,9 @@
             // btnOrders
             // 
             btnOrders.Dock = DockStyle.Top;
-            btnOrders.Location = new Point(0, 84);
+            btnOrders.Location = new Point(0, 121);
             btnOrders.Name = "btnOrders";
-            btnOrders.Size = new Size(234, 93);
+            btnOrders.Size = new Size(234, 121);
             btnOrders.TabIndex = 1;
             btnOrders.Text = "Orders";
             btnOrders.UseVisualStyleBackColor = true;
@@ -109,7 +110,7 @@
             btnCollapse.ImageAlign = ContentAlignment.MiddleRight;
             btnCollapse.Location = new Point(0, 0);
             btnCollapse.Name = "btnCollapse";
-            btnCollapse.Size = new Size(234, 84);
+            btnCollapse.Size = new Size(234, 121);
             btnCollapse.TabIndex = 0;
             btnCollapse.Text = "Collapse";
             btnCollapse.UseVisualStyleBackColor = true;
@@ -118,9 +119,9 @@
             // btnLogout
             // 
             btnLogout.Dock = DockStyle.Bottom;
-            btnLogout.Location = new Point(0, 534);
+            btnLogout.Location = new Point(0, 528);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(234, 45);
+            btnLogout.Size = new Size(234, 51);
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
@@ -156,23 +157,120 @@
             pbLogo.TabStop = false;
             pbLogo.Click += pbLogo_Click;
             // 
+            // pnlHeader
+            // 
+            pnlHeader.Controls.Add(pnlActions);
+            pnlHeader.Controls.Add(lblSubHeading);
+            pnlHeader.Controls.Add(pnlMainHeading);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(234, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(747, 131);
+            pnlHeader.TabIndex = 11;
+            // 
+            // pnlActions
+            // 
+            pnlActions.Controls.Add(btnAddOrder);
+            pnlActions.Dock = DockStyle.Right;
+            pnlActions.Location = new Point(238, 68);
+            pnlActions.Name = "pnlActions";
+            pnlActions.Size = new Size(509, 63);
+            pnlActions.TabIndex = 2;
+            // 
+            // btnAddOrder
+            // 
+            btnAddOrder.AutoSize = true;
+            btnAddOrder.Location = new Point(344, 6);
+            btnAddOrder.Name = "btnAddOrder";
+            btnAddOrder.Size = new Size(153, 52);
+            btnAddOrder.TabIndex = 0;
+            btnAddOrder.Text = "+ New Order";
+            btnAddOrder.UseVisualStyleBackColor = true;
+            btnAddOrder.Visible = false;
+            btnAddOrder.Click += btnAddOrder_Click;
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(344, 8);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(153, 52);
+            btnAddItem.TabIndex = 5;
+            btnAddItem.Text = "+ Add Item";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Visible = false;
+            btnAddItem.Click += btnAddItem_Click;
+            // 
+            // btnAddCategory
+            // 
+            btnAddCategory.Location = new Point(344, 8);
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.Size = new Size(153, 52);
+            btnAddCategory.TabIndex = 1;
+            btnAddCategory.Text = "+ Add Category";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            btnAddCategory.Visible = false;
+            btnAddCategory.Click += btnAddCategory_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.AutoSize = true;
+            btnBack.Location = new Point(344, 6);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(153, 52);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back to all Orders";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Visible = false;
+            // 
+            // btnSaveChanges
+            // 
+            btnSaveChanges.Location = new Point(178, 6);
+            btnSaveChanges.Name = "btnSaveChanges";
+            btnSaveChanges.Size = new Size(153, 52);
+            btnSaveChanges.TabIndex = 3;
+            btnSaveChanges.Text = "Save Changes";
+            btnSaveChanges.UseVisualStyleBackColor = true;
+            btnSaveChanges.Visible = false;
+            btnSaveChanges.Click += btnSaveChanges_Click;
+            // 
+            // lblSubHeading
+            // 
+            lblSubHeading.AutoSize = true;
+            lblSubHeading.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubHeading.Location = new Point(0, 71);
+            lblSubHeading.Name = "lblSubHeading";
+            lblSubHeading.Size = new Size(209, 50);
+            lblSubHeading.TabIndex = 1;
+            lblSubHeading.Text = "Dashboard";
+            lblSubHeading.TextAlign = ContentAlignment.MiddleCenter;
+            lblSubHeading.Click += lblSubHeading_Click;
+            // 
+            // pnlMainHeading
+            // 
+            pnlMainHeading.Controls.Add(lblMainHeading);
+            pnlMainHeading.Dock = DockStyle.Top;
+            pnlMainHeading.Location = new Point(0, 0);
+            pnlMainHeading.Name = "pnlMainHeading";
+            pnlMainHeading.Size = new Size(747, 68);
+            pnlMainHeading.TabIndex = 0;
+            // 
             // lblMainHeading
             // 
             lblMainHeading.Dock = DockStyle.Top;
             lblMainHeading.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMainHeading.Location = new Point(234, 0);
+            lblMainHeading.Location = new Point(0, 0);
             lblMainHeading.Name = "lblMainHeading";
             lblMainHeading.Size = new Size(747, 68);
-            lblMainHeading.TabIndex = 9;
+            lblMainHeading.TabIndex = 0;
             lblMainHeading.Text = "Employee Dashboard";
             lblMainHeading.Click += lblMainHeading_Click;
             // 
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
-            pnlContent.Location = new Point(234, 68);
+            pnlContent.Location = new Point(234, 131);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(747, 511);
+            pnlContent.Size = new Size(747, 448);
             pnlContent.TabIndex = 10;
             // 
             // EmployeeDashboardForm
@@ -181,7 +279,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(981, 579);
             Controls.Add(pnlContent);
-            Controls.Add(lblMainHeading);
+            Controls.Add(pnlHeader);
             Controls.Add(pnlSidebar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmployeeDashboardForm";
@@ -191,6 +289,11 @@
             pnlMenuButtons.ResumeLayout(false);
             pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            pnlActions.ResumeLayout(false);
+            pnlActions.PerformLayout();
+            pnlMainHeading.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -198,7 +301,6 @@
 
         private Panel pnlSidebar;
         private Panel pnlMenuButtons;
-        private Button btnInventory;
         private Button btnMenu;
         private Button btnOrders;
         private Button btnCollapse;
@@ -206,7 +308,17 @@
         private Panel pnlLogo;
         private Panel pnlSubHeading;
         private PictureBox pbLogo;
+        private Panel pnlHeader;
         private Label lblMainHeading;
         private Panel pnlContent;
+        private Label lblSubHeading;
+        private Panel pnlActions;
+        private Button btnAddOrder;
+        private Panel pnlMainHeading;
+        private Button btnRemoveOrder;
+        private Button btnBack;
+        private Button btnAddItem;
+        private Button btnAddCategory;
+        private Button btnSaveChanges;
     }
 }

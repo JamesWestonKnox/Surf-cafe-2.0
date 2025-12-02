@@ -17,12 +17,20 @@ namespace Surf_Cafe.Forms
             LoadProducts();
         }
 
+        /// <summary>
+        /// Loads all products as cards onto the flow layout panel
+        /// </summary>
         public void LoadProducts()
         {
             flpProducts.Controls.Clear();
+
+            //Opening the database connection
             using var db = new DBContext();
+
+            //Finding the specific products within the selected category
             var products = db.MenuItems.Where(p => p.CategoryID == CategoryID).ToList();
 
+            //Creating a new product card for each product
             foreach (var product in products)
             {
                 var card = new ProductCard
@@ -35,6 +43,7 @@ namespace Surf_Cafe.Forms
                     Margin = new Padding(10)
                 };
 
+                //Making the product card clickable and calling the events
                 card.ProductClicked += (id) =>
                 {
                     if (ProductClicked != null)
@@ -46,9 +55,13 @@ namespace Surf_Cafe.Forms
                         OpenEditProductForm(id);
                     }
                 };
+
+                //Adding the card to the flow layout panel
                 flpProducts.Controls.Add(card);
             }
         }
+
+        //Opening the EditProductForm and refreshing products
         private void OpenEditProductForm(int productID)
         {
             using var editForm = new EditProductForm(productID);

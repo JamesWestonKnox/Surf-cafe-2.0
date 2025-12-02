@@ -29,16 +29,24 @@ namespace Surf_Cafe.Forms
             this.Close();
         }
 
+        /// <summary>
+        /// Saves a new order to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
+            //Retrieving the order name from the input
             string orderName = txtOrderName.Text.Trim();
 
+            //Validation ensuring required field isnt left out
             if (string.IsNullOrWhiteSpace(orderName))
             {
                 MessageBox.Show("Please enter a valid order name");
                 return;
             }
 
+            //Creating a new order with the orderName... The other attributes are added afterwards
             var order = new Order
             {
                 OrderName = orderName,
@@ -49,6 +57,7 @@ namespace Surf_Cafe.Forms
                 UserID = _userId
             };
 
+            //Adding the order and saving the database
             db.Orders.Add(order);
             db.SaveChanges();
 
