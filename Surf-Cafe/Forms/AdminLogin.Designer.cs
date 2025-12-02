@@ -52,9 +52,11 @@ namespace Surf_Cafe.Forms
             // 
             txtPassword.Location = new Point(351, 296);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(100, 23);
             txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // CancelBtn
             // 
