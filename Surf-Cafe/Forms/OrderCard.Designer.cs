@@ -36,6 +36,7 @@
             // lblOrderName
             // 
             lblOrderName.AutoSize = true;
+            lblOrderName.ForeColor = SystemColors.Window;
             lblOrderName.Location = new Point(40, 22);
             lblOrderName.Margin = new Padding(6, 0, 6, 0);
             lblOrderName.Name = "lblOrderName";
@@ -46,6 +47,7 @@
             // lblDateCreated
             // 
             lblDateCreated.AutoSize = true;
+            lblDateCreated.ForeColor = SystemColors.Window;
             lblDateCreated.Location = new Point(40, 110);
             lblDateCreated.Margin = new Padding(6, 0, 6, 0);
             lblDateCreated.Name = "lblDateCreated";
@@ -56,6 +58,7 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
+            lblTotal.ForeColor = SystemColors.Window;
             lblTotal.Location = new Point(40, 64);
             lblTotal.Margin = new Padding(6, 0, 6, 0);
             lblTotal.Name = "lblTotal";
@@ -67,7 +70,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblTotal);
             Controls.Add(lblDateCreated);
             Controls.Add(lblOrderName);

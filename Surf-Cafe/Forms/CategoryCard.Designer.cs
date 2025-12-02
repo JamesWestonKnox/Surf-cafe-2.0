@@ -35,9 +35,9 @@
             // 
             lblCategoryName.Anchor = AnchorStyles.None;
             lblCategoryName.AutoSize = true;
-            lblCategoryName.BackColor = SystemColors.ActiveCaption;
+            lblCategoryName.BackColor = Color.FromArgb(22, 78, 99);
             lblCategoryName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategoryName.ForeColor = SystemColors.ButtonHighlight;
+            lblCategoryName.ForeColor = SystemColors.Window;
             lblCategoryName.Location = new Point(87, 78);
             lblCategoryName.Name = "lblCategoryName";
             lblCategoryName.Size = new Size(100, 40);
@@ -48,7 +48,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblCategoryName);
             Name = "CategoryCard";
             Size = new Size(414, 212);

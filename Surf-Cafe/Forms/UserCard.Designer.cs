@@ -36,6 +36,7 @@
             // 
             lblUser.AutoSize = true;
             lblUser.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUser.ForeColor = SystemColors.Window;
             lblUser.Location = new Point(25, 26);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(232, 37);
@@ -46,7 +47,8 @@
             // 
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRole.Location = new Point(58, 72);
+            lblRole.ForeColor = SystemColors.Window;
+            lblRole.Location = new Point(25, 72);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(154, 37);
             lblRole.TabIndex = 1;
@@ -56,6 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(22, 78, 99);
             Controls.Add(lblRole);
             Controls.Add(lblUser);
             Name = "UserCard";
