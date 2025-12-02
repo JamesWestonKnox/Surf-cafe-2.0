@@ -74,7 +74,6 @@
             // 
             StartOfDayQuantity.HeaderText = "Start Of Day Qty";
             StartOfDayQuantity.Name = "StartOfDayQuantity";
-            StartOfDayQuantity.ReadOnly = true;
             StartOfDayQuantity.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // EndOfDayQuantity
