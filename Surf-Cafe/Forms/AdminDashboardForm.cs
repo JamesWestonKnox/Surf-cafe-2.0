@@ -10,6 +10,7 @@ namespace Surf_Cafe.Forms
         private string _selectedCategoryName;
         private OrdersUserControl ordersUC;
         private EmployeesManagementUserControl employeesManagementUC;
+        private OrderDetailsUserControl orderDetailsUC;
         public AdminDashboardForm(User user)
         {
             InitializeComponent();
@@ -102,11 +103,12 @@ namespace Surf_Cafe.Forms
 
             ordersUC.OrderSelected += (order) =>
             {
-                var orderDetailsUC = new OrderDetailsUserControl(order);
+                orderDetailsUC = new OrderDetailsUserControl(order);
                 lblSubHeading.Text = $"Order - {order.OrderName}";
                 LoadUserControl(orderDetailsUC);
                 btnAddOrder.Visible = false;
                 btnBack.Visible = true;
+                btnBack1.Visible = true;
             };
 
             LoadUserControl(ordersUC);
@@ -340,11 +342,18 @@ namespace Surf_Cafe.Forms
                 LoadUserControl(orderDetailsUC);
                 btnAddOrder.Visible = false;
                 btnBack.Visible = true;
+                btnBack1.Visible = true;
             };
 
             LoadUserControl(ordersUC);
             btnAddOrder.Visible = true;
+            btnBack1.Visible = false;
 
+        }
+
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            orderDetailsUC?.LoadMenu();
         }
     }
 }

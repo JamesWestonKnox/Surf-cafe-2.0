@@ -55,6 +55,7 @@
             pnlMainHeading = new Panel();
             lblMainHeading = new Label();
             pnlContent = new Panel();
+            btnBack1 = new Button();
             pnlSidebar.SuspendLayout();
             pnlMenuButtons.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -278,6 +279,7 @@
             // pnlActions
             // 
             pnlActions.BackColor = Color.FromArgb(14, 116, 144);
+            pnlActions.Controls.Add(btnBack1);
             pnlActions.Controls.Add(btnGenerateReport);
             pnlActions.Controls.Add(btnAddEmployee);
             pnlActions.Controls.Add(btnAddCategory);
@@ -459,6 +461,21 @@
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
+            // btnBack1
+            // 
+            btnBack1.BackColor = Color.FromArgb(22, 78, 99);
+            btnBack1.FlatAppearance.BorderSize = 0;
+            btnBack1.FlatStyle = FlatStyle.Flat;
+            btnBack1.ForeColor = SystemColors.Window;
+            btnBack1.Location = new Point(178, 6);
+            btnBack1.Name = "btnBack1";
+            btnBack1.Size = new Size(153, 52);
+            btnBack1.TabIndex = 4;
+            btnBack1.Text = "Back";
+            btnBack1.UseVisualStyleBackColor = false;
+            btnBack1.Visible = false;
+            btnBack1.Click += btnBack1_Click;
+            // 
             // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -515,5 +532,6 @@
         private Button btnBack;
         internal Panel pnlMenuButtons;
         private Button btnCollapse;
+        private Button btnBack1;
     }
 }
