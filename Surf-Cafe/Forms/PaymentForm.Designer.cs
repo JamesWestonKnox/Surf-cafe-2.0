@@ -175,11 +175,12 @@
             // 
             cmbDiscount.ForeColor = SystemColors.WindowText;
             cmbDiscount.FormattingEnabled = true;
-            cmbDiscount.Items.AddRange(new object[] { "Week Breakfast Special (8am - 9am)", "Weekend Lunch Special (11am - 2pm)" });
+            cmbDiscount.Items.AddRange(new object[] { "None", "10%", "15%", "20%", "50%" });
             cmbDiscount.Location = new Point(80, 246);
             cmbDiscount.Name = "cmbDiscount";
             cmbDiscount.Size = new Size(189, 23);
             cmbDiscount.TabIndex = 11;
+            cmbDiscount.SelectedIndexChanged += cmbDiscount_SelectedIndexChanged;
             // 
             // label5
             // 

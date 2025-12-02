@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using iText.Kernel.Pdf;
+﻿using iText.Kernel.Pdf;
+using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using Surf_Cafe.Database;
-using Surf_Cafe.Forms;
-using iText.Layout;
-using System.IO;
 
 namespace Surf_Cafe.Forms
 {
@@ -53,14 +41,14 @@ namespace Surf_Cafe.Forms
                     stock.Threshold,
                     stock.LastUpdated.ToString("g"),
                     status);
-                
+
                 var addedRow = dgvStock.Rows[dgvStock.Rows.Count - 1];
 
                 //Highlighting rows in the table where the stock is running low
                 if (stock.EndOfDayQuantity < stock.Threshold)
                 {
-                   addedRow.DefaultCellStyle.BackColor = Color.LightCoral;
-                   addedRow.DefaultCellStyle.ForeColor = Color.White;
+                    addedRow.DefaultCellStyle.BackColor = Color.LightCoral;
+                    addedRow.DefaultCellStyle.ForeColor = Color.White;
                 }
             }
         }
@@ -81,7 +69,7 @@ namespace Surf_Cafe.Forms
                 //Saving the changes made to each specific stockItem
                 int id = Convert.ToInt32(row.Cells["StockItemID"].Value);
                 var stock = db.StockItems.Find(id);
-                if(stock != null)
+                if (stock != null)
                 {
                     stock.StartOfDayQuantity = Convert.ToInt32(row.Cells["StartOfDayQuantity"].Value);
                     stock.EndOfDayQuantity = Convert.ToInt32(row.Cells["EndOfDayQuantity"].Value);
@@ -99,6 +87,13 @@ namespace Surf_Cafe.Forms
 
         /// <summary>
         /// Generates a stock report based on the stock data as a pdf
+        /// 
+        /// ChatGpt Assited with layout and functionality for pdf generation.
+        /// 
+        /// Reference:
+        /// ChatGPT
+        /// OpenAI, 2025. ChatGPT[Computer program]. Version GPT-5 mini.
+        /// Available at: https://chat.openai.com
         /// 
         /// </summary>
         public void GenerateStockReport()
@@ -160,7 +155,7 @@ namespace Surf_Cafe.Forms
                 table.AddCell(row.Cells["Status"].Value?.ToString() ?? "");
 
             }
-            
+
             //Adding the table to the databse
             document.Add(table);
             document.Close();
@@ -173,7 +168,7 @@ namespace Surf_Cafe.Forms
                 UseShellExecute = true
             };
             System.Diagnostics.Process.Start(psi);
-            
+
         }
     }
 }

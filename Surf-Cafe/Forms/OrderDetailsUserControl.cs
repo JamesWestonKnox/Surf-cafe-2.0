@@ -195,6 +195,14 @@ namespace Surf_Cafe.Forms
             var order = db.Orders.First(o => o.OrderID == _order.OrderID);
 
             PaymentForm paymentForm = new PaymentForm(order);
+
+            paymentForm.PaymentCompleted += () =>
+            {
+                // Find parent form and navigate back to orders
+                var parentForm = this.FindForm() as AdminDashboardForm;
+                parentForm?.btnOrders_Click(null, null);
+            };
+
             paymentForm.ShowDialog();
         }
 
