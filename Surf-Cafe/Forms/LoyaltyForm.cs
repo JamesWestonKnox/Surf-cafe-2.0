@@ -41,6 +41,7 @@ namespace Surf_Cafe.Forms
                     customer.LoyaltyPoints += 1;
                     db.SaveChanges();
                     MessageBox.Show($"Existing customer found. Added 1 point. Total points: {customer.LoyaltyPoints}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
@@ -54,6 +55,7 @@ namespace Surf_Cafe.Forms
                     db.Customers.Add(newCustomer);
                     db.SaveChanges();
                     MessageBox.Show("New customer added with 1 loyalty point.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
         }
