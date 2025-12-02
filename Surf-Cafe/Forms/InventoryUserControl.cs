@@ -23,36 +23,10 @@ namespace Surf_Cafe.Forms
         public InventoryUserControl()
         {
             InitializeComponent();
-            SetUpDataGridView();
             LoadStockItems();
         }
 
-        public void SetUpDataGridView()
-        {
-            dgvStock.Columns.Add("StockItemID", "ID");
-            dgvStock.Columns.Add("StockItemName", "Item Name");
-            dgvStock.Columns.Add("StartOfDayQuantity", "Start of Day Qty");
-            dgvStock.Columns.Add("EndOfDayQuantity", "End of Day Qty");
-            dgvStock.Columns.Add("Unit", "Unit");
-            dgvStock.Columns.Add("Threshold", "Threshold");
-            dgvStock.Columns.Add("LastUpdated", "Last Updated");
-            dgvStock.Columns.Add("Status", "Status");
-
-            dgvStock.Columns["StockItemID"].Visible = false;
-
-            foreach (DataGridViewColumn col in dgvStock.Columns)
-            {
-                if (col.Name != "EndOfDayQuantity")
-                {
-                    col.ReadOnly = true;
-                }
-            }
-
-            dgvStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-        }
-
+       
         public void LoadStockItems()
         {
             dgvStock.Rows.Clear();
@@ -106,7 +80,6 @@ namespace Surf_Cafe.Forms
             db.SaveChanges();
             MessageBox.Show("Stock Quantities Updated!");
             LoadStockItems();
-
 
         }
 
