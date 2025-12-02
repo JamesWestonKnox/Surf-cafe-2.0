@@ -17,6 +17,9 @@ namespace Surf_Cafe
                 db.Database.EnsureCreated();
                 var seed = new SeedData();
                 seed.SeedUsers();
+                seed.SeedCategories();
+                seed.SeedProducts();
+                seed.SeedOrders();
             }
 
             Application.Run(new AdminLogin());
