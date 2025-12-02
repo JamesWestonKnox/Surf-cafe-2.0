@@ -104,7 +104,7 @@ namespace Surf_Cafe.Forms
             // adds new row for each order item
             foreach (var item in orderItems)
             {
-                dataGridView1.Rows.Add(item.MenuItem.Name, item.Quantity, item.ItemSubTotal);
+                dataGridView1.Rows.Add(item.MenuItem.Name, item.Quantity, $"R {item.ItemSubTotal:0.00}");
             }
         }
 
