@@ -31,7 +31,7 @@ You will need access to .NET Framework, preferable 8.0
 
   # Installation of the app
 
-  Step 1: Clone the Surf-cafe 2.0 Github Repositroy or Download the ZIP file
+  Step 1: Clone the Surf-cafe 2.0 Github Repositroy or Download and extract all from the ZIP file
   Step 2: Open the Solution in Visual Studio
   Step 3: Restore NuGet packages in the Tools tab at the top, then press Manage NuGet packages and Download the neccessarry package for the project
   Step 4: Run Database migration ( dotnet ef database update ) in the Terminal which can found if you click on view at the top and then select terminal
