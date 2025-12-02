@@ -36,6 +36,7 @@
             Unit = new DataGridViewTextBoxColumn();
             Threshold = new DataGridViewTextBoxColumn();
             LastUpdated = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvStock).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             dgvStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStock.BackgroundColor = SystemColors.ControlLightLight;
             dgvStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStock.Columns.AddRange(new DataGridViewColumn[] { StockItemID, StockItemName, StartOfDayQuantity, EndOfDayQuantity, Unit, Threshold, LastUpdated });
+            dgvStock.Columns.AddRange(new DataGridViewColumn[] { StockItemID, StockItemName, StartOfDayQuantity, EndOfDayQuantity, Unit, Threshold, LastUpdated, Status });
             dgvStock.Dock = DockStyle.Fill;
             dgvStock.Location = new Point(0, 0);
             dgvStock.Name = "dgvStock";
@@ -103,6 +104,13 @@
             LastUpdated.ReadOnly = true;
             LastUpdated.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // InventoryUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -124,5 +132,6 @@
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Threshold;
         private DataGridViewTextBoxColumn LastUpdated;
+        private DataGridViewTextBoxColumn Status;
     }
 }

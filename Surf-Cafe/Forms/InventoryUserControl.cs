@@ -36,6 +36,7 @@ namespace Surf_Cafe.Forms
 
             foreach (var stock in stockList)
             {
+                string status = stock.EndOfDayQuantity < stock.Threshold ? "LOW" : "OK";
                 dgvStock.Rows.Add(
                     stock.StockItemID,
                     stock.StockItemName,
@@ -43,7 +44,8 @@ namespace Surf_Cafe.Forms
                     stock.EndOfDayQuantity,
                     stock.Unit,
                     stock.Threshold,
-                    stock.LastUpdated.ToString("g")
+                    stock.LastUpdated.ToString("g"),
+                    status
                     );
                 
                 var addedRow = dgvStock.Rows[dgvStock.Rows.Count - 1];
@@ -110,13 +112,14 @@ namespace Surf_Cafe.Forms
                 .SetTextAlignment(TextAlignment.CENTER)
                 .SetFontSize(12));
 
-            Table table = new Table(5, true);
+            Table table = new Table(6, true);
             table.AddHeaderCell("Item name");
             table.AddHeaderCell("Start of day Quantity");
             table.AddHeaderCell("End of day Quantity");
             table.AddHeaderCell("Unit");
             table.AddHeaderCell("Threshold");
-            
+            table.AddHeaderCell("Status");
+
             foreach (DataGridViewRow row in dgvStock.Rows)
             {
                 if (row.IsNewRow)
@@ -128,6 +131,7 @@ namespace Surf_Cafe.Forms
                 table.AddCell(row.Cells["EndOfDayQuantity"].Value?.ToString() ?? "");
                 table.AddCell(row.Cells["Unit"].Value?.ToString() ?? "");
                 table.AddCell(row.Cells["Threshold"].Value?.ToString() ?? "");
+                table.AddCell(row.Cells["Status"].Value?.ToString() ?? "");
 
             }
             document.Add(table);
