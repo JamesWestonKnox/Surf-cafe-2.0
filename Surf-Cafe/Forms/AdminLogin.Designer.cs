@@ -30,50 +30,45 @@ namespace Surf_Cafe.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(AdminLogin));
             txtUsername = new TextBox();
             txtPassword = new TextBox();
-            CancelBtn = new Button();
             LoginBtn = new Button();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            CancelBtn = new Button();
             ((ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(351, 267);
+            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsername.Location = new Point(351, 258);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Username";
-            txtUsername.Size = new Size(100, 23);
+            txtUsername.Size = new Size(100, 29);
             txtUsername.TabIndex = 0;
             txtUsername.TextChanged += textBox1_TextChanged;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(351, 296);
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(351, 293);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(100, 23);
+            txtPassword.Size = new Size(100, 29);
             txtPassword.TabIndex = 1;
             txtPassword.UseSystemPasswordChar = true;
-            // 
-            // CancelBtn
-            // 
-            CancelBtn.BackColor = Color.LightCoral;
-            CancelBtn.Location = new Point(322, 325);
-            CancelBtn.Name = "CancelBtn";
-            CancelBtn.Size = new Size(75, 37);
-            CancelBtn.TabIndex = 2;
-            CancelBtn.Text = "Exit";
-            CancelBtn.UseVisualStyleBackColor = false;
-            CancelBtn.Click += button1_Click;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // LoginBtn
             // 
-            LoginBtn.BackColor = SystemColors.Highlight;
+            LoginBtn.BackColor = Color.FromArgb(22, 78, 99);
+            LoginBtn.BackgroundImageLayout = ImageLayout.None;
+            LoginBtn.FlatAppearance.BorderSize = 0;
+            LoginBtn.FlatStyle = FlatStyle.Flat;
             LoginBtn.ForeColor = SystemColors.Window;
-            LoginBtn.Location = new Point(403, 325);
+            LoginBtn.Location = new Point(403, 356);
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(75, 37);
             LoginBtn.TabIndex = 3;
@@ -81,41 +76,51 @@ namespace Surf_Cafe.Forms
             LoginBtn.UseVisualStyleBackColor = false;
             LoginBtn.Click += button2_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(363, 237);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Please Login\r\n";
-            label1.Click += label1_Click;
-            // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.DodgerBlue;
+            pictureBox1.BackColor = Color.FromArgb(14, 116, 144);
             pictureBox1.Image = Properties.Resources.Surf_Cafe_logo;
-            pictureBox1.Location = new Point(297, 27);
+            pictureBox1.Location = new Point(219, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(206, 159);
+            pictureBox1.Size = new Size(362, 234);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            // 
+            // CancelBtn
+            // 
+            CancelBtn.BackColor = Color.FromArgb(22, 78, 99);
+            CancelBtn.BackgroundImageLayout = ImageLayout.None;
+            CancelBtn.FlatAppearance.BorderSize = 0;
+            CancelBtn.FlatStyle = FlatStyle.Flat;
+            CancelBtn.ForeColor = SystemColors.Window;
+            CancelBtn.Location = new Point(311, 356);
+            CancelBtn.Margin = new Padding(0);
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.Size = new Size(75, 37);
+            CancelBtn.TabIndex = 2;
+            CancelBtn.TabStop = false;
+            CancelBtn.Text = "Exit";
+            CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += button1_Click;
             // 
             // AdminLogin
             // 
             AcceptButton = LoginBtn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
+            BackColor = Color.FromArgb(14, 116, 144);
             CancelButton = CancelBtn;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
             Controls.Add(LoginBtn);
             Controls.Add(CancelBtn);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AdminLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -132,14 +137,10 @@ namespace Surf_Cafe.Forms
         private TextBox txtPassword;
 
 
-        private Button CancelBtn;
-
-
         private Button LoginBtn;
-
-        private Label label1;
         #endregion
 
         private PictureBox pictureBox1;
+        private Button CancelBtn;
     }
 }
